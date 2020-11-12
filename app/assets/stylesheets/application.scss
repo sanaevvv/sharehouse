@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
+@import "users";
+@import "rooms";
+@import "reviews";
+@import "top";
+
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  font-family: 'Kosugi Maru', sans-serif;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: snow;
+}
+
+
+a {
+  display: block;
+  transition: 0.5s;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.header {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 4vw;
+  display: flex;
+
+  .title_gr{
+      display:flex;
+      align-items: center;
+      margin-right: auto;
+
+      .title{
+            font-size: 2rem;
+            font-weight : bold;
+            color: #171717;
+      }
+      .sharehouse_list{
+            margin-left: 30px;
+            color: #171717;
+      }
+  }
+
+  .logout_gr{
+      display:flex;
+      align-items: center;
+    .welcome{
+          margin-right: 20px;
+    }
+    .logout{
+          background-color: #fff;
+          border: 2px solid grey;
+          color: #171717;
+          margin-left: 20px;
+          padding:5px 10px;
+          box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+          border-radius: 2px;
+      &:hover {
+        box-shadow: 0 0;
+        transform: translate(2px, 2px);
+        }
+    }
+  }
+}
+
+
+////////////////// 変数 ////////////////////
+
+$font_s: 2rem;
+$font_m: 2.5rem;
+$font_l: 3rem;
+
+$m_30: 30px;
+$m_50: 50px;
+
+////////////////// 共通 /////////////////////
+
+h2 {
+  color: grey;
+  text-align: center;
+}
+
+.font_l {
+  font-size: $font_l;
+}
+.font_m {
+  font-size: $font_m;
+}
+.font_s {
+  font-size: $font_s;
+}
+
+.bold{
+  font-weight: bold;
+}
+.m_30{
+  margin: 30px;
+}
+.m_50{
+  margin: 50px;
+}
+.mt50{
+  margin-top:50px;
+}
+
+//スマホ改行テキスト
+.sp_br {
+  display: none;
+  @media screen and(max-width:768px) {
+    display: block;
+  }
+}
+
+
+
+.footer {
+  text-align: center;
+  background-color: #333333;
+  padding: 10px;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.flash_notice,
+.flash_alert {
+  margin: 10px 0;
+  text-align: center;
+  .notice {
+    background-color: lightgreen;
+    color: #eee;
+    padding: 10px;
+  }
+  .aleart {
+    background-color: red;
+    color: #eee;
+    padding: 10px;
+  }
+}
+
+.container{
+     max-width:800px;
+     width:100%;
+     margin:0 auto;
+     .sharehouse_search{
+          font-size:28px;
+          text-align: center;
+          margin: 50px 0;
+     }
+}
+
+/*
+ *= require_tree .
+ *= require_self
+ */

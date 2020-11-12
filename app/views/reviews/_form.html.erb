@@ -1,0 +1,32 @@
+<p class="review">レビューを書く</p>
+<% if review.errors.any? %>
+     <div>
+          <h2><%= review.errors.count %>件のエラーがあります。</h2>
+          <% review.errors.full_messages.each do |message|%>
+               <ul>
+                    <li><%= message %></li>
+               </ul>
+          <% end %>
+     </div>
+<% end %>
+
+<div><%= form_with model: review, url: room_reviews_path(room), local: true do |f| %>
+     <div class="main_ratings">
+          <div class="ratings">
+               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
+               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
+               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
+               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
+               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
+          </div>
+          <div class="rating_value_display">
+               <span id="rating_value_display">0</span>/5
+          </div>
+     </div>
+          <%= f.hidden_field :room_id, value: room.id %>
+          <%= f.hidden_field :score, id: "rating_value" %>
+          <%= f.text_area :comment, row: 5, class: "textarea" %>
+          <%= f.submit "保存", class: "button" %>
+          <%= link_to "他のレビューを見る", room_reviews_path(room), class: "link_button" %>
+<% end %>
+</div>

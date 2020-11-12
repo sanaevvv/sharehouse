@@ -1,0 +1,57 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.card_inner{
+     position: relative;
+     .w_50{
+          width: 50%;
+          padding: 20px;
+          .star_review{
+               display:flex;
+               align-items: center;
+
+               .star-rating {
+                    width: 5em;
+                    font-size: 2.5rem;
+                    position: relative;
+                    .star-rating-front {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    overflow: hidden;
+                    color: #ffcc33;
+                    }
+                    .star-rating-back {
+                    color: #ccc;
+                    }
+               }
+
+               .average-score-display {
+                    font-size: 16px;
+                    margin-left: 20px;
+                    }
+          }
+     }
+
+     .roomfee{
+     font-size: 2rem;
+     }
+     .description{
+     font-size: 1.6rem;
+     padding: 0 20px;
+     }
+     .link_bottons{
+     position: absolute;
+     bottom: 20px;
+     right: 10px;
+     }
+}
+
+
+
+
+// .average-score {
+//   display: flex;
+// }

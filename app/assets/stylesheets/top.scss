@@ -1,0 +1,31 @@
+.login{
+     background-color: #fff;
+     border: 2px solid grey;
+     color: #171717;
+     margin: 30px 0;
+     }
+.new{
+     background-color: grey;
+     color:#fff;
+}
+
+.login_gr{
+     margin: 20px auto;
+     .btn_link{
+          padding: 10px 40px;
+          border-radius : 3px;
+     }
+  }
+
+
+.header_login{
+     @extend .login;
+     padding: 0 10px;
+     border-radius : 2px;
+}
+.header_new{
+  @extend .new;
+  padding: 3px 10px;
+  margin-left: 10px;
+  border-radius : 2px;
+}
