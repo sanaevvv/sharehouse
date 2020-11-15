@@ -3,3 +3,5 @@ class AddRoomsIdToReviews < ActiveRecord::Migration[6.0]
     add_reference :reviews, :room, foreign_key: true
   end
 end
+
+

@@ -18,39 +18,6 @@
      }
 }
 
-// .card_inner{
-//      position: relative;
-//      .w_50{
-//           width: 50%;
-//           padding: 20px;
-//           .star_review{
-//                display:flex;
-//                align-items: center;
-
-               // .star-rating {
-               //      width: 5em;
-               //      font-size: 2.5rem;
-               //      position: relative;
-               //      .star-rating-front {
-               //      position: absolute;
-               //      top: 0;
-               //      left: 0;
-               //      overflow: hidden;
-               //      color: #ffcc33;
-               //      }
-               //      .star-rating-back {
-               //      color: #ccc;
-               //      }
-               // }
-
-//                .average-score-display {
-//                     font-size: 16px;
-//                     margin-left: 20px;
-//                     }
-//           }
-//      }
-// }
-
 .main_ratings{
      display:flex;
      .ratings{
@@ -66,6 +33,31 @@
      padding: 8px 0 0 20px;
      }
 }
+
+.rate{
+position: relative;
+display: inline-block;
+}
+.rate:before,
+.rate:after{
+content: “★★★”;
+}
+.rate:before{
+color: #ccc;
+}
+.rate:after{
+position: absolute;
+left:0;
+top:0;
+color: #FFA500;
+}
+
+
+
+
+
+
+
 .review{
      font-size: 20px;
      padding:40px 0 20px 0;
@@ -80,23 +72,6 @@
      border: 1px solid lightgrey;
      margin-bottom: 10px;
 }
-// .button{
-//      cursor:pointer;
-// 	border: none;
-// 	outline: none;
-// 	-webkit-appearance: none;
-// 	-moz-appearance: none;
-// 	appearance: none;
-
-//      background-color: green;
-//      color: white;
-//      display: inline-block;
-//      vertical-align: middle;
-//      line-height:20px;
-//      font-size: 1rem;
-//      padding:10px;
-//      border-radius: 3px;
-// }
 
 .grid_table{
      margin-top: 30px;
@@ -104,7 +79,7 @@
      width:100%;
      grid-template-columns: 1fr 1fr 2fr;
      .grid_ttl{
-          border-bottom: 2px solid lightgrey;
+     border-bottom: 2px solid lightgrey;
      }
      .border_layout{
      padding: 5px;

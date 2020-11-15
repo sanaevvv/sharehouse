@@ -18,14 +18,14 @@
                     <p class="description"><%= @room.description %></p>
 
                     <p class="link_bottons">
-          
+
                     <%= link_to "レビューを書く", room_path(@room), class: "button link_button" %>
                     </p>
                </div>
           </div>
      </div>
      <div class="average-score-display">
-                点（<%= @room.reviews.count %>件のレビュー）
+         <%= @room.avg_score %>点（<%= @room.reviews.count %>件のレビュー）
      </div>
 
      <div class="grid_table">

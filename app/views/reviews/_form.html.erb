@@ -10,14 +10,10 @@
      </div>
 <% end %>
 
-<div><%= form_with model: review, url: room_reviews_path(room), local: true do |f| %>
+<%= form_with model: [room, review], local: true do |f| %>
      <div class="main_ratings">
-          <div class="ratings">
-               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
-               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
-               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
-               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
-               <span class="fa fa-star-o" id="star"><i class="far fa-star"></i></span>
+          <div class="ratings" id="ratings">
+               <span class="fa fa-star-o"><i class="far fa-star"></i></span>
           </div>
           <div class="rating_value_display">
                <span id="rating_value_display">0</span>/5
@@ -29,4 +25,3 @@
           <%= f.submit "保存", class: "button" %>
           <%= link_to "他のレビューを見る", room_reviews_path(room), class: "link_button" %>
 <% end %>
-</div>
