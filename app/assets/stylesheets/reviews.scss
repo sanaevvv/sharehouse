@@ -18,49 +18,41 @@
      }
 }
 
-.main_ratings{
-     display:flex;
-     .ratings{
-          padding-bottom: 10px;
-          .far{
-          font-size:30px;
-          color: #fc0;
-          cursor: pointer;
+.evaluation{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+     input[type='radio']{
+     display: none;
+     }
+     label{
+     position: relative;
+     padding: 10px 10px 0;
+     color: gray;
+     cursor: pointer;
+     font-size: 40px;
+          .text{
+          position: absolute;
+          left: 0;
+          top: 0;
+          right: 0;
+          text-align: center;
+          font-size: 12px;
+          color: gray;
           }
      }
-     .rating_value_display{
-     font-size: 20px;
-     padding: 8px 0 0 20px;
-     }
 }
 
-.rate{
-position: relative;
-display: inline-block;
+.evaluation label:hover,
+.evaluation label:hover ~ label,
+.evaluation input[type='radio']:checked ~ label{
+  color: #ffcc00;
 }
-.rate:before,
-.rate:after{
-content: “★★★”;
-}
-.rate:before{
-color: #ccc;
-}
-.rate:after{
-position: absolute;
-left:0;
-top:0;
-color: #FFA500;
-}
-
-
-
-
-
 
 
 .review{
      font-size: 20px;
-     padding:40px 0 20px 0;
+     padding:40px 0 0 0;
      width: 500px;
      text-align: left;
      margin:0 auto;

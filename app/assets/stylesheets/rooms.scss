@@ -7,10 +7,11 @@
      position: relative;
      .w_50{
           width: 50%;
-          padding: 20px;
+          padding: 15px;
           .star_review{
                display:flex;
                align-items: center;
+               width:100%;
 
                .star-rating {
                     width: 5em;
@@ -30,7 +31,7 @@
 
                .average-score-display {
                     font-size: 16px;
-                    margin-left: 20px;
+                    margin-left: 18px;
                     }
           }
      }

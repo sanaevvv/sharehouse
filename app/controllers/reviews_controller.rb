@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user_id = current_user.id
+    @review.user_id = current_user.id #誰が投稿したかを格納
     if
       @review.save
       redirect_to room_reviews_path(@review.room)
@@ -23,3 +23,5 @@ class ReviewsController < ApplicationController
   end
 
 end
+
+

@@ -10,7 +10,8 @@
                               <div class="star-rating-back">★★★★★</div>
                          </div>
                          <div class="average-score-display">
-                              <%= @room.avg_score %>点（<%= @room.reviews.count %>件のレビュー）
+                              <%= @room.avg_score %>点
+                              (<%= @room.reviews.count %>件のレビュー)
                          </div>
                     </div>
 
@@ -25,7 +26,7 @@
           </div>
      </div>
      <div class="average-score-display">
-         <%= @room.avg_score %>点（<%= @room.reviews.count %>件のレビュー）
+         <%= @room.avg_score %>点(<%= @room.reviews.count %>件のレビュー)
      </div>
 
      <div class="grid_table">

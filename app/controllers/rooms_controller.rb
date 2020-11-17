@@ -7,4 +7,5 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
     @review = Review.new
   end
+
 end
