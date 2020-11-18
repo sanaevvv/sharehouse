@@ -50,9 +50,20 @@
      }
 }
 
+.button_right{
+      text-align: right;
+     .new{
+          display:inline-block;
+     }
+}
+.grid_new{
+     width: 500px;
+     margin:0 auto;
+}
 
-
-
-// .average-score {
-//   display: flex;
-// }
+input[type="text"],
+textarea{
+     width: 95%;
+     margin-bottom: 20px;
+     border: 1px solid lightgrey;
+}
