@@ -1,30 +1,23 @@
 <div class="container">
-　　　<h2><%= "#{@room.name}を編集する" %></h2>
 
-     <div class="border">
-          <h2 class="card_title"><%= @room.name %></h2>
-          <div class="card_inner">
-               <div class="w_50"><%= image_tag "room#{@room.id}" %></div>
-               <div class="w_50">
-                    <div class="star_review">
-                         <div class="star-rating">
-                              <div class="star-rating-front" style="width: <%= @room.review_score_percentage %>%">★★★★★</div>
-                              <div class="star-rating-back">★★★★★</div>
-                         </div>
-                         <div class="average-score-display">
-                              <%= @room.avg_score %>点（<%= @room.reviews.count %>件のレビュー）
-                         </div>
-                    </div>
+     <h2>シェアハウス更新</h2>
+     <div class="button_right"><%= link_to '一覧', admin_rooms_path(@room), class:"button new" %></div>
 
-                    <p class="roomfee">【お部屋代】¥<%= @room.price.to_s(:delimited) %></p>
-                    <p class="description"><%= @room.description %></p>
 
-                    <p class="link_bottons">
-                    <%= link_to "更新する", admin_room_path(@room), class: "button" %>
-                    <%= link_to "削除", admin_room_path(@room), method: :delete, data:{confirm: "#{@room.name}を削除します。よろしいですか？"}, class: "button link_button" %>
-                    </p>
-               </div>
+          <%= form_with model:[:admin, @room], local: true do |f| %>
+               <div class="grid_new">
+               <div><%= f.label :name, "シェアハウス名" %></div>
+               <div><%= f.text_field :name %></div>
+               <div><%= f.label :price, "家賃" %></div>
+               <div><%= f.text_field :price %>&nbsp;円</div>
+               <div><%= f.label :description, "詳細" %></div>
+               <div><%= f.text_area :desctiption, rows: 5 %></div>
+               <div><%= f.label :picture, "画像" %></div>
+               <div><%= f.file_field :picture %></div>
+
+               <%= f.submit '更新する', class:"button" %></div>
           </div>
-     </div>
+          <% end %>
+
 
 </div>

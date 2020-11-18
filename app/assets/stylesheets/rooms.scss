@@ -4,6 +4,7 @@
 
 
 .card_inner{
+     height:200px;
      position: relative;
      .w_50{
           width: 50%;
@@ -45,8 +46,8 @@
      }
      .link_bottons{
      position: absolute;
-     bottom: 20px;
-     right: 10px;
+     bottom: 0;
+     right: 20px;
      }
 }
 

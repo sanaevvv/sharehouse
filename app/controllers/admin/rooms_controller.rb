@@ -30,7 +30,7 @@ module Admin
                @room = Room.find(params[:id])
 
                if @room.update(room_params)
-               redirect_to admin_room_url(@room), notice: "#{room.name}を更新しました。"
+               redirect_to admin_room_url(@room), notice: "#{@room.name}を更新しました。"
                else
                     render :edit
                end
