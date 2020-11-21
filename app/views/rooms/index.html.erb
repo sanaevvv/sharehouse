@@ -1,5 +1,16 @@
 <div class="container">
-     <p class="sharehouse_search"><i class="fas fa-home"></i>&nbsp;シェアハウスを探す</p>
+
+     <p class="sharehouse_search">
+          <i class="fas fa-home"></i>&nbsp;シェアハウスを探す
+     </p>
+
+     <div class="search_box">
+          <%= search_form_for @q, class:"search" do |f| %>
+               <%= f.search_field :name_cont, placeholder: '検索するテキストを入力...' %>
+               <%= f.submit "検索", class: 'link_button'%>
+          <% end %>
+     </div>
+
      <% @rooms.each do |room| %>
           <div class="border">
                <h2 class="card_title"><%= room.name %></h2>
