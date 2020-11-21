@@ -1,0 +1,25 @@
+
+<h2 class="ttl">ユーザー一覧</h2>
+<div class="button_right"><%= link_to '新規登録', new_admin_user_path, class:"button new" %></div>
+
+<div class="grid_admin_user">
+     <div class="grid_ttl"><%= User.human_attribute_name(:name)%></div>
+     <div class="grid_ttl"><%= User.human_attribute_name(:email)%></div>
+     <div class="grid_ttl"><%= User.human_attribute_name(:admin)%></div>
+     <div class="grid_ttl">
+</div>
+
+
+<% @users.each do |user| %>
+
+     <div class="border_layout"><%= user.username %></div>
+     <div class="border_layout"><%= user.email %></div>
+     <div class="border_layout"><%= user.admin?? "あり" : "なし" %></div>
+
+     <div class="border_layout">
+          <%= link_to "編集", edit_admin_user_path(user), class:"button" %>
+          <%= link_to "削除", [:admin, user], method: :delete, data: {confirm: "#{user.username}を削除してよろしいでしょうか？"}, class:"link_button" %>
+     </div>
+
+<% end %>
+

@@ -1,0 +1,25 @@
+<p class="button_right">
+     <%= link_to "一覧へ戻る", admin_users_path,
+     class: "button button_right" %>
+</p>
+
+<%= form_with model:[:admin, @user], local: true do |f| %>
+     <div class="grid_new">
+          <div><%= f.label :name %></div>
+          <div><%= f.text_field :name %></div>
+
+          <div><%= f.label :email %></div>
+          <div><%= f.email_field :email %></div>
+
+          <div class="mt30"><%= f.check_box :admin %>
+                              <%= f.label :admin %></div>
+
+          <div class="mt20"><%= f.label :password %></div>
+                         <div><%= f.password_field :password %></div>
+
+          <div class="mt20"><%= f.label :password_confirmation %></div>
+                         <div><%= f.password_field :password_confirmation %></div>
+
+          <%= f.submit '登録する', class:"button" %></div>
+     </div>
+<% end %>
