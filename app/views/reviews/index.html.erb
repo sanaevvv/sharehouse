@@ -30,10 +30,13 @@
      </div>
 
      <div class="grid_table">
-          <div class="grid_ttl">ユーザー</div>
-          <div class="grid_ttl">点数</div>
+
+          <div class="grid_ttl">
+               <%= sort_link(@q, :user_id,'投稿者',hide_indicator: true) %></div>
+          <div class="grid_ttl">
+               <%= sort_link(@q, :score,  '点数',  hide_indicator: true) %></div>
           <div class="grid_ttl">内容</div>
-          <div class="grid_ttl">   </div>
+          <div class="grid_ttl"></div>
 
           <% @reviews.each do |review| %>
                <div class="border_layout"><%= review.user.username %></div>

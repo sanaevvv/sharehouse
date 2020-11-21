@@ -2,7 +2,9 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   def index
     @room = Room.find(params[:room_id])
-    @reviews = @room.reviews
+    # @reviews = @room.reviews
+    @q = @room.reviews.ransack(params[:q])
+    @reviews = @q.result(distinct:true)
   end
 
   def create
