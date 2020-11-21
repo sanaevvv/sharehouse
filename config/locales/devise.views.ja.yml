@@ -25,6 +25,8 @@ ja:
         unconfirmed_email: 未確認メール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        admin: 管理者権限
+        name: 名前
     models:
       user: ユーザー
     errors:

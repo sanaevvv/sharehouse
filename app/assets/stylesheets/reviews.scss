@@ -69,7 +69,7 @@
      margin-top: 30px;
      display:grid;
      width:100%;
-     grid-template-columns: 1fr 1fr 2fr;
+     grid-template-columns: 150px 10vw 1fr 60px;
      .grid_ttl{
      border-bottom: 2px solid lightgrey;
      }
@@ -77,4 +77,12 @@
      padding: 5px;
      border-bottom: 1px solid lightgrey;
      }
+}
+
+.favorites{
+     display: flex;
+     gap: 0 20px;
+    .fa-heart{
+         color:deeppink;
+    }
 }

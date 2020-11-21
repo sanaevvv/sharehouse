@@ -1,6 +1,6 @@
 module Admin
      class RoomsController < ApplicationController
-
+          layout 'admin'
           def index
                @rooms = Room.all
           end
@@ -22,7 +22,7 @@ module Admin
                if @room.save
                redirect_to admin_room_url(@room), notice:"#{@room.name}を登録しました。"
                else
-               render :new;
+               render :new
                end
           end
 
@@ -30,7 +30,7 @@ module Admin
                @room = Room.find(params[:id])
 
                if @room.update(room_params)
-               redirect_to admin_room_url(@room), notice: "#{@room.name}を更新しました。"
+               redirect_to admin_rooms_path, notice: "#{@room.name}を更新しました。"
                else
                     render :edit
                end
@@ -40,12 +40,12 @@ module Admin
           def destroy
                @room = Room.find(params[:id])
                @room.destroy
-               redirect_to admin_rooms_url, notice: "#{room.name}を削除しました。"
+               redirect_to admin_rooms_path, notice: "#{@room.name}を削除しました。"
           end
 
           private
           def room_params
-               params.require(:room).permit(:name, :price, :description, :picture)
+               params.require(:room).permit(:name, :price, :description, :image)
           end
      end
 end

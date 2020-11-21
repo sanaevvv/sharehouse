@@ -7,11 +7,16 @@ Rails.application.routes.draw do
 
   # root 'rooms#index'
   resources :rooms, only: %i[index show] do
-    resources :reviews, only: %i[index create]
+    resources :reviews, only: %i[index create] do
+      resource :favorites, only: %i[create destroy]
+    end
   end
 
   namespace 'admin' do
     resources :rooms
+    resources :users
   end
+
+
 
 end

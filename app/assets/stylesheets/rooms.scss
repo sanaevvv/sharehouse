@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
+.ttl{
+     margin-top:30px;
+}
 .card_inner{
-     height:200px;
+     height:250px;
      position: relative;
      .w_50{
           width: 50%;
@@ -67,4 +69,8 @@ textarea{
      width: 95%;
      margin-bottom: 20px;
      border: 1px solid lightgrey;
+}
+
+input[type="submit"]{
+     margin-top: 30px;
 }

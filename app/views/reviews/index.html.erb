@@ -2,7 +2,7 @@
      <div class="border">
           <h2 class="card_title"><%= @room.name %></h2>
           <div class="card_inner">
-               <div class="w_50"><%= image_tag "room#{@room.id}" %></div>
+               <div class="w_50"><%= image_tag @room.image if @room.image.attached? %></div>
                <div class="w_50">
                     <div class="star_review">
                          <div class="star-rating">
@@ -30,11 +30,27 @@
      </div>
 
      <div class="grid_table">
-          <div class="grid_ttl">ユーザー</div><div class="grid_ttl">点数</div><div class="grid_ttl">内容</div>
+          <div class="grid_ttl">ユーザー</div>
+          <div class="grid_ttl">点数</div>
+          <div class="grid_ttl">内容</div>
+          <div class="grid_ttl">   </div>
+
           <% @reviews.each do |review| %>
                <div class="border_layout"><%= review.user.username %></div>
                <div class="border_layout"><%= review.score %></div>
                <div class="border_layout"><%= review.comment %></div>
+               <div class="border_layout favorites">
+                    <% if current_user.favorites?(review) %>
+                         <%= link_to room_review_favorites_path(@room, review), method: :delete do%>
+                         <i class="fa fa-heart"></i>
+                         <% end %>
+                    <% else %>
+                         <%= link_to room_review_favorites_path(@room,review), method: :post do%>
+                         <i class="far fa-heart"></i>
+                         <% end %>
+                    <% end %>
+                    <%= review.favorites.count %>
+               </div>
           <% end %>
      </div>
 </div>

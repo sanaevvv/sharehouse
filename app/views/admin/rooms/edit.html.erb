@@ -1,23 +1,2 @@
-<div class="container">
-
-     <h2>シェアハウス更新</h2>
-     <div class="button_right"><%= link_to '一覧', admin_rooms_path(@room), class:"button new" %></div>
-
-
-          <%= form_with model:[:admin, @room], local: true do |f| %>
-               <div class="grid_new">
-               <div><%= f.label :name, "シェアハウス名" %></div>
-               <div><%= f.text_field :name %></div>
-               <div><%= f.label :price, "家賃" %></div>
-               <div><%= f.text_field :price %>&nbsp;円</div>
-               <div><%= f.label :description, "詳細" %></div>
-               <div><%= f.text_area :desctiption, rows: 5 %></div>
-               <div><%= f.label :picture, "画像" %></div>
-               <div><%= f.file_field :picture %></div>
-
-               <%= f.submit '更新する', class:"button" %></div>
-          </div>
-          <% end %>
-
-
-</div>
+<h2 class="ttl">シェアハウス更新</h2>
+<%= render 'form' %>

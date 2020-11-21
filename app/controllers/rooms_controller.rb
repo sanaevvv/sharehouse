@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   def index
-    @rooms = Room.where(id: 21..25)
+    @rooms = Room.all
   end
 
   def show

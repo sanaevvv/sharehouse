@@ -4,6 +4,7 @@
 @import "rooms";
 @import "reviews";
 @import "top";
+@import "favorites";
 
 
 html {
@@ -129,6 +130,12 @@ h2 {
 .mt50{
   margin-top:50px;
 }
+.mt30{
+  margin-top:30px;
+}
+.mt20{
+  margin-top:20px;
+}
 
 
 //スマホ改行テキスト
@@ -154,7 +161,8 @@ h2 {
   margin: 10px 0;
   text-align: center;
   .notice {
-    background-color: lightgreen;
+    background-color:#009140;
+    box-shadow: 2px;
     color: #eee;
     padding: 10px;
   }
@@ -166,9 +174,10 @@ h2 {
 }
 
 .container{
-     max-width:800px;
+     max-width:900px;
      width:100%;
      margin:0 auto;
+     padding:0 4vw;
      .sharehouse_search{
           font-size:28px;
           text-align: center;

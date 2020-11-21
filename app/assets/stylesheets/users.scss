@@ -7,6 +7,7 @@
   .field{
     margin-top: 20px;
   }
+
   input[type="text"],
   input[type="email"],
   input[type="password"] {
@@ -72,3 +73,31 @@
 .reset{
   margin: 30px 0;
 }
+
+.grid_admin_user{
+     margin-top: 30px;
+     width:100%;
+     display:grid;
+     grid-template-columns: 1fr 2fr 1fr 1fr;
+
+
+     .grid_ttl{
+     border-bottom: 2px solid lightgrey;
+     }
+     .border_layout{
+     border-bottom: 1px solid lightgrey;
+     line-height: 3em;
+     height: 3em;
+    }
+    .button{
+      padding:5px;
+    }
+  }
+
+  .button-right{
+    text-align: right;
+  }
+
+  #user_name{
+    width:100%;
+  }
