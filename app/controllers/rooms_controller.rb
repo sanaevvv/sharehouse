@@ -4,8 +4,8 @@ class RoomsController < ApplicationController
 
     # 検索フォームの入力内容で検索する
     @q = Room.ransack(params[:q])
-    # 重複を排除
-    @rooms = @q.result(distinct: true)
+    # 重複を排除/ページ番号に対応するデータ範囲検索
+    @rooms = @q.result(distinct: true).page(params[:page]).per(5)
   end
 
   def show
@@ -14,7 +14,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    
+
     end
 
 end

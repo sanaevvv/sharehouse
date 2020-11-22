@@ -4,7 +4,9 @@ class ReviewsController < ApplicationController
     @room = Room.find(params[:room_id])
     # @reviews = @room.reviews
     @q = @room.reviews.ransack(params[:q])
-    @reviews = @q.result(distinct:true)
+    @reviews = @q.result(distinct:true).page(params[:page]).per(5)
+
+
   end
 
   def create

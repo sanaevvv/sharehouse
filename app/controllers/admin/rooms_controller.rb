@@ -7,7 +7,7 @@ module Admin
                # 検索フォームの入力内容で検索する
                @q = Room.ransack(params[:q])
                # 重複を排除
-               @rooms = @q.result(distinct: true)
+               @rooms = @q.result(distinct: true).page(params[:page]).per(5)
           end
 
           def show
