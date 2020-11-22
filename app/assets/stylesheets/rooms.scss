@@ -35,15 +35,23 @@
                .average-score-display {
                     font-size: 16px;
                     margin-left: 18px;
-                    }
+                    white-space: nowrap;
+               }
           }
      }
 
      .roomfee{
      font-size: 2rem;
+     font-weight: bold;
+     padding: 10px 20px;
+          .utilities{
+          font-size: 1.5rem;
+          font-weight:normal;
+          }
      }
      .description{
-     font-size: 1.6rem;
+     font-size: 1.5rem;
+     color: #333;
      padding: 0 20px;
      }
      .link_bottons{
@@ -66,10 +74,17 @@
 
 input[type="text"],
 textarea{
-     width: 95%;
+     width: 100%;
      margin-bottom: 20px;
      border: 1px solid lightgrey;
+     padding:10px;
 }
+
+.price{
+     width:100%;
+     display:flex;
+}
+
 
 input[type="submit"]{
      margin-top: 30px;

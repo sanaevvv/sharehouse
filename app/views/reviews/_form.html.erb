@@ -15,15 +15,15 @@
 <%= form_with model: [room, review], local: true do |f| %>
 
 　　　<div class="evaluation">
-          <%= f.radio_button :score, 5, id:"star1" %>
-               <label for="star1"><span class="text">最高</span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 4, id:"star2" %>
-               <label for="star2"><span class="text">良い</span><i class="fas fa-star"></i></label>
+          <%= f.radio_button :score, 5, id:"star5" %>
+               <label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
+          <%= f.radio_button :score, 4, id:"star4" %>
+               <label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
           <%= f.radio_button :score, 3, id:"star3" %>
                <label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 2, id:"star4" %>
+          <%= f.radio_button :score, 2, id:"star2" %>
                <label for="star4"><span class="text">悪い</span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 1, id:"star5" %>
+          <%= f.radio_button :score, 1, id:"star1" %>
                <label for="star5"><span class="text">最悪</span><i class="fas fa-star"></i></label>
      </div>
 
@@ -31,7 +31,7 @@
      <%= f.text_area :comment, row: 5, class: "textarea" %>
      <%= f.submit "保存", class: "button" %>
      <%= link_to "他のレビューを見る", room_reviews_path(room), class: "link_button" %>
-     
+
 <% end %>
 
 

@@ -2,7 +2,12 @@ module Admin
      class RoomsController < ApplicationController
           layout 'admin'
           def index
-               @rooms = Room.all
+               # @rooms = Room.all
+
+               # 検索フォームの入力内容で検索する
+               @q = Room.ransack(params[:q])
+               # 重複を排除
+               @rooms = @q.result(distinct: true)
           end
 
           def show
@@ -45,7 +50,7 @@ module Admin
 
           private
           def room_params
-               params.require(:room).permit(:name, :price, :description, :image)
+               params.require(:room).permit(:name, :price, :description, :image, :maxprice)
           end
      end
 end

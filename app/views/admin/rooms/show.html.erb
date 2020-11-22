@@ -16,7 +16,7 @@
                     </div>
                </div>
 
-               <p class="roomfee">【お部屋代】¥<%= @room.price.try(:to_s, :delimited) %></p>
+               <p class="roomfee">&yen;<%= @room.price.try(:to_s, :delimited) %></p>
                <p class="description"><%= @room.description %></p>
 
                <p class="link_bottons">

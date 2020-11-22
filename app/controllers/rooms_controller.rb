@@ -13,4 +13,8 @@ class RoomsController < ApplicationController
     @review = Review.new
   end
 
+  def edit
+    
+    end
+
 end
