@@ -8,6 +8,7 @@ module Admin
                @q = Room.ransack(params[:q])
                # 重複を排除
                @rooms = @q.result(distinct: true).page(params[:page]).per(5)
+         
           end
 
           def show
@@ -33,7 +34,6 @@ module Admin
 
           def update
                @room = Room.find(params[:id])
-
                if @room.update(room_params)
                redirect_to admin_rooms_path, notice: "#{@room.name}を更新しました。"
                else
@@ -50,7 +50,7 @@ module Admin
 
           private
           def room_params
-               params.require(:room).permit(:name, :price, :description, :image, :maxprice)
+               params.require(:room).permit(:name, :price, :description, :image, :maxprice, :tag_list)
           end
      end
 end

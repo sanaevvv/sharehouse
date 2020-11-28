@@ -33,7 +33,7 @@
      color: #fff;
      display: inline-block;
 
-     font-size: 1.6rem;
+     font-size: 1.5rem;
      padding:10px;
      border-radius: 5px;
 
@@ -51,7 +51,8 @@
 .link_button{
   @extend.button;
   background-color: #fff;
-  color: #171717;
+  color: grey;
+  font-weight: bold;
   border: 2px solid grey;
   display: inline-block;
 

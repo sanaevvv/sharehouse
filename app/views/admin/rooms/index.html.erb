@@ -30,6 +30,15 @@
                     <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
                     <p class="description"><%= room.description %></p>
 
+                   <%= render 'tag_list', tag_list: room.tag_list %>
+
+
+
+
+
+
+
+
                     <p class="link_bottons">
                     <%= link_to "編集する", edit_admin_room_path(room), class: "button" %>
                     <%= link_to "削除する", [:admin, room], method: :delete,data:{confirm: "#{room.name}を削除します。よろしいですか？"}, class: "button link_button" %>

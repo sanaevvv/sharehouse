@@ -68,9 +68,8 @@
 .grid_table{
      margin-top: 30px;
      display:grid;
-
      width: 100%;
-     grid-template-columns: 150px 8vw 1fr 60px;
+     grid-template-columns: 130px 8vw 1fr 60px;
      word-break : break-all;
 
      .grid_ttl{
@@ -80,8 +79,10 @@
           }
      }
      .border_layout{
-     padding: 5px;
+     padding: 7px 15px 7px 0;
      border-bottom: 1px solid lightgrey;
+     font-size: 1.5rem;
+     color: #333;
      }
 
 
@@ -89,7 +90,7 @@
      display: flex;
      gap: 0 20px;
     .fa-heart{
-         color:deeppink;
+         color: deeppink;
     }
 }
 }

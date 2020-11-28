@@ -14,6 +14,14 @@
           <div><%= f.label :description, "詳細" %></div>
           <div><%= f.text_area :description, rows: 5 %></div>
 
+
+
+          <div><%= f.label :tag_list, "タグの表示" %></div>
+          <div><%= f.text_field:tag_list, value: @room.tag_list.join(',') %></div>
+
+
+
+
           <div><%= f.label :image, "画像" %></div>
           <div><%= f.file_field :image %></div>
 
