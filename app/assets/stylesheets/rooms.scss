@@ -49,11 +49,7 @@
           font-weight:normal;
           }
      }
-     .description{
-     font-size: 1.3rem;
-     color: dimgrey;
-     padding: 0 20px;
-     }
+
      .link_bottons{
      position: absolute;
      bottom: 0;
@@ -78,9 +74,6 @@ textarea{
      margin-bottom: 20px;
      border: 1px solid lightgrey;
      padding:10px;
-}
-.white_space{
-     white-space: pre-wrap;
 }
 
 .price{
@@ -122,8 +115,13 @@ input[type="submit"]{
 
 .tag{
      border: 1px solid grey;
-     padding: 2px 5px;
+     padding: 0 5px;
      background-color: lightpink;
-     display:inline;
+     display:inline-block;
      font-size: 1.4rem;
+     margin:10px 0;
+}
+
+.desc{
+     color: grey;
 }

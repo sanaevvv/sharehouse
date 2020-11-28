@@ -12,9 +12,7 @@
           <div class="price"><%= f.text_field :price %>&nbsp;円&nbsp;-&nbsp;<%= f.text_field :maxprice %>&nbsp;円</div>
 
           <div><%= f.label :description, "詳細" %></div>
-          <div><%= f.text_area :description, rows: 5 %></div>
-
-
+          <div class="description"><%= f.text_area :description, rows: 5 %></div>
 
           <div><%= f.label :tag_list, "タグの表示" %></div>
           <div><%= f.text_field:tag_list, value: @room.tag_list.join(',') %></div>
