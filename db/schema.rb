@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_015030) do
+ActiveRecord::Schema.define(version: 2020_12_04_024858) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2020_11_27_015030) do
     t.integer "review_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "follower_id", null: false, comment: "フォローした人のuser id"
+    t.bigint "followerd_id", null: false, comment: "フォローされた人のuser id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["followerd_id"], name: "index_relationships_on_followerd_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -102,6 +111,8 @@ ActiveRecord::Schema.define(version: 2020_11_27_015030) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "relationships", "users", column: "follower_id"
+  add_foreign_key "relationships", "users", column: "followerd_id"
   add_foreign_key "reviews", "rooms"
   add_foreign_key "reviews", "users"
   add_foreign_key "taggings", "tags"

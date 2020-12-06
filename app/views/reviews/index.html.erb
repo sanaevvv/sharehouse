@@ -16,7 +16,8 @@
                     </div>
 
                      <p class="roomfee">&yen;<%= @room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= @room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
-                    <p class="description"><%= @room.description %></p>
+                      <%=simple_format(@room.description, class: 'desc') %>
+                     <%= render 'tag_list', tag_list: @room.tag_list %>
 
                     <p class="link_bottons">
 
@@ -58,6 +59,6 @@
      </div>
      <div class="pagination">
           <p class="mt20"><%= paginate @reviews %></p>
-          <p class="mt20"><%= page_entries_info @reviews%></p>
+          <p class="mt20"><%= page_entries_info @reviews, entry_name: 'レビュー' %></p>
      </div>
 </div>

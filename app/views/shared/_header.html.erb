@@ -1,17 +1,17 @@
-<header class="header">
-        <div class="title_gr">
-          <h1><%= link_to "Sharehouse Review", root_path, class: "title" %></h1>
-          <p><%= link_to "シェアハウス一覧", rooms_path, class: "sharehouse_list" %></p>
-        </div>
 
-     <div class="logout_gr">
-          <% if user_signed_in? %>
-          <p class="welcom">ようこそ <%= current_user.username %>さん</p>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
-          <% else %>
-          <%= link_to "ログイン", new_user_session_path, class: "header_login btn_link" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "header_new btn_link" %>
-          <% end %>
-     </div>
+     <header class="header">
+          <div class="title_gr">
+               <h1><%= link_to "Sharehouse Review", root_path, class: "title" %></h1>
+               <p><%= link_to "シェアハウス一覧", rooms_path, class: "sharehouse_list" %></p>
+          </div>
 
-</header>
+          <div class="logout_gr">
+               <% if user_signed_in? %>
+               <p class="welcom">ようこそ <%= current_user.username %>さん</p>
+               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
+               <% else %>
+               <%= link_to "ログイン", new_user_session_path, class: "header_login btn_link" %>
+               <%= link_to "新規登録", new_user_registration_path, class: "header_new btn_link" %>
+               <% end %>
+          </div>
+     </header>

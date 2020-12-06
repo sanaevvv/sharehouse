@@ -9,7 +9,7 @@ ja:
 
   helpers:
       page_entries_info:
- 
+
         one_page:
           display_entries:
                zero: '%{entry_name}がありません。'
