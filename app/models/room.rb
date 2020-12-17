@@ -20,4 +20,14 @@ class Room < ApplicationRecord
                      0.0
               end
        end
+
+       # roomのお気に入り判定 → vies側で呼び出し
+       # current_userに特定の投稿がブックマークされているかされていないかの判定をするメソッド
+       # 引数の(user)にはcurrent_userが引き渡されています。
+       def bookmark_by(user)
+              bookmarks.where(user_id: user.id).exists?
+       end
+
+       has_many :bookmarks, dependent: :destroy
+       has_many :users, through: :bookmarks
 end

@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
      def create
           @favorite = current_user.favorites.create(review_id: params[:review_id])
           redirect_back(fallback_location: root_path)
+          #current_user.favorites.create =>currnet_userに結びついたいいねを作成
      end
 
      def destroy

@@ -7,10 +7,14 @@
      background-color:#f5f5f5;
      margin:20px 0;
      padding:20px;
+
+     .bookmark{
+          text-align: right;
+          color:#333;
+     }
      .card_title{
           font-weight:bold;
           font-size:20px;
-          margin-bottom:20px;
      }
      .card_inner{
           display:flex;

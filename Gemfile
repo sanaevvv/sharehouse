@@ -28,10 +28,15 @@ gem 'jbuilder', '~> 2.7'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'active_storage_validations'
+gem 'aws-sdk'
+gem 'aws-sdk-rails'
+gem 'aws-sdk-s3', :require => false
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'dotenv-rails' # 認証系
 gem 'tzinfo-data'
 gem 'ransack'
 gem 'kaminari'

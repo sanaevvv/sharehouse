@@ -1,35 +1,105 @@
-<p><%= "id: #{@user.id}" %></p>
-<p><%= "フォロー数: #{@user.follower.count}" %></p>
-<p><%= "フォロワー数: #{@user.followed.count}" %></p>
-<% unless @user == current_user %>
-  <% if current_user.following?(@user) %>
-    <%= link_to 'フォロー外す', unfollow_path(@user.id), method: :POST %>
-  <% else %>
-    <%= link_to 'フォローする', follow_path(@user.id), method: :POST %>
-  <% end %>
-<% end %>
+<div class="container">
 
-<h2>フォロー一覧</h2>
-  <% @user.following_user.where.not(id: current_user.id).each do |user| %>
-    <p>
-      <%= "id: #{user.id} email: #{user.email}" %>
-      <% if current_user.following?(user) %>
-        <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
-      <% else %>
-        <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
-      <% end %>
-      <%= link_to "show", user_path(user) %>
-    </p>
-  <% end %>
-<h2>フォロワー一覧</h2>
-  <% @user.follower_user.where.not(id: current_user.id).each do |user| %>
-    <p>
-      <%= "id: #{user.id} email: #{user.email}" %>
-      <% if current_user.following?(user) %>
-        <%= link_to 'フォロー外す', unfollow_path(user.id), method: :POST %>
-      <% else %>
-        <%= link_to 'フォローする', follow_path(user.id), method: :POST %>
-      <% end %>
-      <%= link_to "show", user_path(user) %>
-    </p>
-  <% end %>
+  <h2 class="m_30">マイページ</h2>
+
+    <div class="profile_gr">
+
+      <div class="profile_img"><%= image_tag 'no_image.jpg' %></div>
+
+      <div class="profile_text">
+        <p>プロフィール</p>
+        <p class="profile"><%= @user.profile %></p>
+      </div>
+
+      <div class="user_name">
+        ユーザー名：<%= @user.username %>
+        <% if @user.id == current_user.id %>
+          <%= @user.email %>
+          <% else %>
+          <%= link_to 'フォローする', edit_user_path(@user) %>
+        <% end %>
+        <div class="link_gr">
+          <%= link_to '編集', edit_user_path(@user) %>
+          <%= link_to '削除', @user, method: :delete, data: {confirm: "#{@user.username}を削除します。よろしいですか？"} %>
+        </div>
+      </div>
+    </div>
+
+    <ul class="tabs">
+      <li class="tab_item"><a href="" class="active">投稿レビュー</a></li>
+      <li class="tab_item"><a href="">お気に入り</a></li>
+      <li class="tab_item"><a href="">フォロー</a></li>
+    </ul>
+
+    <ul class="contents">
+      <li class="active">
+
+          <div class="grid_table_mypage">
+            <% @user.reviews.each do |review| %>
+              <div class="border_layout"><%= review.room.name %></div>
+              <div class="border_layout"><%= review.score %></div>
+              <div class="border_layout"><%= review.comment %></div>
+            <% end %>
+          </div>
+
+      </li>
+    　<li>
+
+     <% @rooms.each do |room| %>
+          <div class="border">
+               <h2 class="card_title"><%= room.name %></h2>
+               <div class="card_inner">
+                    <div class="w_50"><%= image_tag room.image if room.image.attached? %></div>
+                    <div class="w_50">
+                         <div class="star_review">
+                              <div class="star-rating">
+                                   <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                                   <div class="star-rating-back">★★★★★</div>
+                              </div>
+                              <div class="average-score-display">
+                                   <%= room.avg_score %>点（<%= room.reviews.count %>件のレビュー）
+                              </div>
+                         </div>
+
+                          <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
+                        <%=simple_format(room.description, class: 'desc') %>
+
+                   <%= render 'tag_list', tag_list: room.tag_list %>
+
+
+                         <p class="link_bottons">
+                         <%= link_to "レビューを見る", room_reviews_path(room), class: "button" %>
+                         <%= link_to "レビューを書く", room_path(room), class: "button link_button" %>
+                         </p>
+                    </div>
+               </div>
+          </div>
+     <% end %>
+
+    </li>
+      <li>テキスト</li>
+    </ul>
+</div>
+
+<script data-turbolinks-eval="false">
+
+const tabs = document.querySelectorAll(".tabs li a");
+const contents = document.querySelectorAll(".contents li");
+
+for(let i = 0; i < tabs.length; i++){
+     tabs[i].addEventListener("click", function(e){
+          e.preventDefault();
+
+          for(let j = 0; j < tabs.length; j++){
+               tabs[j].classList.remove("active");
+          }
+          for(let j = 0; j < tabs.length; j++){
+               contents[j].classList.remove("active");
+          }
+
+          this.classList.add("active");
+          contents[i].classList.add("active");
+      });
+  }
+
+</script>

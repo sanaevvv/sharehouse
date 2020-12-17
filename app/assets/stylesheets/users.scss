@@ -22,7 +22,6 @@
   }
 
     .button{
-    cursor:pointer;
     border: 2px solid grey;
     outline: none;
     -webkit-appearance: none;
@@ -45,6 +44,7 @@
     &:hover {
     box-shadow: 0 0;
     transform: translate(3px, 3px);
+    cursor: pointer;
      }
 }
 
@@ -55,10 +55,10 @@
   font-weight: bold;
   border: 2px solid grey;
   display: inline-block;
-
   &:hover {
     box-shadow: 0 0;
     transform: translate(2px, 2px);
+    cursor: pointer;
      }
 }
 
@@ -101,3 +101,108 @@
   #user_name{
     width:100%;
   }
+
+  .form_container{
+    width: 600px;
+  }
+
+
+  .profile_gr{
+    display:flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: auto;
+
+  .profile_img{
+    width: 30%;
+
+  }
+  .profile_text{
+     width:70%;
+     padding: 10px 20px;
+     border-top: 2px solid lightgrey;
+     border-bottom: 2px solid lightgrey;
+  }
+}
+  .container{
+    width: 1000px;
+    margin:0 auto;
+  }
+
+ .user_name{
+   padding:10px 20px;
+  .link_gr{
+    display:flex;
+    gap:10px;
+  }
+ }
+
+.new_btn{
+    text-align:center;
+ input[type="submit"]{
+   font-size: 1.6rem;
+   border-radius: 2px;
+   background-color:#fff;
+   padding: 5px 10px;
+   color:grey;
+   font-family: 'Kosugi Maru', sans-serif;
+   border: 2px solid grey;
+   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+   transition: .5s;
+   &:hover{
+     opacity: .7;
+     cursor:pointer;
+      box-shadow: 0 0;
+      transform: translate(2px, 2px);
+   }
+ }
+}
+
+.tabs{
+  margin-top: 50px;
+  display: flex;
+  .tab_item{
+    width:15%;
+    margin-right:10px;
+    a{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:40px;
+      background-color: #bbb;
+      border-top-right-radius: 3px;
+      border-top-left-radius: 3px;
+      transition: .3s;
+      font-size: 1.5rem;
+      color: #333;
+      &.active{
+      background-color:#fff;
+      }
+    }
+  }
+}
+.contents{
+   background-color:#fff;
+  li{
+    padding:20px;
+    display:none;
+  }
+   .active{
+      display:block;
+    }
+}
+
+.grid_table_mypage{
+     margin-top: 30px;
+     display: grid;
+     width: 100%;
+     grid-template-columns: 200px 8vw 1fr;
+     word-break : break-all;
+
+     .border_layout{
+     padding: 7px 15px 7px 0;
+     border-bottom: 1px solid lightgrey;
+     font-size: 1.5rem;
+     color: #333;
+     }
+}

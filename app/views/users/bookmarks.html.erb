@@ -1,27 +1,7 @@
-<div class="container">
-
-     <p class="sharehouse_search">
-          <i class="fas fa-home"></i>&nbsp;シェアハウスを探す
-     </p>
-
-     <div class="search_box">
-          <%= search_form_for @q, class:"search" do |f| %>
-               <%= f.search_field :name_cont, placeholder: '検索するテキストを入力...' %>
-               <%= f.submit "検索", class: 'link_button'%>
-          <% end %>
-     </div>
-
+<% if user_rooms?(room) %>
      <% @rooms.each do |room| %>
           <div class="border">
                <h2 class="card_title"><%= room.name %></h2>
-
-
-     <%= link_to user_path(room) do %>
-          <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
-     <% end %>
-
-
-
                <div class="card_inner">
                     <div class="w_50"><%= image_tag room.image if room.image.attached? %></div>
                     <div class="w_50">
@@ -35,22 +15,19 @@
                               </div>
                          </div>
 
-                         <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
-                         <%=simple_format(room.description, class: 'desc') %>
+                          <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
+                        <%=simple_format(room.description, class: 'desc') %>
 
-                         <%= render 'tag_list', tag_list: room.tag_list %>
-                    </div>
-               </div>
-                <p class="link_buttons">
+                   <%= render 'tag_list', tag_list: room.tag_list %>
+
+
+                         <p class="link_bottons">
                          <%= link_to "レビューを見る", room_reviews_path(room), class: "button" %>
                          <%= link_to "レビューを書く", room_path(room), class: "button link_button" %>
                          </p>
+                    </div>
+               </div>
           </div>
      <% end %>
 
-     <div class="pagination">
-          <%= paginate @rooms %>
-          <%= page_entries_info @rooms %>
-     </div>
-
-</div>
+<% end %>
