@@ -1,6 +1,13 @@
 <div class="container">
      <div class="border">
           <h2 class="card_title"><%= @room.name %></h2>
+
+          <% if user_signed_in? %>
+                    <%= link_to room_bookmarks_path(current_user, room_id: @room.id), method: :post do %>
+                         <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
+                    <% end %>
+          <% end %>
+
           <div class="card_inner">
                <div class="w_50"><%= image_tag @room.image if @room.image.attached? %></div>
                <div class="w_50">
@@ -19,7 +26,7 @@
                       <%=simple_format(@room.description, class: 'desc') %>
                      <%= render 'tag_list', tag_list: @room.tag_list %>
 
-                    <p class="link_bottons">
+                    <p class="link_buttons">
 
                     <%= link_to "レビューを書く", room_path(@room), class: "button link_button" %>
                     </p>
@@ -37,17 +44,16 @@
           <div class="grid_ttl"></div>
 
           <% @reviews.each do |review| %>
-               <div class="border_layout"><%= review.user.username %></div>
+               <div class="border_layout"><%= link_to review.user.username, user_path(review.user) %></div>
                <div class="border_layout"><%= review.score %></div>
                <div class="border_layout"><%= review.comment %></div>
                <div class="border_layout favorites">
                     <% if current_user.favorites?(review) %>
-                    bookmark_by(user)
                          <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :delete do%>
                          <i class="fa fa-heart"></i>
                          <% end %>
                     <% else %>
-                         <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :put do%>
+                         <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :post do%>
                          <i class="far fa-heart"></i>
                          <% end %>
                     <% end %>

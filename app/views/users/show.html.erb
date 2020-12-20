@@ -15,9 +15,14 @@
         ユーザー名：<%= @user.username %>
         <% if @user.id == current_user.id %>
           <%= @user.email %>
+        <% else %>
+          <% if current_user.following?(@user) %>
+            <%= link_to 'フォロー外す', user_unfollow_path(@user), method: :POST %>
           <% else %>
-          <%= link_to 'フォローする', edit_user_path(@user) %>
+            <%= link_to 'フォローする', user_follow_path(@user), method: :POST %>
+          <% end %>
         <% end %>
+
         <div class="link_gr">
           <%= link_to '編集', edit_user_path(@user) %>
           <%= link_to '削除', @user, method: :delete, data: {confirm: "#{@user.username}を削除します。よろしいですか？"} %>
@@ -27,13 +32,13 @@
 
     <ul class="tabs">
       <li class="tab_item"><a href="" class="active">投稿レビュー</a></li>
-      <li class="tab_item"><a href="">お気に入り</a></li>
-      <li class="tab_item"><a href="">フォロー</a></li>
+      <li class="tab_item"><a href="">ブックマーク</a></li>
+      <li class="tab_item"><a href="">フォロー中</a></li>
+      <li class="tab_item"><a href="">フォロワー</a></li>
     </ul>
 
     <ul class="contents">
       <li class="active">
-
           <div class="grid_table_mypage">
             <% @user.reviews.each do |review| %>
               <div class="border_layout"><%= review.room.name %></div>
@@ -41,11 +46,9 @@
               <div class="border_layout"><%= review.comment %></div>
             <% end %>
           </div>
-
       </li>
-    　<li>
-
-     <% @rooms.each do |room| %>
+      <li>
+        <% @rooms.each do |room| %>
           <div class="border">
                <h2 class="card_title"><%= room.name %></h2>
                <div class="card_inner">
@@ -64,7 +67,7 @@
                           <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
                         <%=simple_format(room.description, class: 'desc') %>
 
-                   <%= render 'tag_list', tag_list: room.tag_list %>
+                   <%= render 'reviews/tag_list', tag_list: room.tag_list %>
 
 
                          <p class="link_bottons">
@@ -74,11 +77,19 @@
                     </div>
                </div>
           </div>
-     <% end %>
+        <% end %>
+    </li>
+    <li>
+    <% @user.following_users.each do |follow_user| %>
+      <%= follow_user.username %>
+    <% end %>
 
     </li>
-      <li>テキスト</li>
-    </ul>
+    <li> <% @user.follower_users.each do |followerd_user| %>
+      <%= followerd_user.username %>
+    <% end %>
+    </li>
+  </ul>
 </div>
 
 <script data-turbolinks-eval="false">
@@ -93,7 +104,7 @@ for(let i = 0; i < tabs.length; i++){
           for(let j = 0; j < tabs.length; j++){
                tabs[j].classList.remove("active");
           }
-          for(let j = 0; j < tabs.length; j++){
+          for(let j = 0; j < contents.length; j++){
                contents[j].classList.remove("active");
           }
 

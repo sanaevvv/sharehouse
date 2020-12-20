@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'bookmarks/create'
-  get 'bookmarks/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'top#index'
@@ -12,6 +9,7 @@ Rails.application.routes.draw do
 
   # root 'rooms#index'
   resources :rooms, only: %i[index show] do
+    resource :bookmarks, only: %i[create destroy]
     resources :reviews, only: %i[index create] do
       resource :favorites, only: %i[create destroy]
     end
@@ -22,20 +20,11 @@ Rails.application.routes.draw do
     resources :users
   end
 
-resources :users, only: %i[show new create edit update destroy] do
-    resource :favorites, only: %i[create destroy]
-    resource :bookmarks, only: %i[create destroy]
-    member do
-      get :following, :followers
-    end
-end
-
-
-
-# resources :profiles, only: %i[show new edit create update]
-#   resources :posts
-
-
- resources :relationships, only: [:create, :destroy]
+  resources :users, except: :index do
+    # resource :follows, only: %i[create destroy]
+    post 'follow/:id' => 'relationships#follow', as: 'follow'
+    post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
+    resources :relationships, only: %i[create destroy]
+  end
 
 end

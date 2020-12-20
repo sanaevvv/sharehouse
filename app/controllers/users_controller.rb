@@ -1,17 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  def following
-    @user = User.find(params[:id])
-    @users = @user.following
-    render 'show_follow'
-  end
-  def followers
-    @user = User.find(params[:id])
-    @users = @user.followers
-    render 'show_follow'
-  end
-
   def show
      @user = User.find(params[:id])
      @rooms = current_user.rooms
@@ -47,16 +36,29 @@ class UsersController < ApplicationController
   def destroy
      user = User.find(params[:id])
      user.destroy
-     redirect to user_path(@user), notice: "{#user.username}を削除しました。"
+     redirect to user_path(@user), notice: "{#@user.username}を削除しました。"
   end
 
 #   def bookmarks
 #      @rooms = current_user.rooms
 #   end
 
-  private
-  def user_params
-     params.require(:user).permit(:username, :email, :profile, :profile_image)
-  end
+
+
+  # def following?(other_user)
+  #   self.followings.include?(other_user)
+  # end
+
+  # def follow(other_user)
+  #   unless self == other_user
+  #     self.relationships.find_or_create_by(follow_id: other_user.id)
+  #   end
+  # end
+
+  # def unfollow(other_user)
+  #   relationship = self.relationships.find_by(follow_id: other_user.id)
+  #   relationship.destroy if relationship
+  # end
+
 
 end

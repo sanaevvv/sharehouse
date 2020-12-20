@@ -15,10 +15,11 @@
           <div class="border">
                <h2 class="card_title"><%= room.name %></h2>
 
-
-     <%= link_to user_path(room) do %>
-          <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
-     <% end %>
+               <% if user_signed_in? %>
+                    <%= link_to rooms_path(current_user, room_id: room.id), method: :post do %>
+                         <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
+                    <% end %>
+               <% end %>
 
 
 
