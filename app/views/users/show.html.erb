@@ -85,7 +85,8 @@
     <% end %>
 
     </li>
-    <li> <% @user.follower_users.each do |followerd_user| %>
+    <li>
+     <% @user.follower_users.each do |followerd_user| %>
       <%= followerd_user.username %>
     <% end %>
     </li>
