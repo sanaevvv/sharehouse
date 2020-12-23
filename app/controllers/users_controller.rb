@@ -27,8 +27,8 @@ class UsersController < ApplicationController
      @user = User.find_by(id: params[:id])
      return redirect_to root_path if @user.blank?
 
-     if @user.update(username: params[:profile])
-          redirect_to @user, notice: "更新しました。"
+     if @user.update(profile: params[:user][:profile], username: params[:user][:username], email: params[:user][:email], profile_image: params[:user][:profile_image])
+     redirect_to @user, notice: "更新しました。"
      else render:edit
      end
   end

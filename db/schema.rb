@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_12_15_064515) do
     t.bigint "followerd_id", null: false, comment: "フォローされた人のuser id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["follower_id", "followerd_id"], name: "index_relationships_on_follower_id_and_followerd_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
     t.index ["followerd_id"], name: "index_relationships_on_followerd_id"
   end

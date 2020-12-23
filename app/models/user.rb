@@ -9,9 +9,6 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
 
-  validates :username, presence: true
-  validates :email, presence: true, uniqueness: true
-
   has_many :followers, class_name: "Relationship", foreign_key: :follower_id, dependent: :destroy
   has_many :followerds, class_name: "Relationship", foreign_key: :followerd_id, dependent: :destroy
   has_many :following_users, through: :followers, source: :followerd #自分がフォローしている人
@@ -21,6 +18,8 @@ class User < ApplicationRecord
   has_one_attached :image
   has_one_attached :profile_image
 
+  validates :username, presence: true
+  validates :email, presence: true, uniqueness: true
 
   # ユーザーをフォローする
   def follow(user_id)
@@ -47,5 +46,6 @@ class User < ApplicationRecord
   def user_rooms?(room)
     self.id == room.user_id
   end
+
 
 end
