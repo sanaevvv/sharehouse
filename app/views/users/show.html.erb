@@ -17,25 +17,26 @@
         ユーザー名：<br><%= @user.username %>
         <% if @user.id == current_user.id %>
           <%= @user.email %>
+          <div class="link_gr">
+          <%= link_to '編集', edit_user_path(@user) %>
+          <%= link_to '削除', @user, method: :delete, data: {confirm: "#{@user.username}を削除します。よろしいですか？"} %>
+
+      </div>
           <% else %>
           <% if current_user.following?(@user) %>
-            <%= link_to 'フォロー外す', user_unfollow_path(@user), method: :POST, class: 'unfollow' %>
+            <%= link_to 'フォロー外す', user_unfollow_path(@user), method: :delete, class: 'unfollow' %>
             <% else %>
             <%= link_to 'フォローする', user_follow_path(@user), method: :POST, class: 'follow' %>
             <% end %>
         <% end %>
-      <div class="link_gr">
-        <%= link_to '編集', edit_user_path(@user) %>
-        <%= link_to '削除', @user, method: :delete, data: {confirm: "#{@user.username}を削除します。よろしいですか？"} %>
-      </div>
     </div>
   </div>
 
   <ul class="tabs">
     <li class="tab_item"><a href="" class="active">投稿レビュー</a></li>
     <li class="tab_item"><a href="">ブックマーク</a></li>
-    <li class="tab_item"><a href="">フォロー中</a></li>
-    <li class="tab_item"><a href="">フォロワー</a></li>
+    <li class="tab_item"><a href="">フォロー中(<%= @current_user.follower_users.size %>)</a></li>
+    <li class="tab_item"><a href="">フォロワー(<%= @current_user.following_users.size %>)</a></li>
   </ul>
 
   <ul class="contents">
@@ -80,20 +81,34 @@
       </div>
       <% end %>
     </li>
+
+    <%# フォロー中 %>
     <li>
-      <% @user.following_users.each do |follow_user| %>
-      <%= follow_user.username %>
-      <%= image_tag @user.profile_image if @user.image.attached? %>
-      <%= @user.profile %>
-      <% end %>
+
+        <% @user.following_users.each do |follow_user| %>
+        <div class="follower_user_parent">
+        <div class="follower_user">
+          <%= follow_user.username %>
+          <%= image_tag follow_user.profile_image if follow_user.profile_image.attached? %>
+
+          <%= simple_format(follow_user.profile, class: 'profile') %>
+       </div>
+       </div>
+        <% end %>
+
 
     </li>
+    <%# フォロワー %>
     <li>
-      <% @user.follower_users.each do |followerd_user| %>
-      <%= followerd_user.username %>
-      <%= image_tag @user.profile_image if @user.profile_image.attached? %>
-      <%= @user.profile %>
-      <% end %>
+
+        <% @user.follower_users.each do |followerd_user| %>
+        <div class="followerd_user">
+        <%= followerd_user.username %>
+        <%= image_tag followerd_user.profile_image if followerd_user.profile_image.attached? %>
+        <%= simple_format(followerd_user.profile, class: 'profile') %>
+</div>
+        <% end %>
+
     </li>
   </ul>
 </div>
