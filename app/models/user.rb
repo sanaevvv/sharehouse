@@ -47,5 +47,6 @@ class User < ApplicationRecord
     self.id == room.user_id
   end
 
-
 end
+
+

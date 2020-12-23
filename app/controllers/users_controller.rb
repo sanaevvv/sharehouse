@@ -31,6 +31,7 @@ class UsersController < ApplicationController
      redirect_to @user, notice: "更新しました。"
      else render:edit
      end
+
   end
 
   def destroy

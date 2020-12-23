@@ -111,14 +111,13 @@
   .profile_gr{
     display:flex;
     justify-content: space-between;
-    height: auto;
-    gap: 15px;
+    gap: 20px;
 
   .profile_img{
-    width: 25%;
+    width: 200px;
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
 
   }
   .profile_text{
@@ -139,10 +138,7 @@
     margin:0 auto;
   }
 
- .user_name{
-   padding: 0px;
 
- }
 
   .follow,
   .unfollow{
@@ -154,7 +150,9 @@
     border: 2px solid, rgb(238, 183, 190);
     border-radius: 20px;
     color:#fff;
-    margin: 10px 0;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
     font-weight: bold;
     padding: 2px 10px;
   }
@@ -164,10 +162,15 @@
       color:rgb(238, 183, 190);
       border: 2px solid rgb(238, 183, 190);
   }
-
+.user_name{
+  width: 150px;
+  padding-left: 10px;
+  position: relative;
  .link_gr{
     display:flex;
-    justify-content: center;
+    position: absolute;
+    bottom:10px;
+    right: 10px;
     gap:10px;
     margin-top: 8px;
     a{
@@ -177,13 +180,13 @@
     border-radius: 2px;
     }
   }
+}
   .follower_user_parent{
   display:flex;
   }
   .follower_user,
   .followerd_user{
     width: 33%;
-
     border: 2px solid #F8F8F8;
     padding: 10px;
     background-color:#F8F8F8;
