@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
 
   # root 'rooms#index'
-  resources :rooms, only: %i[index show] do
+  resources :rooms, only: %i[index show ] do
     resource :bookmarks, only: %i[create destroy]
     resources :reviews, only: %i[index create] do
       resource :favorites, only: %i[create destroy]

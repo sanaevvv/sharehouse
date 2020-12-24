@@ -2,16 +2,16 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-     @user = User.find(params[:id])
-     @rooms = current_user.rooms
+    @user = User.find(params[:id])
+    @rooms = current_user.rooms
   end
 
   def new
-     @user = User.new
+    @user = User.new
   end
 
   def create
-     @user = User.new(user_params)
+    @user = User.new(user_params)
     if @user.save
       redirect to user_path(@user), notice:"{#@user.username}様を登録しました。"
     else
@@ -20,24 +20,28 @@ class UsersController < ApplicationController
   end
 
   def edit
-     @user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
-     @user = User.find_by(id: params[:id])
-     return redirect_to root_path if @user.blank?
+    user = User.find_by(id: params[:id])
+    return redirect_to root_path if user.blank?
 
-     if @user.update(profile: params[:user][:profile], username: params[:user][:username], email: params[:user][:email], profile_image: params[:user][:profile_image])
-     redirect_to @user, notice: "更新しました。"
-     else render:edit
-     end
+    user.profile = params[:user][:profile]
+    user.username = params[:user][:username]
+    user.email = params[:user][:email]
+    user.profile_image = params[:user][:profile_image] if params[:user][:profile_image].present?
 
+    if user.save
+      redirect_to user, notice: "更新しました。"
+    else render:edit
+    end
   end
 
   def destroy
-     user = User.find(params[:id])
-     user.destroy
-     redirect to user_path(@user), notice: "{#@user.username}を削除しました。"
+    user = User.find(params[:id])
+    user.destroy
+    redirect to user_path(@user), notice: "{#@user.username}を削除しました。"
   end
 
 #   def bookmarks

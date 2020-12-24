@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :favorites, dependent: :destroy
 
+  has_many :bookmarks, dependent: :destroy
+
   has_many :followers, class_name: "Relationship", foreign_key: :follower_id, dependent: :destroy
   has_many :followerds, class_name: "Relationship", foreign_key: :followerd_id, dependent: :destroy
   has_many :following_users, through: :followers, source: :followerd #自分がフォローしている人
@@ -48,5 +50,3 @@ class User < ApplicationRecord
   end
 
 end
-
-

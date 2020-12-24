@@ -4,7 +4,9 @@
 
   <div class="profile_gr">
 
-    <div class="profile_img"><%= image_tag @user.profile_image if @user.profile_image.attached? %></div>
+    <div class="profile_img">
+      <img src="<%= user_image_url(@user) %>" alt="<%= @user.username %>さんのプロフィール画像" />
+    </div>
 
     <div class="profile_text">
       <p>プロフィール</p>
@@ -35,8 +37,8 @@
   <ul class="tabs">
     <li class="tab_item"><a href="" class="active">投稿レビュー</a></li>
     <li class="tab_item"><a href="">ブックマーク</a></li>
-    <li class="tab_item"><a href="">フォロー中(<%= @current_user.follower_users.size %>)</a></li>
-    <li class="tab_item"><a href="">フォロワー(<%= @current_user.following_users.size %>)</a></li>
+    <li class="tab_item"><a href="">フォロー中(<%= @user.followers.size %>)</a></li>
+    <li class="tab_item"><a href="">フォロワー(<%= @user.followerds.size %>)</a></li>
   </ul>
 
   <ul class="contents">
@@ -44,8 +46,8 @@
       <div class="grid_table_mypage">
         <% @user.reviews.each do |review| %>
         <div class="border_layout"><%= review.room.name %></div>
-        <div class="border_layout"><%= review.score %></div>
-        <div class="border_layout"><%= review.comment %></div>
+        <div class="border_layout star-rating"><%= review.score %></div>
+        <%= simple_format(review.comment, class: 'border_layout') %>
         <% end %>
       </div>
     </li>
@@ -54,7 +56,7 @@
       <div class="border">
         <h2 class="card_title"><%= room.name %></h2>
         <div class="card_inner">
-          <div class="w_50"><%= image_tag room.image if room.image.attached? %></div>
+          <div class="w_50"><img src="<%= user_image_url(@user) %>" alt="" /></div>
           <div class="w_50">
             <div class="star_review">
               <div class="star-rating">
@@ -83,21 +85,22 @@
     </li>
 
     <%# フォロー中 %>
+
     <li>
-
+      <div class="follower_user_parent">
         <% @user.following_users.each do |follow_user| %>
-        <div class="follower_user_parent">
-        <div class="follower_user">
-          <%= follow_user.username %>
-          <%= image_tag follow_user.profile_image if follow_user.profile_image.attached? %>
-
-          <%= simple_format(follow_user.profile, class: 'profile') %>
-       </div>
-       </div>
+          <div class="follower_user">
+          <%= link_to follow_user do%>
+            <%= follow_user.username %>
+            <%= image_tag follow_user.profile_image if follow_user.profile_image.attached? %>
+            <%= simple_format(follow_user.profile, class: 'profile') %>
+          </div>
         <% end %>
-
-
+        <% end %>
+      </div>
     </li>
+
+
     <%# フォロワー %>
     <li>
 

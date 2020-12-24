@@ -1,7 +1,10 @@
 class Room < ApplicationRecord
        has_many :reviews, dependent: :destroy
        has_many :users, through: :reviews
+       has_many :bookmarks, dependent: :destroy
+       has_many :users, through: :bookmarks
        has_one_attached :image
+
        acts_as_taggable
   # acts_as_taggable_on :tags　と同じ意味のエイリアス
   # tags のなかにIDやら名前などが入る。イメージ的には親情報。
@@ -28,7 +31,6 @@ class Room < ApplicationRecord
               bookmarks.where(user_id: user.id).exists?
        end
 
-       has_many :bookmarks, dependent: :destroy
-       has_many :users, through: :bookmarks
+
 
 end

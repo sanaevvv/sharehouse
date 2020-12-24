@@ -16,7 +16,7 @@
                <h2 class="card_title"><%= room.name %></h2>
 
                <% if user_signed_in? %>
-                    <%= link_to rooms_path(current_user, room_id: room.id), method: :post do %>
+                    <%= link_to room_bookmarks_path(room_id: room.id), method: :post do %>
                          <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
                     <% end %>
                <% end %>
