@@ -14,4 +14,17 @@ module ApplicationHelper
       assets_url('nouser.jpg')
     end
   end
+
+  def room_image_url(room)
+    if room.present?
+      if room.image.attached?
+        assets_url(room.image.blob.key)
+      else
+        assets_url('nouser.jpg')
+      end
+    else
+      assets_url('nouser.jpg')
+    end
+  end
+
 end

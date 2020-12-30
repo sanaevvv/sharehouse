@@ -14,7 +14,7 @@
           <h2 class="card_title"><%= room.name %></h2>
           <div class="card_inner">
                <div class="w_50">
-                    <%= image_tag room.image if room.image.attached? %>
+                    <img src="<%= room_image_url(room) %>" alt="" />
                </div>
                <div class="w_50">
                     <div class="star_review">
@@ -32,7 +32,7 @@
 
                    <%= render 'tag_list', tag_list: room.tag_list %>
 
-                    <p class="link_bottons">
+                    <p class="link_buttons">
                     <%= link_to "編集する", edit_admin_room_path(room), class: "button" %>
                     <%= link_to "削除する", [:admin, room], method: :delete,data:{confirm: "#{room.name}を削除します。よろしいですか？"}, class: "button link_button" %>
                     </p>

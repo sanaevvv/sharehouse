@@ -44,43 +44,68 @@
   <ul class="contents">
     <li class="active">
       <div class="grid_table_mypage">
-        <% @user.reviews.each do |review| %>
-        <div class="border_layout"><%= review.room.name %></div>
-        <div class="border_layout star-rating"><%= review.score %></div>
-        <%= simple_format(review.comment, class: 'border_layout') %>
-        <% end %>
+        <div class="grid_ttl">シェアハウス名</div>
+        <div class="grid_ttl">点数</div>
+        <div class="grid_ttl">内容</div>
+        <div class="grid_ttl"></div>
+        <% if @user.reviews.present? %>
+          <% @user.reviews.each do |review| %>
+            <div class="border_layout"><%= review.room.name %></div>
+            <div class="border_layout star-rating"><%= review.score %></div>
+            <%= simple_format(review.comment, class: 'border_layout') %>
+            <div class="border_layout favorites">
+              <%# if current_user.favorites?(review) %>
+               <%#= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :delete do %>
+                <%# <i class="fa fa-heart"></i> %>
+                <%# end %>
+              <%# else %>
+                <%#= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :post do%>
+                 <%# <i class="far fa-heart"></i> %>
+                <%# end %>
+              <%# end %>
+              <%#= review.favorites.count %>
+            </div>
+          <% end %>
       </div>
+      <% else %>
+        <p class="color_grey ">現在、投稿レビューはありません。</p>
+      <% end %>
+
     </li>
     <li>
+    　<% if @rooms.present? %>
       <% @rooms.each do |room| %>
-      <div class="border">
-        <h2 class="card_title"><%= room.name %></h2>
-        <div class="card_inner">
-          <div class="w_50"><img src="<%= user_image_url(@user) %>" alt="" /></div>
-          <div class="w_50">
-            <div class="star_review">
-              <div class="star-rating">
-                <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
+        <div class="border">
+          <h2 class="card_title"><%= room.name %></h2>
+          <div class="card_inner">
+            <div class="w_50"><img src="<%= room_image_url(room) %>" alt="" /></div>
+            <div class="w_50">
+              <div class="star_review">
+                <div class="star-rating">
+                  <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                  <div class="star-rating-back">★★★★★</div>
+                </div>
+                <div class="average-score-display">
+                  <%= room.avg_score %>点（<%= room.reviews.count %>件のレビュー）
+                </div>
               </div>
-              <div class="average-score-display">
-                <%= room.avg_score %>点（<%= room.reviews.count %>件のレビュー）
-              </div>
+
+              <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
+              <%=simple_format(room.description, class: 'desc') %>
+
+              <%= render 'reviews/tag_list', tag_list: room.tag_list %>
+
+
+              <p class="link_buttons">
+                <%= link_to "レビューを見る", room_reviews_path(room), class: "button" %>
+                <%= link_to "レビューを書く", room_path(room), class: "button link_button" %>
+              </p>
             </div>
-
-            <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
-            <%=simple_format(room.description, class: 'desc') %>
-
-            <%= render 'reviews/tag_list', tag_list: room.tag_list %>
-
-
-            <p class="link_bottons">
-              <%= link_to "レビューを見る", room_reviews_path(room), class: "button" %>
-              <%= link_to "レビューを書く", room_path(room), class: "button link_button" %>
-            </p>
           </div>
         </div>
-      </div>
+      <% end %>
+     <% else %>
+        <p class="color_grey">現在、ブックマークはありません。</p>
       <% end %>
     </li>
 
@@ -88,30 +113,45 @@
 
     <li>
       <div class="follower_user_parent">
-        <% @user.following_users.each do |follow_user| %>
-          <div class="follower_user">
-          <%= link_to follow_user do%>
-            <%= follow_user.username %>
-            <%= image_tag follow_user.profile_image if follow_user.profile_image.attached? %>
-            <%= simple_format(follow_user.profile, class: 'profile') %>
-          </div>
-        <% end %>
-        <% end %>
+       <% if @user.following_users.present? %>
+
+          <% @user.following_users.each do |follow_user| %>
+            <div class="follower_user">
+              <%= link_to follow_user do%>
+                <%= follow_user.username %>
+                <img src="<%= user_image_url(follow_user) %>" alt="" />
+                <%= simple_format(follow_user.profile, class: 'profile') %>
+              <% end %>
+            </div>
+          <% end %>
+
+      <% else %>
+        <p class="color_grey">現在、フォロー中はいません。</p>
+      <% end %>
+
       </div>
     </li>
 
 
     <%# フォロワー %>
     <li>
+      <div class="follower_user_parent">
+        <% if @user.follower_users.present? %>
 
-        <% @user.follower_users.each do |followerd_user| %>
-        <div class="followerd_user">
-        <%= followerd_user.username %>
-        <%= image_tag followerd_user.profile_image if followerd_user.profile_image.attached? %>
-        <%= simple_format(followerd_user.profile, class: 'profile') %>
-</div>
+          <% @user.follower_users.each do |followerd_user| %>
+            <div class="followerd_user">
+              <%= link_to followerd_user do%>
+                <%= followerd_user.username %>
+                <img src="<%= user_image_url(followerd_user) %>" alt="" />
+                <%= simple_format(followerd_user.profile, class: 'profile') %>
+              <% end %>
+            </div>
+          <% end %>
+
+        <% else %>
+          <p class="color_grey">現在、フォロワーはいません。</p>
         <% end %>
-
+      </div>
     </li>
   </ul>
 </div>

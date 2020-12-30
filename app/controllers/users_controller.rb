@@ -1,9 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  # before_action :user_admin, only: [:show]
+
+  def index
+      @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])
     @rooms = current_user.rooms
+    @room = Room.find_by(id: params[:room_id])
   end
 
   def new
@@ -44,26 +50,14 @@ class UsersController < ApplicationController
     redirect to user_path(@user), notice: "{#@user.username}を削除しました。"
   end
 
-#   def bookmarks
-#      @rooms = current_user.rooms
+
+# private
+#   def user_admin
+#     if  current_user.admin == false
+#         redirect_to root_path
+#     else
+#         render action: "show"
+#     end
 #   end
-
-
-
-  # def following?(other_user)
-  #   self.followings.include?(other_user)
-  # end
-
-  # def follow(other_user)
-  #   unless self == other_user
-  #     self.relationships.find_or_create_by(follow_id: other_user.id)
-  #   end
-  # end
-
-  # def unfollow(other_user)
-  #   relationship = self.relationships.find_by(follow_id: other_user.id)
-  #   relationship.destroy if relationship
-  # end
-
 
 end

@@ -23,6 +23,12 @@ class ReviewsController < ApplicationController
 
   end
 
+  def show
+    @review = Review.find(params[:id])
+    @comment = @review.comments.build
+  end
+
+
   private
   def review_params
     params.require(:review).permit(:room_id, :score, :comment, :tag_list)

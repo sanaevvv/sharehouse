@@ -1,5 +1,6 @@
 module Admin
      class RoomsController < ApplicationController
+
           layout 'admin'
           def index
                # @rooms = Room.all
@@ -8,7 +9,6 @@ module Admin
                @q = Room.ransack(params[:q])
                # 重複を排除
                @rooms = @q.result(distinct: true).page(params[:page]).per(5)
-         
           end
 
           def show
@@ -39,7 +39,6 @@ module Admin
                else
                     render :edit
                end
-
           end
 
           def destroy

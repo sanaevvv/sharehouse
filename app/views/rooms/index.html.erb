@@ -21,10 +21,8 @@
                     <% end %>
                <% end %>
 
-
-
                <div class="card_inner">
-                    <div class="w_50"><%= image_tag room.image if room.image.attached? %></div>
+                    <div class="w_50"><img src="<%= room_image_url(room) %>" alt="" /></div>
                     <div class="w_50">
                          <div class="star_review">
                               <div class="star-rating">

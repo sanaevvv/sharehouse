@@ -183,11 +183,12 @@
 }
   .follower_user_parent{
   display:flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 15px;
   }
   .follower_user,
   .followerd_user{
-    width: 33%;
+    width: 241px;
     border: 2px solid #F8F8F8;
     padding: 10px;
     background-color:#F8F8F8;
@@ -266,12 +267,17 @@
 }
 
 .grid_table_mypage{
-     margin-top: 30px;
-     display: grid;
-     width: 100%;
-     grid-template-columns: 200px 8vw 1fr;
-     word-break : break-all;
+    display: grid;
+    grid-template-columns: 180px 8vw 1fr 100px;
+    word-break : break-all;
+    font-size: 80%;
 
+      .grid_ttl{
+     border-bottom: 2px solid lightgrey;
+          a{
+               color: #171717;
+          }
+     }
      .border_layout{
      padding: 7px 15px 7px 0;
      border-bottom: 1px solid lightgrey;
@@ -285,4 +291,9 @@
   height: 170px;
   object-fit: contain;
   }
+}
+
+.color_grey{
+  color: grey;
+  text-align: center;
 }

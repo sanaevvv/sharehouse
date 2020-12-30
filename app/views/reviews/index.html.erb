@@ -9,7 +9,7 @@
           <% end %>
 
           <div class="card_inner">
-               <div class="w_50"><%= image_tag @room.image if @room.image.attached? %></div>
+               <div class="w_50"><img src="<%= room_image_url(@room) %>" alt="<%= @room.name %>のプロフィール画像" /></div>
                <div class="w_50">
                     <div class="star_review">
                          <div class="star-rating">
@@ -42,12 +42,24 @@
           <div class="grid_ttl">点数</div>
           <div class="grid_ttl">内容</div>
           <div class="grid_ttl"></div>
+          <div class="grid_ttl"></div>
 
           <% @reviews.each do |review| %>
-               <div class="border_layout"><%= link_to review.user.username, user_path(review.user) %></div>
-               <div class="border_layout"><%= review.score %></div>
                <div class="border_layout">
-               <%= simple_format(review.comment) %></div>
+                <%= link_to review.user.username, user_path(review.user) %>
+              </div>
+               <div class="border_layout">
+                <%= review.score %>
+              </div>
+               <div class="border_layout">
+                <%= simple_format(review.comment) %>
+              </div>
+               <div class="border_layout">
+                <%= link_to '返信', room_review_path(@room.id, review.id) %>
+
+
+              </div>
+
                <div class="border_layout favorites">
                     <% if current_user.favorites?(review) %>
                          <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :delete do %>
