@@ -1,19 +1,20 @@
-<%= form_with model:[@rooom][@review][@comment], local: true do |f| %>
 
-<div class="field">
-<%= f.label :name %><br>
-<%= f.text_field :name %>
-</div>
+  <%= form_with model: @comment, url: room_review_comments_path(room_id: review.room.id, review_id: review.id), local: true do |f| %>
 
-<div class="field">
-<%= f.label :body %><br>
-<%= f.text_area :body %>
-</div>
+  <div class="field">
+  <%= f.label :name, '名前' %><br>
+  <%= f.text_field :name %>
+  </div>
 
-<%= f.hidden_field :review_id %>
+  <div class="field">
+  <%= f.label :body, '内容' %><br>
+  <%= f.text_area :body %>
+  </div>
 
-<div>
-<%= f.submit '登録する', class:"button" %>
-</div>
+  <%= f.hidden_field :review_id, value: review.id %>
 
-<% end %>
+  <div>
+  <%= f.submit '登録する', class:"button" %>
+  </div>
+
+  <% end %>

@@ -8,8 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @rooms = current_user.rooms
-    @room = Room.find_by(id: params[:room_id])
+    # @rooms = current_user.rooms
   end
 
   def new

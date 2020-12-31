@@ -29,6 +29,8 @@ class ReviewsController < ApplicationController
   end
 
 
+
+
   private
   def review_params
     params.require(:review).permit(:room_id, :score, :comment, :tag_list)

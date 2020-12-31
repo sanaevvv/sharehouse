@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
     @q = Room.ransack(params[:q])
     # 重複を排除/ページ番号に対応するデータ範囲検索
     @rooms = @q.result(distinct: true).page(params[:page]).per(5)
-    
+
   end
 
   def show

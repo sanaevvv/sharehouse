@@ -54,16 +54,17 @@
             <div class="border_layout star-rating"><%= review.score %></div>
             <%= simple_format(review.comment, class: 'border_layout') %>
             <div class="border_layout favorites">
-              <%# if current_user.favorites?(review) %>
-               <%#= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :delete do %>
-                <%# <i class="fa fa-heart"></i> %>
-                <%# end %>
-              <%# else %>
-                <%#= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :post do%>
-                 <%# <i class="far fa-heart"></i> %>
-                <%# end %>
-              <%# end %>
-              <%#= review.favorites.count %>
+           
+              <% if current_user.favorites?(review) %>
+               <%= link_to room_review_favorites_path(room_id: review.room.id, review_id: review.id), method: :delete do %>
+                  <i class="fa fa-heart"></i>
+               <% end %>
+              <% else %>
+                <%= link_to room_review_favorites_path(room_id: review.room.id, review_id: review.id), method: :post do %>
+                 <i class="far fa-heart"></i>
+                <% end %>
+              <% end %>
+              <%= review.favorites.count %>
             </div>
           <% end %>
       </div>

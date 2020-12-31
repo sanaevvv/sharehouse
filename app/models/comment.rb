@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :review
 
-  validates :name, length: { maximun: 15 }
-  validates :body, presence: true, length: { maximun: 140 }
+  validates :name, length: { maximum: 15 }
+  validates :body, presence: true, length: { maximum: 140 }
 end

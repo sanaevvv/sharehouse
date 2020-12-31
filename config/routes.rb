@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :users, except: :index do
     # resource :follows, only: %i[create destroy]
+    resource :favorites, only: %i[create destroy]
     post 'follow/:id' => 'relationships#follow', as: 'follow'
     delete 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
     resources :relationships, only: %i[create destroy]

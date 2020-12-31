@@ -57,18 +57,17 @@
                <div class="border_layout">
                 <%= link_to '返信', room_review_path(@room.id, review.id) %>
 
-
               </div>
 
                <div class="border_layout favorites">
                     <% if current_user.favorites?(review) %>
-                         <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :delete do %>
-                         <i class="fa fa-heart"></i>
-                         <% end %>
+                      <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :delete do %>
+                        <i class="fa fa-heart"></i>
+                      <% end %>
                     <% else %>
-                         <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :post do%>
-                         <i class="far fa-heart"></i>
-                         <% end %>
+                      <%= link_to room_review_favorites_path(room_id: @room.id, review_id: review.id), method: :post do%>
+                        <i class="far fa-heart"></i>
+                      <% end %>
                     <% end %>
                     <%= review.favorites.count %>
                </div>
