@@ -54,7 +54,6 @@
             <div class="border_layout star-rating"><%= review.score %></div>
             <%= simple_format(review.comment, class: 'border_layout') %>
             <div class="border_layout favorites">
-           
               <% if current_user.favorites?(review) %>
                <%= link_to room_review_favorites_path(room_id: review.room.id, review_id: review.id), method: :delete do %>
                   <i class="fa fa-heart"></i>
@@ -67,11 +66,11 @@
               <%= review.favorites.count %>
             </div>
           <% end %>
-      </div>
-      <% else %>
-        <p class="color_grey ">現在、投稿レビューはありません。</p>
-      <% end %>
 
+        <% else %>
+          <p class="color_grey">現在、投稿レビューはありません。</p>
+        <% end %>
+      </div>
     </li>
     <li>
     　<% if @rooms.present? %>

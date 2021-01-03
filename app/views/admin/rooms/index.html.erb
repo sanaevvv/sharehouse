@@ -31,12 +31,12 @@
                    <%=simple_format(room.description, class: 'desc') %>
 
                    <%= render 'tag_list', tag_list: room.tag_list %>
-
+                </div>
                     <p class="link_buttons">
                     <%= link_to "編集する", edit_admin_room_path(room), class: "button" %>
                     <%= link_to "削除する", [:admin, room], method: :delete,data:{confirm: "#{room.name}を削除します。よろしいですか？"}, class: "button link_button" %>
                     </p>
-               </div>
+
           </div>
      </div>
 <% end %>

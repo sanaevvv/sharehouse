@@ -8,15 +8,15 @@
           <div class="logout_gr">
                <% if user_signed_in? %>
 
-                    <%# if current_user.admin? %>
-                         <%#= link_to "管理画面へ", admin_rooms_path, class: "admin_page" %>
-                          <%#= link_to "マイページ", user_path(current_user), class: "my_page_btn" %>
-                         <%#= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
-                    <%# else %>
+                    <% if current_user.admin? %>
+                         <%= link_to "管理画面へ", admin_rooms_path, class: "admin_page" %>
+                          <%= link_to "マイページ", user_path(current_user), class: "my_page_btn" %>
+                         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
+                    <% else %>
                          <p class="current_user">ようこそ <%= current_user.username %>さん</p>
                          <%= link_to "マイページ", user_path(current_user), class: "my_page_btn" %>
                          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
-                    <%# end %>
+                    <% end %>
 
                <% else %>
                     <%= link_to "ログイン", new_user_session_path, class: "header_login btn_link" %>

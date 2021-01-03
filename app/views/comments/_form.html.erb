@@ -1,10 +1,7 @@
 
-  <%= form_with model: @comment, url: room_review_comments_path(room_id: review.room.id, review_id: review.id), local: true do |f| %>
+  <%#= form_with model: [@room, @review, @comment], local: true do |f| %>
 
-  <div class="field">
-  <%= f.label :name, '名前' %><br>
-  <%= f.text_field :name %>
-  </div>
+  <%= form_with model: @comment, url: room_review_comments_path(room_id: review.room.id, review_id: review.id), local: true do |f| %>
 
   <div class="field">
   <%= f.label :body, '内容' %><br>

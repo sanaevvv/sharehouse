@@ -3,10 +3,46 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.form_conteiner{
+.comment_form_container{
   width: 600px;
   margin: 0 auto;
 }
 .comment{
   margin-top: 50px;
+}
+
+.grid_comment{
+  display:grid;
+  grid-template-columns: 150px 1fr 80px;
+}
+
+.comment_button{
+  display: flex;
+  gap: 10px;
+}
+
+.grid_table_review{
+    margin-top: 30px;
+     display:grid;
+     grid-template-columns: 130px 7vw 1fr 50px;
+
+     .grid_ttl{
+     border-bottom: 2px solid lightgrey;
+     padding-left: 10px;
+     font-size: 85%;
+     }
+
+     .border_layout{
+       padding-left: 10px;
+       color: rgb(99, 97, 97);
+       font-size: 95%;
+     }
+
+  .favorites{
+      display: flex;
+      gap: 0 7px;
+      .fa-heart{
+          color:rgb(252,101,141);
+      }
+  }
 }

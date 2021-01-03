@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   # root 'rooms#index'
   resources :rooms, only: %i[index show ] do
     resource :bookmarks, only: %i[create destroy]
-    resources :reviews, only: %i[index create show] do
-      resource :comments, only: %i[create new destroy]
+    resources :reviews, only: %i[index new create show] do
+      resource :comments, only: %i[create destroy update edit]
       resource :favorites, only: %i[create destroy]
     end
   end

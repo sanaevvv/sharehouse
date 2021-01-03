@@ -1,14 +1,39 @@
-<%= @review.comment%>
-<div class="form_container">
-<h2 class="comment">コメント</h3>
-<% @review.comments.each do |comment| %>
-  <div>
-    <strong><%= comment.name %></strong><br />
-    <p><%= comment.body %></p>
+<div class="comment_form_container">
+  <div class="grid_table_review">
+    <div class="grid_ttl">ユーザー名</div>
+    <div class="grid_ttl">点数</div>
+    <div class="grid_ttl">内容</div>
+    <div class="grid_ttl"></div>
 
-    <%# if comment.persisted? %>
-      <p><%#= link_to '削除', comment_path(comment), method: :delete, data: { confirm: '削除してもよろしいですか？' } %></p>
-    <%# end %>
+    <div class="border_layout">
+      <%= link_to @review.user.username, user_path(@review.user) %></div>
+    <div class="border_layout">
+      <%= @review.score %></div>
+    <div class="border_layout">
+      <%= simple_format(@review.comment) %></div>
+    <div class="border_layout favorites">
+      <% if current_user.favorites?(@review) %>
+        <%= link_to room_review_favorites_path(room_id: @review.room.id, review_id: @review.id), method: :delete do %>
+          <i class="fa fa-heart"></i><% end %>
+      <% else %>
+        <%= link_to room_review_favorites_path(room_id: @review.room.id, review_id: @review.id), method: :post do%>
+          <i class="far fa-heart"></i><% end %>
+      <% end %>
+        <%= @review.favorites.count %>
+    </div>
+  </div>
+
+<h2 class="comment">レビューコメント</h3>
+<% @review.comments.each do |comment| %>
+  <div class="grid_comment">
+ <% if comment.persisted? %>
+   <div><%= current_user.username %></div>
+    <div><%= comment.body %></div>
+    <div class="comment_button">
+    <%= link_to '削除', room_review_comments_path(room_id: @review.room.id, review_id: comment.id), method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+         <%= link_to '編集', room_review_comments_path(@review.room.id, @review), method: :patch %>
+    </div>
+    <% end %>
   </div>
 <% end %>
 

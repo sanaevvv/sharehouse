@@ -23,13 +23,15 @@ class ReviewsController < ApplicationController
 
   end
 
+
+  def new
+    @review = Review.new
+  end
+
   def show
     @review = Review.find(params[:id])
     @comment = @review.comments.build
   end
-
-
-
 
   private
   def review_params

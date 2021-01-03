@@ -295,5 +295,15 @@
 
 .color_grey{
   color: grey;
-  text-align: center;
+  font-size: 1.5rem;
+  white-space: nowrap;
+  padding-top: 10px;
 }
+
+.favorites{
+     display: flex;
+     gap: 0 20px;
+    .fa-heart{
+         color:rgb(252,101,141);
+    }
+  }
