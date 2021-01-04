@@ -17,7 +17,8 @@
                     <p class="roomfee">&yen;<%= @room&.price.to_s(:delimited) %>&nbsp;-&nbsp;&yen;<%= @room.maxprice.try(:to_s, :delimited) %><span class="utilities">(光熱費込)</span></p>
                     <p class="description"><%= @room.description %></p>
 
-                    <p class="link_bottuns">
+                    <p class="link_buttons">
+                    <%= link_to "一覧へ戻る", rooms_path, class: "button" %>
                     <%= link_to "レビューを見る", room_reviews_path(@room), class: "link_button" %>
                     </p>
                </div>
