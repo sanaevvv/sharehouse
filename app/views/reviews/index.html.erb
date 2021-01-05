@@ -70,7 +70,7 @@
           <%= simple_format(review.comment) %>
         </div>
         <div class="border_layout">
-          <%= link_to '詳細', room_review_path(@room.id, review.id) %>
+          <%= link_to '詳細', room_review_path(room_id: @room.id, id: review.id) %>
         </div>
         <div class="border_layout favorites">
 					<% if current_user.favorites?(review) %>

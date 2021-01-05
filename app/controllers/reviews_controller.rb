@@ -23,6 +23,11 @@ class ReviewsController < ApplicationController
 
   end
 
+  def edit
+
+  end
+
+
 
   def new
     @review = Review.new

@@ -1,29 +1,30 @@
 class CommentsController < ApplicationController
   def create
-    # @room = Room.find(params[:room_id])
-    # @review = Review.find(params[:review_id])
+    @room = Room.find(params[:room_id])
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to root_path, notice: 'コメントの保存に成功しました.'
-
+      redirect_to room_reviews_path(@room), notice: 'コメントの保存に成功しました.'
     end
-      # redirect_to room_review_path(room_id: review.room.id, params[id: review.id]) notice: 'コメントの保存に成功しました.'
-
-    #  redirect_to room_reviews_path(room_id: review.room.id), notice: 'コメントの保存に成功しました.'
   end
 
   def edit
+    @room    = Room.find(params[:room_id])
+    @review  = Review.find(params[:review_id])
+    @comment = Comment.find_by(id: params[:id])
+
   end
 
   def update
     comment = Comment.find(params[:id])
-    comment.update
+    comment.update(comment_params)
+    redirect_to room_review_path(params[:room_id], params[:review_id])
   end
 
-  # def destroy
-  #   comment = Comment.find_by(review_id: params[:review_id] comment)
-  #   comment.destroy
-  # end
+  def destroy
+    comment = Comment.find_by(id: params[:id])
+    comment.destroy
+    redirect_to room_review_path(params[:room_id], params[:review_id])
+  end
 
   private
   def comment_params

@@ -1,0 +1,17 @@
+<div class="form_container">
+<h2 class='mt50'>コメントの編集</h2>
+<%= form_with model: @comment, url: room_review_comment_path(@room, @review, @comment), local: true do |f| %>
+
+  <div class="field">
+  <%= f.label :body, '内容' %><br>
+  <%= f.text_area :body %>
+  </div>
+
+  <%= f.hidden_field :review_id, value: @review.id %>
+
+  <div>
+  <%= f.submit '登録する', class:"button" %>
+  </div>
+
+  <% end %>
+  </div>

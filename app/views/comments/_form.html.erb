@@ -1,7 +1,7 @@
+<div class="form_container">
+  <%#= form_with model: [room, review, comment] local: true do |f| %>
 
-  <%#= form_with model: [@room, @review, @comment], local: true do |f| %>
-
-  <%= form_with model: @comment, url: room_review_comments_path(room_id: review.room.id, review_id: review.id), local: true do |f| %>
+  <%= form_with model: comment, url: room_review_comments_path(room, review, comment), local: true do |f| %>
 
   <div class="field">
   <%= f.label :body, '内容' %><br>
@@ -15,3 +15,5 @@
   </div>
 
   <% end %>
+
+</div>

@@ -40,6 +40,9 @@
     </div>
   </div>
 
+  <h2 class='mt50'>レビューに返信</h2>
+<%= render 'comments/form', room: @room, review: @review, comment: @comment %>
+
 <h2 class="comment">レビューコメント</h3>
 <% @review.comments.each do |comment| %>
   <div class="grid_comment">
@@ -47,12 +50,11 @@
    <div><%= current_user.username %></div>
     <div><%= comment.body %></div>
     <div class="comment_button">
-    <%= link_to '削除', room_review_comments_path(room_id: @review.room.id, review_id: comment.id), method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
-         <%= link_to '編集', room_review_comments_path(@review.room.id, @review), method: :patch %>
+    <%= link_to '削除', room_review_comment_path(@room, @review, comment), method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+    <%= link_to '編集', edit_room_review_comment_path(@room, @review, comment) %>
     </div>
     <% end %>
   </div>
 <% end %>
 
-<%= render 'comments/form', review: @review %>
 </div>
