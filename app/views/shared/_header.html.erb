@@ -9,6 +9,7 @@
                <% if user_signed_in? %>
 
                     <% if current_user.admin? %>
+                        <i class="far fa-arrow-alt-circle-right"></i>&nbsp;
                          <%= link_to "管理画面へ", admin_rooms_path, class: "admin_page" %>
                           <%= link_to "マイページ", user_path(current_user), class: "my_page_btn" %>
                          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>

@@ -2,8 +2,9 @@ class CommentsController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
     @comment = Comment.new(comment_params)
+    @review = Review.find(params[:review_id])
     if @comment.save
-      redirect_to room_reviews_path(@room), notice: 'コメントの保存に成功しました.'
+      redirect_to room_review_path(params[:room_id], @review), notice: 'コメントの保存に成功しました.'
     end
   end
 

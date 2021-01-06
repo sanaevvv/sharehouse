@@ -45,15 +45,16 @@
      }
 
      .roomfee{
-     font-size: 2rem;
- font-family: toppan-bunkyu-midashi-go-std, sans-serif;
+     font-size: 1.8rem;
+     font-family: toppan-bunkyu-midashi-go-std, sans-serif;
+     font-weight: bold;
+     font-style: italic;
 
-font-weight: 900;
+     letter-spacing: -0.02em;
+     padding: 10px 10px 10px 0;
 
-     letter-spacing: -0.01em;
-     padding: 10px;
           .utilities{
-          font-size: 1.5rem;
+          font-size: 1.3rem;
           font-weight:normal;
           }
      }

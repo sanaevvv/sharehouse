@@ -40,8 +40,9 @@
     </div>
   </div>
 
-  <h2 class='mt50'>レビューに返信</h2>
-<%= render 'comments/form', room: @room, review: @review, comment: @comment %>
+  <h2 class='review_reply'>レビューに返信</h2>
+<%= render 'comments/form', room: @room, review: @review, comment: @comment, url: room_review_comments_path(@room, @review, @comment), model: @comment %>
+
 
 <h2 class="comment">レビューコメント</h3>
 <% @review.comments.each do |comment| %>

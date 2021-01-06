@@ -3,4 +3,7 @@ class Comment < ApplicationRecord
 
   validates :name, length: { maximum: 15 }
   validates :body, presence: true, length: { maximum: 140 }
+
+  default_scope -> { order(created_at: :desc) }
+
 end

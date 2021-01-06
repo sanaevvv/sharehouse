@@ -8,7 +8,9 @@
   margin: 0 auto;
 }
 .comment{
-  margin-top: 50px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 3px dotted rgb(226, 190, 186);
 }
 
 .grid_comment{
@@ -25,6 +27,7 @@
     margin-top: 30px;
      display:grid;
      grid-template-columns: 120px 100px 1fr 50px;
+
 
      .grid_ttl{
      border-bottom: 2px solid lightgrey;
@@ -80,4 +83,10 @@
   a{
   color:#636161;;
 }
+}
+
+.review_reply{
+  margin-top: 30px;
+  padding-top: 20px;
+
 }
