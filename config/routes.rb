@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'top#index'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   # root 'rooms#index'
 
   resources :rooms, only: %i[index show ] do
+    resources :photos, except: :show
     resource :bookmarks, only: %i[create destroy]
     resources :reviews, only: %i[index new create show] do
       resources :comments, only: %i[create update destroy edit]
@@ -19,7 +21,9 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    resources :rooms
+    resources :rooms do
+      resources :photos, except: :show
+    end
     resources :users
   end
 

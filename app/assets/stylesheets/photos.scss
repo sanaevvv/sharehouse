@@ -1,0 +1,88 @@
+// Place all the styles related to the photo controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.photo_gallery{
+  width: 300px;
+  margin-bottom:20px;
+  background-color: #fff;
+  box-shadow: 0 0 7px 0 rgb(234, 196, 201);
+   .photo_link{
+     display: flex;
+     justify-content: center;
+     gap: 10px;
+      .button{
+        padding:5px 7px;
+      }
+   }
+    .photo_img{
+      img{
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    .desc{
+      padding:10px;
+      .photo_title{
+        text-align: center;
+        font-weight: bold;
+      }
+     .photo_text{
+       text-align: left;
+      height: 80px;
+      }
+    }
+}
+.photo_flex{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.photo_index{
+  margin-top: 20px;
+
+}
+
+.photo_link_buttons{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 15px 0;
+
+}
+
+.back_button{
+   background-color: #eee;
+   color:#333;
+}
+
+.add_button{
+  background-color:#fff;
+  color:grey;
+  border: 2px solid rgb(85, 84, 84);
+}
+.new_button{
+  text-align:right;
+  margin: 0 10px 20px 0;
+
+}
+.form_button{
+  padding:2px 5px;
+  background-color: #fff;
+  border: 2px solid #333;
+  color: #333;
+  border-radius: 3px;
+
+  &:hover {
+
+
+    cursor: pointer;
+     }
+}
+
+.button_gr{
+  display: flex;
+     justify-content: flex-end;
+     gap: 10px;
+}

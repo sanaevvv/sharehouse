@@ -1,0 +1,20 @@
+
+<div class="photo_link_buttons">
+     <%= link_to 'シェアハウス一覧', admin_rooms_path, class:"card_button1" %>
+     <%= link_to '写真一覧', admin_room_photos_path(room_id: room.id), class:"card_button2" %>
+</div>
+
+<%= form_with model:[:admin, room, photo], local: true do |f| %>
+     <div class="grid_new">
+        <div><%= f.label :title, "件名" %></div>
+        <div><%= f.text_field :title %></div>
+
+        <div><%= f.label :body, "説明文" %></div>
+        <div class="description"><%= f.text_area :body, rows: 5 %></div>
+
+        <div><%= f.label :photo_image, "画像" %></div>
+        <div><%= f.file_field :photo_image %></div>
+
+        <div><%= f.submit '登録する', class:"button" %></div>
+     </div>
+<% end %>

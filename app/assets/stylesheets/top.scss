@@ -1,3 +1,5 @@
+
+
 .login{
      background-color: #fff;
      border: 2px solid grey;
@@ -36,16 +38,79 @@
 }
 
 .welcome{
-     text-align: center;
-     font-size: 10rem;
-     color: pink;
-     text-shadow: 2px 2px 1px silver;
-     font-family: 'Pacifico', cursive;
-     padding-top: 20px;
+  text-align: center;
+  font-size: 10rem;
+  color: pink;
+  text-shadow: 2px 2px 1px silver;
+  font-family: 'Pacifico', cursive;
+  padding-top: 20px;
 }
 
 .main_ttl{
-font-family: a-otf-jun-pro, sans-serif;
-font-style: normal;
-font-size: 20px;
+  font-family: a-otf-jun-pro, sans-serif;
+  font-style: normal;
+  font-size: 20px;
+}
+
+
+
+div[class^="circle"]:not(.circle_parts){
+  color:rgb(172, 169, 169);
+  box-shadow: 0 0 30px 1px pink inset,0 0 8px 1px pink;
+
+  text-align: center;
+}
+
+.circle_parts{
+  position:relative;
+  height: 600px;
+  .circle1{
+    position:absolute;
+    top: 100px;
+    left: 0;
+    width: 200px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 82% 81% 79% 67% / 84% 82% 87% 75%;
+  }
+  .circle2{
+    position:absolute;
+    top: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 180px;
+    line-height: 180px;
+    border-radius: 49% 51% 43% 57% / 51% 47% 53% 49%;
+  }
+
+  .circle3{
+    position:absolute;
+    top:100px;
+    right: 0;
+    width: 150px;
+    height: 100px;
+    line-height: 100px;
+    border-radius:43% 57% 37% 63% / 55% 47% 53% 45%;
+  }
+
+  .circle4{
+    position:absolute;
+    top:300px;
+    left: 100px;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 52% 48% 48% 52% / 55% 47% 53% 45%;
+  }
+
+  .circle5{
+    position:absolute;
+    top:400px;
+    right: 50px;
+    width: 200px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 79% 75% 72% 82% / 75% 77% 70% 65%;
+  }
 }

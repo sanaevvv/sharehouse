@@ -51,7 +51,6 @@
         <% if @user.reviews.present? %>
           <% @user.reviews.each do |review| %>
             <div class="border_layout"><%= review.room.name %></div>
-
             <div class="border_layout">
            <%= form_with model: [@room, review], local: true do |f| %>
              <div class="comment_evaluation">
@@ -112,10 +111,10 @@
               <%= render 'reviews/tag_list', tag_list: room.tag_list %>
 
 
-              <p class="link_buttons">
-                <%= link_to "レビューを見る", room_reviews_path(room), class: "button" %>
-                <%= link_to "レビューを書く", room_path(room), class: "button link_button" %>
-              </p>
+              <div class="link_buttons">
+                <%= link_to "問い合わせする", room_reviews_path(room), class: "inqury" %>
+                <%= link_to "レビューを見る", room_reviews_path(room), class: "card_button1" %>
+                <%= link_to "レビューを書く", room_path(room), class: "card_button2" %>
             </div>
           </div>
         </div>

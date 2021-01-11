@@ -1,6 +1,5 @@
 module Admin
      class RoomsController < ApplicationController
-
           layout 'admin'
           def index
                # @rooms = Room.all
@@ -20,7 +19,7 @@ module Admin
           end
 
           def edit
-               @room = Room.find(params[:id])
+               @room = Room.find_by(id: params[:id])
           end
 
           def create

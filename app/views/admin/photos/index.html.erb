@@ -1,0 +1,24 @@
+
+ <h2 class="photo_index mt50"><i class="fas fa-camera"></i>&nbsp;<%= "#{@room.name}の写真一覧を更新する" %></h2>
+
+<div class="photo_link_buttons">
+     <%= link_to 'シェアハウス一覧', admin_rooms_path, class:"card_button1" %>
+     <%= link_to "写真を追加する", new_admin_room_photo_path(room_id: @room.id), class: "card_button2" %>
+
+ </div>
+<div class="photo_flex">
+  <% @photos.each do |photo| %>
+  <div class="photo_gallery">
+      <div class="photo_img"><img src="<%= photo_image_url(photo) %>" alt="" /></div>
+      <div class="desc">
+        <div class="photo_title"><%= photo.title %></div>
+        <%=simple_format(photo.body, class: 'photo_text') %>
+      </div>
+
+    <p class="photo_link">
+    <%= link_to "編集する", edit_admin_room_photo_path(room_id: @room.id, id: photo.id), class: "button" %>
+    <%= link_to "削除する", admin_room_photo_path(room_id: @room.id, id: photo.id), method: :delete, data:{confirm: "#{photo.title}を削除します。よろしいですか？"}, class: "button link_button" %>
+    </p>
+  </div>
+  <% end %>
+</div>

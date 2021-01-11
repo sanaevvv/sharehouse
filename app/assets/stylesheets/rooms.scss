@@ -5,15 +5,17 @@
 .ttl{
      margin-top:30px;
 }
-.card_inner{
-     height:250px;
+
      .w_50{
           width: 50%;
           padding: 15px;
+
           img{
-          width: 100%;
-          height: 220px;
+           width: 100%;
+          height: 260px;
           object-fit: cover;
+          }
+
           }
           .star_review{
                display:flex;
@@ -42,31 +44,43 @@
                     white-space: nowrap;
                }
           }
-     }
+
 
      .roomfee{
      font-size: 1.8rem;
      font-family: toppan-bunkyu-midashi-go-std, sans-serif;
      font-weight: bold;
-     font-style: italic;
+
+     text-shadow:1px 1px 1px #ccc;
 
      letter-spacing: -0.02em;
      padding: 10px 10px 10px 0;
 
           .utilities{
           font-size: 1.3rem;
+
           font-weight:normal;
+
           }
      }
-}
-.border{
-     position:relative;
-    height:380px;
-     .link_buttons{
-     position: absolute;
-     bottom: 10px;
-     right: 20px;
-     }
+// .card_inner{
+//   position: relative;
+// }
+// .border{
+//    position: relative;
+//     height:400px;
+//      .link_buttons{
+//      position: absolute;
+//      bottom: 0;
+//      right: 15px;
+//      }
+// }
+
+.more_photo{
+  text-align:right;
+  color: grey;
+  font-weight: bold;
+
 }
 
 
@@ -152,4 +166,55 @@ input[type="submit"]{
 .desc{
      color: grey;
      font-size: 1.4rem;
+}
+.inqury{
+  text-align: right;
+  margin: 0 20px 0 0;
+  padding: 0 10px 0 0;
+  color: rgb(252, 195, 204);
+  width: 170px;
+  height:40px;
+  line-height: 40px;
+  background-color:#333;
+  position:relative;
+  white-space: nowrap;
+
+  &::before{
+    text-align: left;
+    padding-left:10px;
+    content: "\f1d8";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    width: 96%;
+    height: 86%;
+    z-index: 10;
+    color: rgb(252, 195, 204);
+    border: 1px solid rgb(238, 188, 197);
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+
+  }
+}
+
+
+.card_button1,
+.card_button2{
+color:#fff;
+background-color: grey;
+padding: 3px 5px;
+border-radius: 3px;
+font-size: 90%;
+border:2px solid grey;
+letter-spacing: -0.03em;
+}
+.card_button2{
+  margin-left: 10px;
+  background-color: #fff;
+  color: grey;
+}
+.font100{
+  font-size:100%;
 }

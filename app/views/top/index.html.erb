@@ -1,9 +1,16 @@
 
-<h2 class="m_50 main_ttl">レビューを自由に</h2>
-
+<h2 class="m_50 main_ttl"><i class="far fa-comments"></i>&nbsp;レビューを自由に</h2>
 <% if user_signed_in? %>
-  <p class="welcome">Welcome!</p>
-  <% else %>
+<div class="circle_parts">
+<p class="welcome">Welcome!</p>
+<div class="circle1">どんな部屋？</div>
+<div class="circle2">仲良くなれる？</div>
+<div class="circle3">治安は？</div>
+<div class="circle4">住人はどんな人？</div>
+<div class="circle5">住人の交流は？</div>
+</div>
+
+ <% else %>
     <div class="login_gr">
       <%= link_to "ログイン", new_user_session_path, class: "login btn_link" %>
       <%= link_to "新規登録", new_user_registration_path, class: "new btn_link" %>

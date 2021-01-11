@@ -27,4 +27,16 @@ module ApplicationHelper
     end
   end
 
+   def photo_image_url(photo)
+    if photo.present?
+      if photo.photo_image.attached?
+        assets_url(photo.photo_image.blob.key)
+      else
+        assets_url('nouser.jpg')
+      end
+    else
+      assets_url('nouser.jpg')
+    end
+  end
+
 end

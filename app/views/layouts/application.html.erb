@@ -28,7 +28,12 @@
   <body>
     <%= render 'shared/header' %>
     <%= render 'shared/toast' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
+    <div class="footer_fixed">
+      <div class="container">
+        <%= yield %>
+      </div>
+      <%= render 'shared/footer' %>
+    </div>
+
   </body>
 </html>

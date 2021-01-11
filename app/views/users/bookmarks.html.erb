@@ -21,10 +21,10 @@
                    <%= render 'tag_list', tag_list: room.tag_list %>
 
 
-                         <p class="link_buttons">
-                         <%= link_to "レビューを見る", room_reviews_path(room), class: "button" %>
-                         <%= link_to "レビューを書く", room_path(room), class: "button link_button" %>
-                         </p>
+                      <div class="link_buttons">
+                         <%= link_to "問い合わせする", room_reviews_path(room), class: "inqury" %>
+                         <%= link_to "レビューを見る", room_reviews_path(room), class: "card_button 1" %>
+                         <%= link_to "レビューを書く", room_path(room), class: "card_button2" %>
                     </div>
                </div>
           </div>

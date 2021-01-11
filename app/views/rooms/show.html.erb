@@ -1,9 +1,16 @@
-<div class="container">
+
      <div class="border">
           <h2 class="card_title"><%= @room.name %></h2>
           <div class="card_inner">
-               <div class="w_50"><img src="<%= room_image_url(@room) %>" alt="<%= @room.name %>のプロフィール画像" /></div>
                <div class="w_50">
+                <%= link_to room_photos_path(room_id: @room.id) do %>
+               <img src="<%= room_image_url(@room) %>" alt="<%= @room.name %>の部屋画像" />
+               <div class="more_photo"><i class="fas fa-angle-double-right"></i>写真をもっと見る</div>
+
+               <% end %>
+               </div>
+
+               <div class="w_50 card_right">
                     <div class="star_review">
                          <div class="star-rating">
                               <div class="star-rating-front" style="width: <%= @room.review_score_percentage %>%">★★★★★</div>
@@ -17,13 +24,13 @@
                     <p class="roomfee">&yen;<%= @room&.price.to_s(:delimited) %>&nbsp;-&nbsp;&yen;<%= @room.maxprice.try(:to_s, :delimited) %><span class="utilities">&nbsp;(光熱費込)</span></p>
                     <p class="description"><%= @room.description %></p>
 
-                    <p class="link_buttons">
-                    <%= link_to "一覧へ戻る", rooms_path, class: "button" %>
-                    <%= link_to "レビューを見る", room_reviews_path(@room), class: "link_button" %>
-                    </p>
+                    <div class="link_buttons">
+                    <%= link_to "一覧へ戻る", rooms_path, class: "card_button1" %>
+                    <%= link_to "レビューを見る", room_reviews_path(@room), class: "card_button2" %>
+                    </div>
                </div>
           </div>
      </div>
-</div>
+
 
 <%= render 'reviews/form', review: @review, room: @room %>

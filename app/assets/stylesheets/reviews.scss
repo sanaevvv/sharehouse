@@ -5,38 +5,49 @@
 .border{
      box-shadow: 0 0 1px 1px rgba(135, 207, 235, 0.336);
      border: 2px solid #DBE6FF;
-     background-color:#f5f5f5;
+     background-color: #f4f6f9;
      margin:20px 0;
-     height: 380px;
      padding: 20px;
-     position:relative;
-     .link_buttons{
+     height: 400px;
+
+     .buttons{
+          position:relative;
+     }
+      .card_inner{
+          display:flex;
+          position:relative;
+.link_buttons{
+     display:flex;
+     align-items: center;
           position:absolute;
           bottom:10px;
-          right: 20px;
+          right: 15px;
      }
+     }
+
+
 
      .bookmark{
           text-align: right;
           color:#333;
+          padding-right:15px;
      }
      .card_title{
           font-weight:bold;
           font-size:20px;
 
      }
-     .card_inner{
-          display:flex;
-          height:250px;
-     }
+
      .w_50{
           width: 50%;
-          padding: 15px;
           img{
           width: 100%;
-          height: 220px;
+          height: 260px;
           object-fit: cover;
           }
+     }
+     .card_right{
+          height: 260px;
      }
 }
 
@@ -76,7 +87,7 @@
      font-size: 17px;
      font-weight: bold;
      padding:40px 0 0 0;
-     width: 500px;
+     width: 600px;
      text-align: center;
      margin:0 auto;
      color:grey
@@ -95,7 +106,7 @@ textarea{
      margin-top: 30px;
      display:grid;
      width: 100%;
-     grid-template-columns: 150px 8vw 1fr 60px 60px;
+     grid-template-columns: 150px 8vw 1fr 120px 100px 30px;
      word-break : break-all;
 
      .grid_ttl{
@@ -115,9 +126,34 @@ textarea{
 
 .favorites{
      display: flex;
-     gap: 0 20px;
+     gap: 0 7px;
     .fa-heart{
         color:rgb(252,101,141);
     }
 }
+}
+
+.profile_page{
+     a{
+       text-align: center;
+       color: #fff;
+       font-weight:bold;
+       font-size: 90%;
+ background-color:rgb(228, 138, 153);
+ border: 2px solid rgb(228, 138, 153);
+  border-radius: 20px;
+     }
+}
+.profile_reply{
+     a{
+           text-align: center;
+          color:rgb(228, 138, 153);
+           font-weight:bold;
+            font-size: 86%;
+
+ border: 2px solid rgb(228, 138, 153);
+ background-color: #fff;
+  border-radius: 20px;
+
+     }
 }

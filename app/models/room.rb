@@ -3,10 +3,11 @@ class Room < ApplicationRecord
        has_many :users, through: :reviews
        has_many :bookmarks, dependent: :destroy
        has_many :users, through: :bookmarks
+       has_many :photos, dependent: :destroy
        has_one_attached :image
 
        acts_as_taggable
-  # acts_as_taggable_on :tags　と同じ意味のエイリアス
+  # acts_as_taggable_on :tagsと同じ意味のエイリアス
   # tags のなかにIDやら名前などが入る。イメージ的には親情報。
 
        def avg_score
@@ -30,7 +31,6 @@ class Room < ApplicationRecord
        def bookmark_by(user)
               bookmarks.where(user_id: user.id).exists?
        end
-
 
 
 end

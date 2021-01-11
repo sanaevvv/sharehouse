@@ -1,5 +1,5 @@
 .form_container{
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
     margin: 0 auto;
     text-align: left;
@@ -133,10 +133,6 @@
   }
 }
 
-  .container{
-    width: 1000px;
-    margin:0 auto;
-  }
 
 
 
@@ -184,12 +180,13 @@
   .follower_user_parent{
   display:flex;
   flex-wrap: wrap;
-  gap: 10px;
+  justify-content: space-evenly;
   margin: 0 auto;
   }
   .follower_user,
   .followerd_user{
-    width: 241px;
+    margin-bottom: 20px;
+    width: 250px;
     border: 2px solid #F8F8F8;
     padding: 10px;
     background-color:#F8F8F8;
@@ -269,7 +266,7 @@
 
 .grid_table_mypage{
     display: grid;
-    grid-template-columns: 180px 8vw 1fr 100px;
+    grid-template-columns: 180px 8vw 1fr 50px;
     word-break : break-all;
     font-size: 80%;
 
