@@ -13,5 +13,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
-RUN bundle install && bundle update && yarn install && yarn upgrade
+RUN bundle install && bundle update
+RUN pwd
+RUN yarn install
+RUN yarn upgrade
 COPY . /app
