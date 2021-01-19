@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_06_104858) do
+ActiveRecord::Schema.define(version: 2021_01_14_054233) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(version: 2021_01_06_104858) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "management_companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.string "tel"
+    t.string "email"
+    t.string "url"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "room_id"
+    t.index ["room_id"], name: "index_management_companies_on_room_id"
+  end
+
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "room_id"
     t.string "title"
@@ -89,6 +100,15 @@ ActiveRecord::Schema.define(version: 2021_01_06_104858) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "room_contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "room_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_room_contacts_on_room_id"
+  end
+
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -97,6 +117,8 @@ ActiveRecord::Schema.define(version: 2021_01_06_104858) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture"
     t.integer "maxprice"
+    t.bigint "management_company_id", null: false
+    t.index ["management_company_id"], name: "index_rooms_on_management_company_id"
   end
 
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -144,9 +166,11 @@ ActiveRecord::Schema.define(version: 2021_01_06_104858) do
   add_foreign_key "bookmarks", "rooms"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "reviews"
+  add_foreign_key "management_companies", "rooms"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "relationships", "users", column: "followerd_id"
   add_foreign_key "reviews", "rooms"
   add_foreign_key "reviews", "users"
+  add_foreign_key "room_contacts", "rooms"
   add_foreign_key "taggings", "tags"
 end

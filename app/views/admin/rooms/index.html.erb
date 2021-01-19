@@ -17,7 +17,7 @@
                <div class="w_50">
                 <%= link_to admin_room_photos_path(room_id: room.id) do %>
                     <img src="<%= room_image_url(room) %>" alt="" />
-                     <div class="more_photo"><i class="fas fa-angle-double-right"></i>写真を更新する</div>
+                     <div class="more_photo"><i class="fas fa-angle-double-right"></i>写真をもっと掲載する</div>
                     <% end %>
                </div>
                <div class="w_50 card_right">
@@ -36,11 +36,20 @@
 
                    <%= render 'tag_list', tag_list: room.tag_list %>
                 </div>
-                    <div class="link_buttons">
-                     <%= link_to "問い合わせする", room_reviews_path(room), class: "inqury" %>
+
+
+ <div class="link_buttons">
+ <% unless room.management_company.present? %>
+                     <%= link_to "管理会社登録", new_admin_room_management_companies_path(room_id: room.id), class: "management_new" %>
+<% else %>
+                     <%= link_to "管理会社詳細",  admin_room_management_companies_path(room_id: room.id), class: "management_show" %>
+
+<% end %>
+
                     <%= link_to "編集する", edit_admin_room_path(room), class: "card_button1 font100" %>
                     <%= link_to "削除する", [:admin, room], method: :delete,data:{confirm: "#{room.name}を削除します。よろしいですか？"}, class: "card_button2 font100" %>
                     </div>
+
 
           </div>
      </div>

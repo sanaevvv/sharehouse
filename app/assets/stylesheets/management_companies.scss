@@ -1,0 +1,111 @@
+// Place all the styles related to the ManagementCompanies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.management_show{
+  margin-right: 20px;
+
+}
+.management_show,
+.management_new{
+  padding: 2px 8px;
+  color: #8da7c4;
+  border: 2px solid #8da7c4;
+  margin-right:20px;
+  border-radius:3px;
+  font-weight: bold;
+  background-color: #fff;
+  font-size:90%;
+}
+
+.management_inner{
+  h2{
+    padding: 30px 0;
+  }
+  div{
+    margin-bottom: 20px;
+  }
+  width:600px;
+  background-color:#fff;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 0 30px 30px 30px;
+
+  .mb10{
+  margin-bottom:10px;
+}
+}
+
+.management_button{
+  width: 600px;
+  margin:50px auto;
+  text-align: right;
+
+  .management_back{
+    font-size: 90%;
+    padding:3px 7px;
+    display:inline-block;
+    border-radius: 5px;
+    color:grey;
+  border: 2px solid grey;
+  font-weight:bold;
+
+  }
+}
+
+.edit_delete_bottons{
+  display:flex;
+  margin-top: 50px;
+  gap: 10px;
+  .edit_button{
+    border-radius: 5px;
+    background: grey;
+    padding:2px 7px;
+   color:#fff;
+   border: 2px solid grey;
+   box-shadow: 1px 1px 1px lightgrey;
+   &:hover{
+  box-shadow: 0 0;
+  transform: translate(1px, 1px);
+}
+  }
+
+  .delete_button{
+    border-radius: 5px;
+    padding: 2px 7px;
+
+    color:grey;
+    border: 2px solid grey;
+    box-shadow: 1px 1px 1px lightgrey;
+    &:hover{
+  box-shadow: 0 0;
+  transform: translate(1px, 1px);
+}
+}
+
+}
+
+.management_grid{
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+
+  .management_grid_ttl{
+    font-size:90%;
+     padding: 3px 7px;
+  }
+  .management_grid_right{
+     padding: 3px 7px;
+
+  input[type="text"]{
+    margin-bottom: 0;
+  }
+  }
+}
+.bg_pink{
+  background-color:rgba(247, 220, 225, 0.561);
+  padding:20px;
+  color: rgb(85, 83, 83);
+ border-radius: 5px;
+
+}

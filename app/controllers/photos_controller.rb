@@ -5,6 +5,7 @@ class PhotosController < ApplicationController
   end
 
   def new
+     
 
   end
 

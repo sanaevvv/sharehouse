@@ -25,6 +25,7 @@
                     <p class="description"><%= @room.description %></p>
 
                     <div class="link_buttons">
+                    <%= link_to "問い合わせする", new_room_room_contact_path(room_id: @room.id), class: "inqury" %>
                     <%= link_to "一覧へ戻る", rooms_path, class: "card_button1" %>
                     <%= link_to "レビューを見る", room_reviews_path(@room), class: "card_button2" %>
                     </div>

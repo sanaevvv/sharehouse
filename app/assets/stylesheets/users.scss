@@ -142,8 +142,8 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgb(238, 183, 190);
-    border: 2px solid, rgb(238, 183, 190);
+    background-color: rgb(238, 173, 182);
+    border: 2px solid, rgb(238, 173, 182);
     border-radius: 20px;
     color:#fff;
     position: absolute;
@@ -155,8 +155,8 @@
   .unfollow{
     @extend.follow;
       background-color: #fff;
-      color:rgb(238, 183, 190);
-      border: 2px solid rgb(238, 183, 190);
+      color:rgb(238, 173, 182);
+      border: 2px solid rgb(238, 173, 182);
   }
 .user_name{
   width: 150px;
@@ -266,8 +266,7 @@
 
 .grid_table_mypage{
     display: grid;
-    grid-template-columns: 180px 8vw 1fr 50px;
-    word-break : break-all;
+    grid-template-columns: 180px 9vw 1fr 120px 40px;
     font-size: 80%;
 
       .grid_ttl{
@@ -281,6 +280,7 @@
      border-bottom: 1px solid lightgrey;
      font-size: 1.5rem;
      color: #333;
+
      }
 }
 
@@ -300,8 +300,14 @@
 
 .favorites{
      display: flex;
-     gap: 0 20px;
+     gap: 0 7px;
     .fa-heart{
          color:rgb(252,101,141);
     }
   }
+
+.back_to_mypage{
+  a{
+  color:rgb(114, 112, 112);
+  }
+}

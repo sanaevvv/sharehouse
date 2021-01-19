@@ -9,9 +9,9 @@
 
   <%= f.hidden_field :review_id, value: review.id %>
 
-  <div>
-  <%= f.submit '登録する', class:"button" %>
-  <%= link_to 'レビューに戻る', room_reviews_path, class:"link_button" %>
+  <div class="comment_button_gr">
+  <%= f.submit '登録する', class:"card_button1" %>
+  <%= link_to 'レビュー一覧に戻る', room_reviews_path, class:"card_button2 mt30" %>
   </div>
 
   <% end %>

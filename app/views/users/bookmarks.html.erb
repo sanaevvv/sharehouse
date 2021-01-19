@@ -3,7 +3,9 @@
           <div class="border">
                <h2 class="card_title"><%= room.name %></h2>
                <div class="card_inner">
-                    <div class="w_50"><%= image_tag room.image if room.image.attached? %></div>
+                    <div class="w_50">
+                    <img src="<%= room_image_url(room) %>" alt="" />
+                    </div>
                     <div class="w_50">
                          <div class="star_review">
                               <div class="star-rating">
@@ -22,7 +24,7 @@
 
 
                       <div class="link_buttons">
-                         <%= link_to "問い合わせする", room_reviews_path(room), class: "inqury" %>
+                         <%= link_to "問い合わせする", new_room_management_companies_path(room_id: room.id), class: "inqury" %>
                          <%= link_to "レビューを見る", room_reviews_path(room), class: "card_button 1" %>
                          <%= link_to "レビューを書く", room_path(room), class: "card_button2" %>
                     </div>

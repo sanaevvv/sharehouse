@@ -17,19 +17,27 @@
   display:grid;
   grid-template-columns: 150px 1fr 100px;
   gap:10px;
+  align-items: center;
  margin-bottom: 5px;
+ color:rgb(99, 97, 97);
+ font-size: 95%;
 }
 
 .comment_button{
   display: flex;
   gap: 10px;
   a{
-    color:grey;
-    border: 2px solid #f5a4b2;
+    color:rgb(141, 140, 140);
+    border: 2px solid #e594a1af;
     border-radius: 3px;
-    font-size: 90%;
+    font-size: 95%;
     padding: 1px 5px;
   }
+}
+
+.comment_button_gr{
+  display: flex;
+  align-items: center;
 }
 
 

@@ -1,0 +1,27 @@
+<h2 class="mt50">お問い合わせフォーム</h2>
+
+<div class="management_container">
+
+    <div class="management_button">
+    <%= link_to 'シェアハウス一覧へ戻る', rooms_path, class:"management_back" %>
+    </div>
+
+    <div class="management_inner">
+
+
+      <h2 class="mt50"><%= "#{@room.name}のお問い合わせ先" %></h2>
+      <div class="management_grid">
+        <div class="management_grid_ttl">管理会社名:</div>
+        <div class="management_grid_right"><%= @management_company.name %></div>
+        <div class="management_grid_ttl">電話番号:</div>
+        <div class="management_grid_right"><%= @management_company.tel %></div>
+        <div class="management_grid_ttl">メールアドレス:</div>
+        <div class="management_grid_right"><%= @management_company.email %></div>
+        <div class="management_grid_ttl">URL:</div>
+        <div class="management_grid_right"><%= @management_company.url %></div>
+    </div>
+
+
+
+  </div>
+</div>

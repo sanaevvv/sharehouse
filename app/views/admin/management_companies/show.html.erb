@@ -1,0 +1,32 @@
+
+
+<div class="management_container">
+
+    <div class="management_button">
+    <%= link_to 'シェアハウス一覧へ戻る', admin_rooms_path, class:"management_back" %>
+    </div>
+
+    <div class="management_inner">
+
+    <% if @management_company.present? %>
+      <h2 class="mt50"><%= "#{@management_company.name}の管理会社情報" %></h2>
+      <div class="management_grid">
+        <div class="management_grid_ttl">管理会社名:</div>
+        <div class="management_grid_right"><%= @management_company.name %></div>
+        <div class="management_grid_ttl">電話番号:</div>
+        <div class="management_grid_right"><%= @management_company.tel %></div>
+        <div class="management_grid_ttl">メールアドレス:</div>
+        <div class="management_grid_right"><%= @management_company.email %></div>
+        <div class="management_grid_ttl">URL:</div>
+        <div class="management_grid_right"><%= @management_company.url %></div>
+    </div>
+    <p class="edit_delete_bottons">
+                  <%= link_to "編集する", edit_admin_room_management_companies_path(@room), class: "edit_button" %>
+                  <%= link_to "削除する", admin_room_management_companies_path(@room), method: :delete, data:{confirm: "#{@room.name}を削除します。よろしいですか？"}, class: "delete_button" %>
+                  </p>
+
+    <% else %>
+      <p class="color_grey">まだ登録がありません。</p>
+    <% end %>
+  </div>
+</div>

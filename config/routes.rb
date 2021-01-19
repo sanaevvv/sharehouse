@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-
-
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'top#index'
-    devise_for :users, controllers: {
+  devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
 
   # root 'rooms#index'
 
-  resources :rooms, only: %i[index show ] do
+  resources :rooms, only: %i[index show] do
+    resource :room_contact, only: %i[new create]
+    resource :management_companies, only: %i[new create]
     resources :photos, except: :show
     resource :bookmarks, only: %i[create destroy]
     resources :reviews, only: %i[index new create show] do
@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   end
 
   namespace 'admin' do
-    resources :rooms do
+    resources :rooms, except: :show do
+      resource :management_companies
       resources :photos, except: :show
     end
     resources :users

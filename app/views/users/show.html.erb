@@ -48,6 +48,7 @@
         <div class="grid_ttl">点数</div>
         <div class="grid_ttl">内容</div>
         <div class="grid_ttl"></div>
+        <div class="grid_ttl"></div>
         <% if @user.reviews.present? %>
           <% @user.reviews.each do |review| %>
             <div class="border_layout"><%= review.room.name %></div>
@@ -68,6 +69,10 @@
       		<% end %>
         </div>
             <%= simple_format(review.comment, class: 'border_layout') %>
+
+ <div class="border_layout review_list"><%= link_to 'レビュー一覧', room_reviews_path(room_id: review.room.id) %></div>
+
+
             <div class="border_layout favorites">
               <% if current_user.favorites?(review) %>
                <%= link_to room_review_favorites_path(room_id: review.room.id, review_id: review.id), method: :delete do %>
@@ -112,7 +117,7 @@
 
 
               <div class="link_buttons">
-                <%= link_to "問い合わせする", room_reviews_path(room), class: "inqury" %>
+                <%= link_to "問い合わせする", new_room_management_companies_path(room_id: room.id), class: "inqury" %>
                 <%= link_to "レビューを見る", room_reviews_path(room), class: "card_button1" %>
                 <%= link_to "レビューを書く", room_path(room), class: "card_button2" %>
             </div>

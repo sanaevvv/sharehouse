@@ -1,0 +1,46 @@
+
+<div class="management_container">
+
+    <div class="management_button">
+    <%= link_to 'シェアハウス一覧へ戻る', rooms_path, class:"management_back" %>
+    </div>
+
+    <div class="management_inner">
+
+      <h2 class="mt50"><i class="fas fa-info-circle fa-lg"></i>&nbsp;
+      <%= "#{@room.name}のお問い合わせ" %></h2>
+      <div class="management_grid bg_pink">
+        <div class="management_grid_ttl mb10">管理会社名:</div>
+        <div class="management_grid_right mb10"><%= @management_company.name %></div>
+        <div class="management_grid_ttl mb10">電話番号:</div>
+        <div class="management_grid_right mb10"><%= @management_company.tel %></div>
+        <div class="management_grid_ttl mb10">メールアドレス:</div>
+        <div class="management_grid_right mb10"><%= @management_company.email %></div>
+        <div class="management_grid_ttl mb10">URL:</div>
+        <div class="management_grid_right mb10"><%= @management_company.url %></div>
+      </div>
+
+
+      <%= form_with model: @room_contact, local:true do |f| %>
+
+      <div class="management_grid">
+        <div class="management_grid_ttl"><%= f.label :contact_name, "お名前" %></div>
+        <div class="management_grid_right"><%= f.text_field :contact_name %></div>
+
+        <div class="management_grid_ttl"><%= f.label :contact_email, "メールアドレス" %></div>
+        <div class="management_grid_right"><%= f.email_field :contact_email %></div>
+
+        <div class="management_grid_ttl"><%= f.label :title, "お問い合わせ件名" %></div>
+        <div class="management_grid_right"><%= f.text_field :title, placeholder: "内覧について" %></div>
+
+        <div class="management_grid_ttl"><%= f.label :body, "お問い合わせ内容" %></div>
+        <div class="management_grid_right"><%= f.text_area :body, placeholder: "○/○ □ 時から内覧に伺いたいです。" %></div>
+      </div>
+      <%= f.hidden_field :room_id, value: @room.id %>
+      <div class="new_btn"><%= f.submit '送信する', class:"button" %></div>
+
+      <% end %>
+  </div>
+
+
+</div>

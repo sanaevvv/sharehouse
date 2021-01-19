@@ -31,6 +31,7 @@
                      <%= render 'tag_list', tag_list: @room.tag_list %>
 
                <div class="link_buttons">
+                  <%= link_to "問い合わせする", new_room_room_contact_path(room_id: @room.id), class: "inqury" %>
                  <%= link_to "一覧へ戻る", rooms_path, class: "card_button1" %>
                 <%= link_to "レビューを書く", room_path(@room), class: "card_button2" %>
                 </div>
@@ -51,9 +52,14 @@
 
       <% @reviews.each do |review| %>
         <div class="border_layout username_link">
-     			<div><i class="fas fa-arrow-circle-right"></i></div>
-     		  <%= link_to review.user.username, user_path(review.user) %>
+
+     			<div>
+           <%= link_to user_path(review.user) do %>
+            <i class="fas fa-arrow-circle-right"></i></div>
+            <%= review.user.username %>
+            <% end %>
     	  </div>
+
         <div class="border_layout">
            <%= form_with model: [@room, review], local: true do |f| %>
              <div class="comment_evaluation">
@@ -78,7 +84,7 @@
          <div class="border_layout profile_page">
            <%= link_to 'プロフィール', user_path(review.user) %></div>
         <div class="border_layout profile_reply">
-          <%= link_to '返事を書く', room_review_path(room_id: @room.id, id: review.id) %>
+          <%= link_to 'コメント', room_review_path(room_id: @room.id, id: review.id) %>
         </div>
         <div class="border_layout favorites">
 					<% if current_user.favorites?(review) %>

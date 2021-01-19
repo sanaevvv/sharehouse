@@ -19,7 +19,7 @@ class User < ApplicationRecord
   has_many :follower_users, through: :followerds, source: :follower #自分がフォローされている人
 
   # ActiveStorage
-  has_one_attached :image
+  # has_one_attached :image
   has_one_attached :profile_image
 
   validates :username, presence: true

@@ -9,13 +9,15 @@
 　　　　　
           <div class="logout_gr">
                <p class="site_display">
-                <i class="far fa-arrow-alt-circle-right"></i>&nbsp;
-                    <%= link_to "サイトを表示", rooms_path, class: "sharehouse_list admin_page" %>
+                    <%= link_to rooms_path do %>
+                    <i class="far fa-arrow-alt-circle-right"></i>
+                    <span class="admin_page">サイトを表示</span>
+                    <% end %>
                </p>
 
                <%= link_to "新規登録", new_admin_room_path, class: "header_new btn_link" %>
                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
           </div>
-       
+
      </header>
 </div>

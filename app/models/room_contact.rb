@@ -1,0 +1,2 @@
+class RoomContact < ApplicationRecord
+end

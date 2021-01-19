@@ -3,7 +3,7 @@
      <h2 class="card_title"><%= @room.name %></h2>
      <div class="card_inner">
           <div class="w_50">
-               <%= image_tag @room.image if @room.image.attached? %>
+               <img src="<%= room_image_url(@room) %>" alt="" />
           </div>
           <div class="w_50 card_right">
                <div class="star_review">

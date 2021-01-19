@@ -15,9 +15,9 @@ class RoomsController < ApplicationController
   end
 
   def edit
-
+    @room = Room.find(params[:id])
+    @review = Review.new
   end
-
 
 
 end

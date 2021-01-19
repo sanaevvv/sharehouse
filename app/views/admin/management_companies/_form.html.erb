@@ -1,0 +1,31 @@
+
+<div class="form_container">
+
+  <%= form_with model: model, url: url, local: true do |f| %>
+
+  <div class="field">
+  <%= f.label :name, '管理会社名' %><br>
+  <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  <%= f.label :tel, '電話番号' %><br>
+  <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+  <%= f.label :tel, 'Email' %><br>
+  <%= f.text_field :tel %>
+  </div>
+   <div class="field">
+  <%= f.label :url, 'URL' %><br>
+  <%= f.text_field :url %>
+  </div>
+
+
+  <div class="comment_button_gr">
+  <%= f.submit '登録する', class:"card_button1" %>
+  <%= link_to 'シェアハウス一覧に戻る', admin_rooms_path, class:"card_button2 mt30" %>
+  </div>
+
+  <% end %>
+
+</div>

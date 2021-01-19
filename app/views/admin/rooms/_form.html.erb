@@ -1,7 +1,6 @@
 
-<div class="button_gr">
-    <%= link_to '一覧に戻る', admin_rooms_path, class:"form_button" %>
-    <%= link_to '写真一覧', admin_room_photos_path(room_id: room.id), class:"form_button" %>
+<div class="photo_link_buttons">
+    <%= link_to '一覧に戻る', admin_rooms_path, class:"card_button1" %>
 </div>
 
 <%= form_with model:[:admin, room], local: true do |f| %>
@@ -16,12 +15,17 @@
           <div class="description"><%= f.text_area :description, rows: 5 %></div>
 
           <div><%= f.label :tag_list, "タグの表示" %></div>
-          <div><%= f.text_field:tag_list, value: room.tag_list.join(',') %></div>
+          <div><%= f.text_field :tag_list, value: room.tag_list.join(',') %></div>
 
 
-          <div><%= f.label :image, "画像" %></div>
+          <div><%= f.label :image, "イメージ画像" %></div>
           <div><%= f.file_field :image %></div>
 
+          <%= f.hidden_field :management_company_id, value: room.management_company %>
+
+
           <div><%= f.submit '登録する', class:"button" %></div>
+
+
      </div>
 <% end %>
