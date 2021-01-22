@@ -129,6 +129,28 @@ img {
   }
 }
 
+.header_login_gr{
+  display:flex;
+  align-items: center;
+  gap: 10px;
+  .btn_link{
+    border: 2px solid grey;
+    padding: 10px 40px;
+    border-radius : 3px;
+  }
+  .header_login{
+  @extend .login;
+  padding: 2px 10px;
+  border-radius : 2px;
+  }
+  .header_new{
+    @extend .new;
+    padding: 2px 10px;
+    margin-left: 10px;
+    border-radius : 2px;
+  }
+}
+
 
 
 
