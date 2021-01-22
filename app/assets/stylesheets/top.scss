@@ -1,6 +1,9 @@
 
 .login_gr{
   text-align: center;
+  @media screen and (min-width:768px){
+  width: 40%;
+}
   .login{
       background-color: #fff;
       border: 2px solid grey;
