@@ -42,17 +42,17 @@
 <% end %>
 
 <script data-turbolinks-eval="false">
-var mySwiper = new Swiper('.swiper-container', {
+const swiper = new Swiper('.swiper-container', {
   effect: 'cover-flow',
   centeredSlides: true,
   slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 100,
+    modifier: 1,
+    slideShadows: true,
+  },
   loop: true,
   speed: 1000,
   autoplay: {
