@@ -124,3 +124,13 @@ li{
   }
 
 
+.swiper-container{
+  width:100%;
+  height:600px;
+  padding-top:50px;
+  padding-bottom:50px;
+}
+
+div[class^="swiper-button"]{
+  color: rgba(255, 255, 255, 0.776);
+}

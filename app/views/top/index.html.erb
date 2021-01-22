@@ -44,21 +44,27 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
 
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
+
     </div>
 <% end %>
 
-<script>
+<script data-turbolinks-eval="false">
 var mySwiper = new Swiper('.swiper-container', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
+  effect: 'cover-flow',
 
+  coverflowEffect:{
+  },
+  slidesPerView:3;
+  centeredSlides: true;
+  speed: 1000;
+  autoplay: {
+    delay: 300;
+  }
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
   },
+  loop: true;
 
   // Navigation arrows
   navigation: {
@@ -66,9 +72,8 @@ var mySwiper = new Swiper('.swiper-container', {
     prevEl: '.swiper-button-prev',
   },
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+
+
+
 })
 </script>
