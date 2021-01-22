@@ -142,12 +142,16 @@ img {
   @extend .login;
   padding: 2px 10px;
   border-radius : 2px;
+  background: #fff;
+  color: grey;
   }
   .header_new{
     @extend .new;
     padding: 2px 10px;
     margin-left: 10px;
     border-radius : 2px;
+    color: #fff;
+    background: grey;
   }
 
 

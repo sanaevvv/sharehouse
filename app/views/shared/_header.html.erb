@@ -16,7 +16,7 @@
                     </div>
                     <% end %>
 
-                          <%= link_to "マイページ", user_path(current_user), class: "my_page_btn" %>
+                         <%= link_to "マイページ", user_path(current_user), class: "my_page_btn" %>
                          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout btn_link" %>
                     <% else %>
                          <p class="current_user">ようこそ <%= current_user.username %>さん</p>
