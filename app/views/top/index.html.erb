@@ -33,7 +33,7 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <% @rooms.each do |room| %>
-              <img src="<%= room_image_url(room) %>" alt="" />
+              <div class="swiper-wrapper"><img src="<%= room_image_url(room) %>" alt="" /></div>
             <% end %>
 
         </div>
@@ -41,9 +41,8 @@
         <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
+        <%# <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> %>
 
     </div>
 <% end %>
@@ -63,4 +62,5 @@ var mySwiper = new Swiper('.swiper-container', {
     el: '.swiper-pagination',
   },
 });
+
 </script>

@@ -20,10 +20,6 @@
     }
 }
 
-.swiper-container {
-    width: 1200px;
-    height: 300px;
-}
 
 
 
@@ -131,6 +127,10 @@ li{
   padding-bottom:50px;
 }
 
-div[class^="swiper-button"]{
-  color: rgba(255, 255, 255, 0.719);
+// div[class^="swiper-button"]{
+//   color: rgba(255, 255, 255, 0.719);
+// }
+
+.swiper-pagination{
+   color: rgba(255, 255, 255, 0.719);
 }
