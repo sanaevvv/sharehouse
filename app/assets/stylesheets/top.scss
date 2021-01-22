@@ -131,6 +131,16 @@ li{
 //   color: rgba(255, 255, 255, 0.719);
 // }
 
-.swiper-pagination{
+.swiper-pagination-bullet-active{
    color: rgba(255, 255, 255, 0.719);
+}
+
+.swiper-slide{
+   background-position: center;
+      background-size: cover;
+  width: 500px;
+  height:450px;
+  a{
+    object-fit: cover;
+  }
 }
