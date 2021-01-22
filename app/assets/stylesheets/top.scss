@@ -3,7 +3,7 @@
   text-align: center;
   @media screen and (min-width:768px){
   width: 40%;
-}
+
   .login{
       background-color: #fff;
       border: 2px solid grey;
@@ -11,13 +11,13 @@
       margin: 30px 0;
       letter-spacing: .1rem;
       }
-  .new{
-      border: 2px solid grey;
-      background-color: grey;
-      letter-spacing: .1rem;
-      color:#fff;
+    .new{
+        border: 2px solid grey;
+        background-color: grey;
+        letter-spacing: .1rem;
+        color:#fff;
+    }
   }
-
 
 
 
