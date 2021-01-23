@@ -121,7 +121,7 @@ li{
 
 
 .swiper-container{
-  width:100%;
+  max-width:1200px;
   padding-top:50px;
   padding-bottom:50px;
 }
@@ -131,7 +131,7 @@ li{
 // }
 
 .swiper-pagination-bullet-active{
-   background-color: #eac4c9;
+   background-color: #ecb1b8;
 }
 
 .swiper-slide{
