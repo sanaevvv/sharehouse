@@ -121,7 +121,7 @@ li{
 
 
 .swiper-container{
-  max-width:1200px;
+  max-width:100%;
   padding-top:50px;
   padding-bottom:50px;
 }
@@ -146,4 +146,10 @@ li{
 }
 .swiper-pagenation{
   margin-top:30px;
+}
+
+.form_container_s{
+    max-width: 400px;
+    margin: 60px auto;
+    text-align: left;
 }

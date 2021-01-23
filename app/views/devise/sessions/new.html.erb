@@ -1,4 +1,4 @@
-<div class="form_container">
+<div class="form_container_s">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <div class="field">
@@ -18,7 +18,7 @@
       </div>
     <% end %>
 
-    <%= f.submit "ログイン", class:"link_button mt50" %>
+    <%#= f.submit "ログイン", class:"login btn_link mt50" %>
 
 
   <% end %>
