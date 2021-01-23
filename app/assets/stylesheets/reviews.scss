@@ -31,8 +31,10 @@
 
      .bookmark{
           text-align: right;
-          color:royalblue;
+          color:#8da7c4;
+          @media screen and (min-width:381px){
           padding-right:15px;
+          }
      }
      .card_title{
           font-weight:bold;
