@@ -6,12 +6,19 @@
      margin-top:30px;
 }
 
-     .w_50{
-          width: 50%;
-          padding: 15px;
+
+
      @media screen and (max-width:380px){
+          .w_50{
           width: 100%;
          padding-top: 10px;
+     }
+}
+ @media screen and (min-width:381px){
+     .w_50{
+       width: 50%;
+       padding: 15px;
+      }
 }
 
 
@@ -22,7 +29,7 @@
           object-fit: cover;
           }
 
-          }
+
           .star_review{
                display:flex;
                align-items: center;
