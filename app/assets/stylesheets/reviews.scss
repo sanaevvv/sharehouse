@@ -16,6 +16,8 @@
       .card_inner{
           display:flex;
           position:relative;
+           min-width: 100%;
+               flex-wrap: wrap;
 .link_buttons{
      display:flex;
      align-items: center;
@@ -29,7 +31,7 @@
 
      .bookmark{
           text-align: right;
-          color:#333;
+          color:#da86da;
           padding-right:15px;
      }
      .card_title{
@@ -40,6 +42,7 @@
 
      .w_50{
           width: 50%;
+          min-width: 100%;
           img{
           width: 100%;
           height: 260px;

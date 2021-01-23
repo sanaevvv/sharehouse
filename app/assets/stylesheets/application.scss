@@ -73,6 +73,7 @@ img {
             font-weight : bold;
             color: #333;
             font-family: 'Sansita Swashed', cursive;
+            white-space: nowrap;
 }
 
       .sharehouse_list{
@@ -135,7 +136,7 @@ img {
   display:flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 5px;
   flex-wrap: wrap;
 }
   .btn_link{
@@ -284,7 +285,6 @@ h2 {
 .site_display{
   display:flex;
   align-items: center;
-  margin-right: 20px;
 
   a{
    color: rgb(72, 72, 72);
