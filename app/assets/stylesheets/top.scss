@@ -122,9 +122,8 @@ li{
 
 .swiper-container{
   width:100%;
-  height: 350px;
   padding-top:50px;
-  padding-bottom:80px;
+  padding-bottom:50px;
 }
 
 // div[class^="swiper-button"]{
@@ -144,4 +143,7 @@ li{
     object-fit: cover;
     height: 100%;
   }
+}
+.swiper-pagenation{
+  padding-top:30px;
 }
