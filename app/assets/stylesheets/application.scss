@@ -33,6 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   background: snow;
+  max-height: 100vh;
 }
 
 
@@ -64,7 +65,8 @@ img {
   align-items: baseline;
   .title_gr{
       display:flex;
-      align-items: baseline;
+      align-items: center;
+      flex-wrap: wrap;
       margin-right: auto;
       .title{
             font-size: 2rem;
@@ -132,6 +134,9 @@ img {
 .header_login_gr{
   display:flex;
   align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
 }
   .btn_link{
     border: 2px solid grey;
@@ -148,7 +153,6 @@ img {
   .header_new{
     @extend .new;
     padding: 2px 10px;
-    margin-left: 10px;
     border-radius : 2px;
     color: #fff;
     background: grey;
