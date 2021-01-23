@@ -62,7 +62,7 @@ img {
   margin: 0 auto;
   padding: 10px 4vw;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   .title_gr{
       display:flex;
       align-items: center;
@@ -223,7 +223,6 @@ h2 {
 
 
 .footer_fixed{
-  min-height: 100vh;
   position:relative;
   padding-bottom:50px;
 
