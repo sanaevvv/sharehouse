@@ -4,7 +4,8 @@
     <title>シェアハウス</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- 各種デバイス対応 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <!-- リセットCSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
     <!-- スワイパーCSS -->
@@ -18,7 +19,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- JS -->
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
 
     <script>
       (function(d) {
