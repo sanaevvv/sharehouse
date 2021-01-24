@@ -116,6 +116,7 @@
     display:flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 
   .profile_img{
     width: 200px;
@@ -164,11 +165,14 @@
       border: 2px solid rgb(238, 173, 182);
   }
 .user_name{
-  width: 150px;
   padding-left: 10px;
   position: relative;
-   @media screen and(max-width:380px) {
+   @media screen and(max-width:812px) {
    width: 100%;
+   padding-bottom: 40px;
+  }
+  @media screen and(min-width:813px){
+     width: 150px;
   }
  .link_gr{
     display:flex;
