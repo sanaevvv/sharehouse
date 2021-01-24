@@ -63,6 +63,10 @@ img {
   padding: 10px 4vw;
   display: flex;
   align-items: center;
+
+  // @media screen and (max-width:360px){
+
+  }
   .title_gr{
       display:flex;
       align-items: center;
@@ -130,7 +134,7 @@ img {
     }
 
   }
-}
+
 
 .header_login_gr{
   display:flex;
