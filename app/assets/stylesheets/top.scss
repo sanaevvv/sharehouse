@@ -58,7 +58,7 @@ li[class^="circle"]:not(.circle_parts){
     position:absolute;
     top: 100px;
     left: 0;
-    width: 200px;
+    width: 180px;
     height: 150px;
     line-height: 150px;
     border-radius: 82% 81% 79% 67% / 84% 82% 87% 75%;
@@ -72,7 +72,6 @@ li[class^="circle"]:not(.circle_parts){
     position:absolute;
     top: 280px;
     left: 50%;
-    transform: translateX(-50%);
     width: 200px;
     height: 180px;
     line-height: 180px;
@@ -91,8 +90,8 @@ li[class^="circle"]:not(.circle_parts){
     top:100px;
     right: 0;
     width: 150px;
-    height: 100px;
-    line-height: 100px;
+    height: 130px;
+    line-height: 130px;
     border-radius:43% 57% 37% 63% / 55% 47% 53% 45%;
     @media screen and (max-width:380px){
      top: 120px;
@@ -123,8 +122,8 @@ li[class^="circle"]:not(.circle_parts){
     top:400px;
     right: 50px;
     width: 200px;
-    height: 150px;
-    line-height: 150px;
+    height: 180px;
+    line-height: 180px;
     border-radius: 79% 75% 72% 82% / 75% 77% 70% 65%;
     @media screen and (max-width:380px){
     top: 460px;
