@@ -46,6 +46,9 @@
   width: 600px;
   margin:50px auto;
   text-align: right;
+  @media screen and (max-width:380px){
+    width: auto;
+  }
 
   .management_back{
     font-size: 90%;
