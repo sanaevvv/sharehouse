@@ -81,7 +81,7 @@ li[class^="circle"]:not(.circle_parts){
        width: 170px;
     height: 150px;
     line-height: 150px;
-     top: 330px;
+     top: 340px;
      left: 30%;
   }
 }
@@ -95,7 +95,8 @@ li[class^="circle"]:not(.circle_parts){
     line-height: 100px;
     border-radius:43% 57% 37% 63% / 55% 47% 53% 45%;
     @media screen and (max-width:380px){
-     top: 110px;
+     top: 120px;
+     width: 130px;
      right: 4vw;
   }
 }
@@ -128,6 +129,7 @@ li[class^="circle"]:not(.circle_parts){
     @media screen and (max-width:380px){
     top: 460px;
     right: 4vw;
+    width: 180px;
   }
   }
 }
