@@ -33,7 +33,7 @@
   font-family: 'Pacifico', cursive;
   padding-top: 20px;
   @media screen and (max-width:380px){
-  font-size: 7rem;
+  font-size: 6.5rem;
  }
 }
 
@@ -109,11 +109,10 @@ li[class^="circle"]:not(.circle_parts){
     line-height: 200px;
     border-radius: 52% 48% 48% 52% / 55% 47% 53% 45%;
      @media screen and (max-width:380px){
-    top: 220px;
-    right: 4vw;
-    width: 180px;
-    height: 150px;
-    line-height: 150px;
+    top: 230px;
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
   }
   }
 
