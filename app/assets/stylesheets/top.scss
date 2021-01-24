@@ -77,11 +77,11 @@ li[class^="circle"]:not(.circle_parts){
     line-height: 180px;
     border-radius: 49% 51% 43% 57% / 51% 47% 53% 49%;
      @media screen and (max-width:380px){
-       width: 170px;
+       width: 150px;
     height: 150px;
     line-height: 150px;
      top: 340px;
-     left: 30%;
+     left: 4vw;
   }
 }
 
@@ -109,7 +109,7 @@ li[class^="circle"]:not(.circle_parts){
     line-height: 200px;
     border-radius: 52% 48% 48% 52% / 55% 47% 53% 45%;
      @media screen and (max-width:380px){
-    top: 230px;
+    top: 260px;
     left: 160px;
     width: 160px;
     height: 160px;
@@ -128,7 +128,9 @@ li[class^="circle"]:not(.circle_parts){
     @media screen and (max-width:380px){
     top: 460px;
     right: 4vw;
-    width: 180px;
+    width: 170px;
+    height: 170px;
+    line-height: 170px;
   }
   }
 }
