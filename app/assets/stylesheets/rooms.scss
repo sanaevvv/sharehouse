@@ -228,6 +228,21 @@ width: 100%;
 text-align: center;
  }
 }
+.back_to_index{
+  color:#fff;
+background-color: grey;
+padding: 3px 8px;
+border-radius: 3px;
+font-size: 90%;
+border:2px solid grey;
+letter-spacing: -0.03em;
+ @media screen and (max-width:380px){
+padding: 5px 18px;
+text-align: center;
+ }
+
+}
+
 .card_button2{
   background-color: #fff;
   color: grey;
