@@ -141,10 +141,16 @@ textarea{
      width: 100%;
      grid-template-columns: 130px 8vw 1fr 115px 100px 30px;
      word-break : break-all;
+      @media screen and (max-width:380px){
+      grid-template-columns: 1fr;
+     }
 
      .grid_ttl{
      border-bottom: 2px solid lightgrey;
      font-size: 90%;
+     @media screen and (max-width:380px){
+       display:none;
+     }
           a{
                color: #171717;
           }
