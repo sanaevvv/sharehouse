@@ -239,7 +239,12 @@
   display: flex;
   .tab_item{
     width:15%;
+    min-width: 70px;
     margin-right:10px;
+     @media screen and (max-width:380px){
+ margin-right:5px;
+ }
+
     a{
       display:flex;
       justify-content:center;
@@ -270,17 +275,24 @@
 
 .grid_table_mypage{
     display: grid;
-    grid-template-columns: 180px 9vw 1fr 120px 40px;
+    grid-template-columns: 160px 10vw 1fr 120px 40px;
     font-size: 80%;
+     @media screen and (max-width:380px){
+    grid-template-columns: 1fr;
+ }
 
       .grid_ttl{
      border-bottom: 2px solid lightgrey;
+   @media screen and (max-width:380px){
+display:none;
+ }
+
           a{
                color: #171717;
           }
      }
      .border_layout{
-     padding: 7px 15px 7px 0;
+     padding: 7px 5px 7px 0;
      border-bottom: 1px solid lightgrey;
      font-size: 1.5rem;
      color: #333;
