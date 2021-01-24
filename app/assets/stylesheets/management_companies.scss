@@ -8,7 +8,7 @@
 }
 .management_show,
 .management_new{
-  padding: 2px 8px;
+  padding: 5px 20px;
   color: #8da7c4;
   border: 2px solid #8da7c4;
   margin-right:20px;
@@ -16,7 +16,11 @@
   font-weight: bold;
   background-color: #fff;
   font-size:90%;
+  @media only screen and (max-width:380px){
+    width:100%;
+  }
 }
+
 
 .management_inner{
   h2{

@@ -41,6 +41,18 @@
           }
 
      }
+.admin_link_buttons{
+     padding: 0 15px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
 
 
 
