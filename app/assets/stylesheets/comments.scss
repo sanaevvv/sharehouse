@@ -36,8 +36,14 @@
 }
 
 .comment_button_gr{
+  @media only screen and (min-width: 381px){
   display: flex;
   align-items: center;
+  gap: 10px;
+  }
+  @media only screen and (max-width: 380px){
+  width: 100%;
+  }
 }
 
 
