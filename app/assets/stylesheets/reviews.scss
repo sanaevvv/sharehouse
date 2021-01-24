@@ -19,7 +19,7 @@
            min-width: 100%;
             flex-wrap: wrap;
             @media screen and (max-width:380px){
-             padding-bottom: 200px;
+             padding-bottom: 100px;
   }
 .link_buttons{
      display:flex;
@@ -47,8 +47,10 @@
      .bookmark{
           text-align: right;
           color:#8da7c4;
-          @media screen and (min-width:381px){
           padding-right:15px;
+          @media screen and (max-width:380px){
+          letter-spacing: 0;
+          padding-right: 0;
           }
      }
      .card_title{
