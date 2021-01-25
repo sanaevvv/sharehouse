@@ -3,14 +3,13 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .photo_gallery{
-  width: 300px;
-  margin-bottom:20px;
+  width: 310px;
   background-color: #fff;
   box-shadow: 0 0 7px 0 rgb(234, 196, 201);
    .photo_link{
      display: flex;
      justify-content: center;
-     gap: 10px;
+     gap: 15px;
      margin: 0 10px;
       .button{
         padding:5px 7px;
