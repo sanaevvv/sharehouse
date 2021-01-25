@@ -99,7 +99,7 @@
 .evaluation{
   display: flex;
   flex-direction: row-reverse;
-  justify-content: center;
+  align-items: center;
      input[type='radio']{
      display: none;
      }
@@ -120,15 +120,11 @@
           }
      }
 }
-.fa-star{
-  position: relative;
 .star_text{
   padding-right: 10px;
-  position: absolute;
-  top:50%;
-  transform:translateY(-50%);
+  color: grey
 }
-}
+
 
 .evaluation label:hover,
 .evaluation label:hover ~ label,
