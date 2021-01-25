@@ -84,7 +84,7 @@
 		<div class="star_text">管理会社対応</div>
 	</div>
 
-  </div>
+
   <div>
 		<%= f.hidden_field :room_id, value: room.id %>
 		<%= f.text_area :comment, row: 5, placeholder: "コメントをご記入ください", class: "textarea" %>
@@ -93,7 +93,7 @@
 		<%= link_to "他のレビューを見る", room_reviews_path(room), class: "link_button" %>
 		</div>
 	</div>
-
+</div>
 <% end %>
 
 
