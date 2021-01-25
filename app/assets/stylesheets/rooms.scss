@@ -94,11 +94,10 @@
      }
 }
 .grid_new{
-     width: 500px;
-     margin:0 auto;
-    //  @media only screen and (max-width:380px){
-    //    width: 100%;
-    //  }
+    width: 100%;
+    max-width: 500px;
+    margin:0 auto;
+    padding:0 4vw
 }
 
 input[type="text"],
