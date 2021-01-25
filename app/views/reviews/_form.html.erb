@@ -11,9 +11,9 @@
      </div>
 <% end %>
 
-
-<%= form_with model: [room, review], local: true do |f| %>
 <div class="evaluation_form_container">
+<%= form_with model: [room, review], local: true do |f| %>
+<div>
  <div class="evaluation">
 		<%= f.radio_button :score, 5, id:"star5" %>
 			<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
@@ -83,7 +83,7 @@
 			<label for="star1"><span class="text">最悪</span><i class="fas fa-star star_text_relative"></i></label>
 		<div class="star_text">管理会社対応</div>
 	</div>
-
+</div>
 
   <div>
 		<%= f.hidden_field :room_id, value: room.id %>
