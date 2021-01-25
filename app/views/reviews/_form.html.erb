@@ -14,7 +14,7 @@
 
 <%= form_with model: [room, review], local: true do |f| %>
 
-　<div class="evaluation">
+ <div class="evaluation">
 		<%= f.radio_button :score, 5, id:"star5" %>
 			<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
 		<%= f.radio_button :score, 4, id:"star4" %>
@@ -57,7 +57,7 @@
 	</div>
 
 		<%= f.hidden_field :room_id, value: room.id %>
-		<%= f.text_area :comment, row: 5, class: "textarea" %>
+		<%= f.text_area :comment, row: 5, placeholder: "コメントをご記入ください", class: "textarea" %>
 		<%= f.submit "保存", class: "button" %>
 		<%= link_to "他のレビューを見る", room_reviews_path(room), class: "link_button" %>
 
