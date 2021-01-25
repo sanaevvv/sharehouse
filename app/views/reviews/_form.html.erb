@@ -58,8 +58,10 @@
 
 		<%= f.hidden_field :room_id, value: room.id %>
 		<%= f.text_area :comment, row: 5, placeholder: "コメントをご記入ください", class: "textarea" %>
+		<div class="link_buttons">
 		<%= f.submit "保存", class: "button" %>
 		<%= link_to "他のレビューを見る", room_reviews_path(room), class: "link_button" %>
+		</div>
 
 <% end %>
 
