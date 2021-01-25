@@ -25,6 +25,35 @@
 			<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
 		<%= f.radio_button :score, 1, id:"star1" %>
 			<label for="star1"><span class="text">最悪</span><i class="fas fa-star"></i></label>
+		<div class="star_text">清潔さ</div>
+	</div>
+
+	<div class="evaluation">
+		<%= f.radio_button :score, 5, id:"star5" %>
+			<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 4, id:"star4" %>
+			<label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 3, id:"star3" %>
+			<label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 2, id:"star2" %>
+			<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 1, id:"star1" %>
+			<label for="star1"><span class="text">最悪</span><i class="fas fa-star"></i></label>
+		<div class="star_text">静かさ</div>
+	</div>
+
+	<div class="evaluation">
+		<%= f.radio_button :score, 5, id:"star5" %>
+			<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 4, id:"star4" %>
+			<label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 3, id:"star3" %>
+			<label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 2, id:"star2" %>
+			<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
+		<%= f.radio_button :score, 1, id:"star1" %>
+			<label for="star1"><span class="text">最悪</span><i class="fas fa-star"></i></label>
+		<div class="star_text">管理会社対応</div>
 	</div>
 
 		<%= f.hidden_field :room_id, value: room.id %>
