@@ -11,9 +11,9 @@
      </div>
 <% end %>
 
-<div class="evaluation_form_container">
-<%= form_with model: [room, review], local: true do |f| %>
 
+<%= form_with model: [room, review], local: true do |f| %>
+<div class="evaluation_form_container">
  <div class="evaluation">
 		<%= f.radio_button :score, 5, id:"star5" %>
 			<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
