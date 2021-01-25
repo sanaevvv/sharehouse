@@ -1,4 +1,4 @@
-<div class="evaluation_form_container">
+
 <p class="review">レビューを書く</p>
 <% if review.errors.any? %>
      <div>
@@ -11,7 +11,7 @@
      </div>
 <% end %>
 
-
+<div class="evaluation_form_container">
 <%= form_with model: [room, review], local: true do |f| %>
 
  <div class="evaluation">
