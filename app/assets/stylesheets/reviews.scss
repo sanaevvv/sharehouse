@@ -97,12 +97,14 @@
 
 
 .evaluation{
-  padding: 0 50px;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   margin-bottom: 10px;
   font-size: 90%;
+  @media only screen and (min-width:381px){
+     padding: 0 50px;
+  }
      input[type='radio']{
      display: none;
      }
@@ -218,4 +220,5 @@ textarea{
 }
 .evaluate_buttons{
   display: flex;
+  gap:10px;
 }
