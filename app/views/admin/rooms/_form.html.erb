@@ -3,7 +3,7 @@
     <%= link_to '一覧に戻る', admin_rooms_path, class:"back_to_index" %>
 </div>
 
-<%= form_with model:model, local: true do |f| %>
+<%= form_with model: model, local: true do |f| %>
      <div class="grid_new">
           <div><%= f.label :name, "シェアハウス名" %></div>
           <div><%= f.text_field :name %></div>
