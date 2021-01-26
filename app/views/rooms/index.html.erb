@@ -27,6 +27,7 @@
                     <% end %>
 	                  </div>
                     <div class="w_50 card_right">
+                    <div class="card_review">
                         <div class="star_review">
                             <span>清潔さ</span>
                             <div class="star-rating">
@@ -79,6 +80,7 @@
                                   <%= room.avg_score %>点（<%= room.reviews.count %>件）
                             </div>
                          </div>
+                </div>
 
                          <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">&nbsp;(光熱費込)</span></p>
                          <%=simple_format(room.description, class: 'desc') %>
