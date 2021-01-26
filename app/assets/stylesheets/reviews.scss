@@ -224,9 +224,10 @@ textarea{
 }
 .evaluation_form_container{
   display: flex;
-  gap: 10px;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .evaluate_layout{
-  width: 100%;
+  max-width: 350px;
+  width: 50%;
 }
