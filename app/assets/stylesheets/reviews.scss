@@ -3,12 +3,17 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .border{
-     box-shadow: 0 0 1px 1px rgba(135, 207, 235, 0.336);
-     border: 2px solid #DBE6FF;
-     background-color: #f4f6f9;
-     margin:20px 0;
-     padding: 20px;
-
+  border-radius: 15px;
+     box-shadow: 0 0 0 9px #f4f6f9;
+    border: 3px dashed #DBE6FF;
+    background-color: #f4f6f9;
+    margin: 25px 0;
+    padding: 20px;
+  .card_review{
+   color: #fff;
+   background-color: rgba(53, 53, 53, 0.338);
+   padding: 0 20px;
+  }
 
      .buttons{
           position:relative;
