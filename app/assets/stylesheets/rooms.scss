@@ -34,14 +34,15 @@
                display:flex;
                align-items: center;
                width:100%;
+               flex-direction: row;
+               font-size: 90%;
                .span{
-                display: inline-block;
-                text-align: right;
+                flex:1;
                }
 
                .star-rating {
                     width: 5em;
-                    font-size: 1.5rem;
+                    font-size: 1.7rem;
                     position: relative;
                     .star-rating-front {
                     position: absolute;
