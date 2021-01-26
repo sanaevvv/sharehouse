@@ -37,10 +37,10 @@ module Admin
 
           def update
                room = Room.find_by(id: params[:id])
-               if room.save
+               if room.update(room_params)
                redirect_to admin_rooms_path, notice: "#{room.name}を更新しました。"
                else
-                    render :edit
+                  render :edit
                end
           end
 
