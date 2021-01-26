@@ -102,9 +102,6 @@
   align-items: center;
   margin-bottom: 10px;
   font-size: 90%;
-  @media only screen and (min-width:381px){
-     padding: 0 50px;
-  }
      input[type='radio']{
      display: none;
      }
@@ -149,7 +146,7 @@
 textarea{
      width: 100%;
      padding: 10px;
-     height: 200px;
+     height: 230px;
      border: 1px solid lightgrey;
      margin-bottom: 10px;
      color: #333;
@@ -226,8 +223,9 @@ textarea{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 .evaluate_layout{
-  max-width: 350px;
-  width: 50%;
+  max-width: 360px;
+  width: 100%;
 }
