@@ -53,7 +53,7 @@ module Admin
 
           private
           def room_params
-               params.require(:room).permit(:name, :price, :description, :maxprice, :tag_list, :image, :management_company_id)
+               params.require(:room).permit(:name, :price, :description, :maxprice, :tag_list, :image, :management_company_id, :admin)
           end
      end
 end
