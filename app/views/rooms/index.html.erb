@@ -27,64 +27,64 @@
                     <% end %>
 	                  </div>
                     <div class="w_50 card_right">
-                         <div class="star_review evaluation_background">
-                              <span>清潔さ</span>
-                              <div class="star-rating">
-                                   <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
-                                   <div class="star-rating-back">★★★★★</div>
-                              </div>
-                              <div class="average-score-display">
-                                   <%= room.avg_score %>点（<%= room.reviews.count %>件）
-                              </div>
+                        <div class="star_review">
+                            <span>清潔さ</span>
+                            <div class="star-rating">
+                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                                  <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                                  <%= room.avg_score %>点（<%= room.reviews.count %>件）
+                            </div>
+                        </div>
+                        <div class="star_review">
+                            <span>静かさ</span>
+                            <div class="star-rating">
+                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                                  <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                                  <%= room.avg_score %>点（<%= room.reviews.count %>件）
+                            </div>
                          </div>
-                         <div class="star_review star_review_index">
-                              <span>静かさ</span>
-                              <div class="star-rating">
-                                   <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
-                                   <div class="star-rating-back">★★★★★</div>
-                              </div>
-                              <div class="average-score-display">
-                                   <%= room.avg_score %>点（<%= room.reviews.count %>件）
-                              </div>
-                         </div>
-                         <div class="star_review star_review_index">
-                              <span>設備充実度</span>
-                              <div class="star-rating">
-                                   <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
-                                   <div class="star-rating-back">★★★★★</div>
-                              </div>
-                              <div class="average-score-display">
-                                   <%= room.avg_score %>点（<%= room.reviews.count %>件）
-                              </div>
-                         </div>
-
-                         <div class="star_review star_review_index">
-                              <span>人間関係</span>
-                              <div class="star-rating">
-                                   <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
-                                   <div class="star-rating-back">★★★★★</div>
-                              </div>
-                              <div class="average-score-display">
-                                   <%= room.avg_score %>点（<%= room.reviews.count %>件）
-                              </div>
+                         <div class="star_review">
+                            <span>設備充実度</span>
+                            <div class="star-rating">
+                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                                  <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                                  <%= room.avg_score %>点（<%= room.reviews.count %>件）
+                            </div>
                          </div>
 
-                         <div class="star_review star_review_index">
-                              <span>管理会社対応</span>
-                              <div class="star-rating">
-                                   <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
-                                   <div class="star-rating-back">★★★★★</div>
-                              </div>
-                              <div class="average-score-display">
-                                   <%= room.avg_score %>点（<%= room.reviews.count %>件）
-                              </div>
+                         <div class="star_review">
+                            <span>人間関係</span>
+                            <div class="star-rating">
+                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                                  <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                                  <%= room.avg_score %>点（<%= room.reviews.count %>件）
+                            </div>
+                         </div>
+
+                         <div class="star_review">
+                            <span>管理会社対応</span>
+                            <div class="star-rating">
+                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage %>%">★★★★★</div>
+                                  <div class="star-rating-back">★★★★★</div>
+                            </div>
+                            <div class="average-score-display">
+                                  <%= room.avg_score %>点（<%= room.reviews.count %>件）
+                            </div>
                          </div>
 
                          <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">&nbsp;(光熱費込)</span></p>
                          <%=simple_format(room.description, class: 'desc') %>
 
                          <%= render 'tag_list', tag_list: room.tag_list %>
-                    </div>
+                      </div>
 
                 <div class="link_buttons">
                     <%= link_to "問い合わせする", new_room_room_contact_path(room_id: room.id), class: "inqury" %>
