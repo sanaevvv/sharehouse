@@ -11,8 +11,9 @@
      </div>
 <% end %>
 
-<div class="evaluation_form_container">
+
 <%= form_with model: [room, review], local: true do |f| %>
+<div class="evaluation_form_container">
 <div>
  <div class="evaluation">
 		<%= f.radio_button :score, 5, id:"star5" %>
@@ -85,7 +86,7 @@
 	</div>
 </div>
 
-  <div>
+  <div class="evaluate_layout">
 		<%= f.hidden_field :room_id, value: room.id %>
 		<%= f.text_area :comment, row: 5, placeholder: "コメントをご記入ください", class: "textarea" %>
 		<div class="evaluate_buttons">
