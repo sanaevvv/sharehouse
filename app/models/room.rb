@@ -12,14 +12,14 @@ class Room < ApplicationRecord
   # acts_as_taggable_on :tagsと同じ意味のエイリアス
   # tags のなかにIDやら名前などが入る。イメージ的には親情報。
 
-       def avg_score
+       def avg_score_clean
               unless self.reviews.empty?
                      reviews.average(:score).to_f.round(2)
               else
                      0.0
               end
        end
-       def review_score_percentage
+       def review_score_percentage_clean
               unless self.reviews.empty?
                      reviews.average(:score).to_f*100/5.round(2)
               else

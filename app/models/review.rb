@@ -6,5 +6,9 @@ class Review < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   validates :score, presence: true
- 
+  validates :Quiet_score, presence: true
+  validates :Facility_score, presence: true
+  validates :Relationships_score, presence: true
+  validates :Management_score, presence: true
+
 end
