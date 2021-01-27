@@ -34,7 +34,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:room_id])
+    @room = Room.find_by(id: params[:room_id])
     @review = Review.find(params[:id])
     @comment = @review.comments.build
   end
