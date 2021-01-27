@@ -8,13 +8,15 @@
     border: 3px dashed #DBE6FF;
     background-color: #f4f6f9;
     margin: 25px 0;
-    padding: 20px;
+    padding: 15px;
   .card_review{
+   margin: .5em auto;
    color: dimgray;
    background-color: #eeadb640;
+   box-shadow: 0 0 5px 5px #eeadb640;
    padding: 5px 20px;
-   border-top-right-radius: 20px;
-   border-bottom-left-radius: 20px;
+   border-radius: 5px;
+       line-height: 1.55;
   }
 
      .buttons{

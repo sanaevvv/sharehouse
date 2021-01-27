@@ -170,12 +170,16 @@ input[type="submit"]{
      background-color: lightpink;
      display:inline-block;
      font-size: 1.4rem;
-     margin:10px 0;
+     margin:8px 0;
 }
 
 .desc{
      color: grey;
      font-size: 1.4rem;
+         line-height: 1.55;
+}
+.star_text_gr{
+  margin: .5em auto;
 }
 .inqury{
 text-align: center;
@@ -257,5 +261,3 @@ text-align: center;
 .font100{
   font-size:100%;
 }
-
-
