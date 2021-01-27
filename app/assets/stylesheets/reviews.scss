@@ -230,7 +230,8 @@ textarea{
 }
 .evaluation_form_container{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 50px;
   flex-wrap: wrap;
   margin-bottom: 20px;
 }
