@@ -81,7 +81,7 @@
       </div>
       <div class="link_buttons">
         <%= link_to "問い合わせする", new_room_room_contact_path(room_id: @room.id), class: "inqury" %>
-        <%= link_to "レビューを見る", room_reviews_path(@room), class: "card_button1" %>
+        <%= link_to "一覧に戻る", rooms_path, class: "card_button1" %>
         <%= link_to "レビューを書く", room_path(@room), class: "card_button2" %>
       </div>
     </div>
@@ -105,7 +105,7 @@
 
      	<div>
         <%= link_to user_path(review.user) do %>
-        <i class="fas fa-arrow-circle-right"></i></div>
+        <i class="fas fa-arrow-circle-right"></i>
         <%= review.user.username %>
         <% end %>
     	</div>
@@ -145,6 +145,7 @@
         <% end %>
         <%= review.favorites.count %>
 		  </div>
+
     </div>
   <% end %>
 </div>
