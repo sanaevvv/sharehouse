@@ -79,6 +79,11 @@
           <%=simple_format(@room.description, class: 'desc') %>
           <%= render 'tag_list', tag_list: @room.tag_list %>
       </div>
+      <div class="link_buttons">
+        <%= link_to "問い合わせする", new_room_room_contact_path(room_id: room.id), class: "inqury" %>
+        <%= link_to "レビューを見る", room_reviews_path(room), class: "card_button1" %>
+        <%= link_to "レビューを書く", room_path(room), class: "card_button2" %>
+      </div>
     </div>
   </div>
 </div>
