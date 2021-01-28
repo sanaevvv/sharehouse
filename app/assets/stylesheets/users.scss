@@ -281,7 +281,7 @@
 
 .grid_table_mypage{
     display: grid;
-    grid-template-columns: 160px 10vw 1fr 120px 40px;
+    grid-template-columns: 160px 1fr 120px 40px;
     font-size: 80%;
      @media screen and (max-width:380px){
     grid-template-columns: 1fr;

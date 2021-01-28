@@ -45,27 +45,26 @@
     <li class="active">
       <div class="grid_table_mypage">
         <div class="grid_ttl">シェアハウス名</div>
-        <div class="grid_ttl">点数</div>
         <div class="grid_ttl">内容</div>
         <div class="grid_ttl"></div>
         <div class="grid_ttl"></div>
         <% if @user.reviews.present? %>
           <% @user.reviews.each do |review| %>
             <div class="border_layout"><%= review.room.name %></div>
-            <div class="border_layout">
-           <%= form_with model: [@room, review], local: true do |f| %>
-             <div class="comment_evaluation">
-							<%= f.radio_button :score, 5 %>
-								<label><span class="text"></span><i class="fas fa-star"></i></label>
-							<%= f.radio_button :score, 4 %>
-								<label><span class="text"></span><i class="fas fa-star"></i></label>
-							<%= f.radio_button :score, 3 %>
-								<label><span class="text"></span><i class="fas fa-star"></i></label>
-							<%= f.radio_button :score, 2 %>
-								<label><span class="text"></span><i class="fas fa-star"></i></label>
-							<%= f.radio_button :score, 1 %>
-								<label><span class="text"></span><i class="fas fa-star"></i></label>
-             </div>
+            <%# <div class="border_layout"> %>
+           <%#= form_with model: [@room, review], local: true do |f| %>
+             <%# <div class="comment_evaluation"> %>
+							<%#= f.radio_button :score, 5 %>
+								<%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+							<%#= f.radio_button :score, 4 %>
+								<%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+							<%#= f.radio_button :score, 3 %>
+								<%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+							<%#= f.radio_button :score, 2 %>
+								<%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+							<%#= f.radio_button :score, 1 %>
+								<%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+             <%# </div> %>
       		<% end %>
         </div>
             <%= simple_format(review.comment, class: 'border_layout') %>
