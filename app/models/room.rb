@@ -59,7 +59,7 @@ class Room < ApplicationRecord
 
        def avg_score_relationships
               unless self.reviews.empty?
-                     reviews.average(:Relatioships_score).to_f.round(2)
+                     reviews.average(:Relationships_score).to_f.round(2)
               else
                      0.0
               end
