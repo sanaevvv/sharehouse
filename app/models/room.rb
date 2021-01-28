@@ -66,7 +66,7 @@ class Room < ApplicationRecord
        end
        def review_score_percentage_relationships
           unless self.reviews.empty?
-                  reviews.average(:Relatonships_score).to_f*100/5.round(2)
+                  reviews.average(:Relationships_score).to_f*100/5.round(2)
           else
                   0.0
           end
