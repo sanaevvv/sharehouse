@@ -32,44 +32,44 @@
         <div class="star_review">
           <span>静かさ</span>
           <div class="star-rating">
-                <div class="star-rating-front" style="width: <%= @room.review_score_percentage_clean %>%">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
+            <div class="star-rating-front" style="width: <%= @room.review_score_percentage_quiet %>%">★★★★★</div>
+            <div class="star-rating-back">★★★★★</div>
           </div>
           <div class="average-score-display">
-                <%= @room.avg_score_clean %>点（<%= @room.reviews.count %>件）
+            <%= @room.avg_score_clean_quiet %>点（<%= @room.reviews.count %>件）
           </div>
         </div>
 
         <div class="star_review">
           <span>設備充実度</span>
           <div class="star-rating">
-                <div class="star-rating-front" style="width: <%= @room.review_score_percentage_clean %>%">★★★★★</div>
+                <div class="star-rating-front" style="width: <%= @room.review_score_percentage_facility %>%">★★★★★</div>
                 <div class="star-rating-back">★★★★★</div>
           </div>
           <div class="average-score-display">
-            <%= @room.avg_score_clean %>点（<%= @room.reviews.count %>件）
+            <%= @room.avg_score_clean_facility %>点（<%= @room.reviews.count %>件）
           </div>
         </div>
 
         <div class="star_review">
           <span>人間関係</span>
           <div class="star-rating">
-                <div class="star-rating-front" style="width: <%= @room.review_score_percentage_clean %>%">★★★★★</div>
+                <div class="star-rating-front" style="width: <%= @room.review_score_percentage_relationships %>%">★★★★★</div>
                 <div class="star-rating-back">★★★★★</div>
           </div>
           <div class="average-score-display">
-                <%= @room.avg_score_clean %>点（<%= @room.reviews.count %>件）
+                <%= @room.avg_score_relationships %>点（<%= @room.reviews.count %>件）
           </div>
         </div>
 
         <div class="star_review">
           <span>管理会社対応</span>
           <div class="star-rating">
-            <div class="star-rating-front" style="width: <%= @room.review_score_percentage_clean %>%">★★★★★</div>
+            <div class="star-rating-front" style="width: <%= @room.review_score_percentage_management %>%">★★★★★</div>
             <div class="star-rating-back">★★★★★</div>
           </div>
           <div class="average-score-display">
-            <%= @room.avg_score_clean %>点（<%= @room.reviews.count %>件）
+            <%= @room.avg_score_management %>点（<%= @room.reviews.count %>件）
           </div>
         </div>
       </div>

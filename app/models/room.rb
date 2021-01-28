@@ -14,17 +14,77 @@ class Room < ApplicationRecord
 
        def avg_score_clean
               unless self.reviews.empty?
-                     reviews.average(:score).to_f.round(2)
+                reviews.average(:score).to_f.round(2)
               else
                      0.0
               end
        end
        def review_score_percentage_clean
               unless self.reviews.empty?
-                     reviews.average(:score).to_f*100/5.round(2)
+                reviews.average(:score).to_f*100/5.round(2)
               else
                      0.0
               end
+       end
+
+       def avg_score_quiet
+              unless self.reviews.empty?
+                     reviews.average(:Quiet_score).to_f.round(2)
+              else
+                     0.0
+              end
+       end
+       def review_score_percentage_quiet
+          unless self.reviews.empty?
+                  reviews.average(:Quiet_score).to_f*100/5.round(2)
+          else
+                  0.0
+          end
+       end
+
+        def avg_score_facility
+              unless self.reviews.empty?
+                     reviews.average(:Facility_score).to_f.round(2)
+              else
+                     0.0
+              end
+       end
+       def review_score_percentage_facility
+          unless self.reviews.empty?
+                  reviews.average(:Facility_score).to_f*100/5.round(2)
+          else
+                  0.0
+          end
+       end
+
+       def avg_score_relationships
+              unless self.reviews.empty?
+                     reviews.average(:Relatioships_score).to_f.round(2)
+              else
+                     0.0
+              end
+       end
+       def review_score_percentage_relationships
+          unless self.reviews.empty?
+                  reviews.average(:Relatonships_score).to_f*100/5.round(2)
+          else
+                  0.0
+          end
+       end
+
+       def avg_score_management
+              unless self.reviews.empty?
+                     reviews.average(:Management_score).to_f.round(2)
+              else
+                     0.0
+              end
+       end
+       def review_score_percentage_management
+          unless self.reviews.empty?
+                  reviews.average(:Management_score).to_f*100/5.round(2)
+          else
+                  0.0
+          end
        end
 
        # roomのお気に入り判定 → vies側で呼び出し
