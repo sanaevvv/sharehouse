@@ -2,7 +2,6 @@
 <div class="comment_form_container">
   <div class="grid_table_review">
     <div class="grid_ttl">ユーザー名</div>
-    <div class="grid_ttl">点数</div>
     <div class="grid_ttl">内容</div>
     <div class="grid_ttl"></div>
     <div class="grid_ttl"></div>
@@ -12,21 +11,21 @@
      <%= link_to @review.user.username, user_path(@review.user) %>
     </div>
 
-      <%= form_with model: [@room, @review], local: true do |f| %>
-        <div class="border_layout comment_evaluation">
-          <%= f.radio_button :score, 5 %>
-            <label><span class="text"></span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 4 %>
-            <label><span class="text"></span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 3 %>
-            <label><span class="text"></span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 2 %>
-            <label><span class="text"></span><i class="fas fa-star"></i></label>
-          <%= f.radio_button :score, 1 %>
-            <label><span class="text"></span><i class="fas fa-star"></i></label>
-          <%= f.hidden_field :room_id, value: @room.id %>
-        </div>
-      <% end %>
+      <%#= form_with model: [@room, @review], local: true do |f| %>
+        <%# <div class="border_layout comment_evaluation"> %>
+          <%#= f.radio_button :score, 5 %>
+            <%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+          <%#= f.radio_button :score, 4 %>
+            <%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+          <%#= f.radio_button :score, 3 %>
+            <%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+          <%#= f.radio_button :score, 2 %>
+            <%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+          <%#= f.radio_button :score, 1 %>
+            <%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
+          <%#= f.hidden_field :room_id, value: @room.id %>
+        <%# </div> %>
+      <%# <% end %> 
 
     <div class="border_layout">
       <%= simple_format(@review.comment) %></div>
