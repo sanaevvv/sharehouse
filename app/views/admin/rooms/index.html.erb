@@ -1,108 +1,100 @@
 <p class="sharehouse_search">
-          <i class="fas fa-home"></i>&nbsp;シェアハウスを探す
-</p>
+  <i class="fas fa-home"></i>&nbsp;シェアハウスを探す</p>
 
 <div class="search_box">
-          <%= search_form_for @q, class:"search" do |f| %>
-               <%= f.search_field :name_cont, placeholder: '検索するテキストを入力...' %>
-               <%= f.submit "検索", class: 'link_button'%>
-          <% end %>
+	<%= search_form_for @q, class:"search" do |f| %>
+				<%= f.search_field :name_cont, placeholder: '検索するテキストを入力...' %>
+				<%= f.submit "検索", class: 'link_button'%>
+	<% end %>
 </div>
 
 <% @rooms.each do |room| %>
-     <div class="border">
-          <h2 class="card_title"><%= room.name %></h2>
-           <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
-          <div class="card_inner">
-               <div class="w_50">
-                <%= link_to admin_room_photos_path(room_id: room.id) do %>
-                    <img src="<%= room_image_url(room) %>" alt="" />
-                     <div class="more_photo"><i class="fas fa-angle-double-right"></i>写真をもっと掲載する</div>
-                    <% end %>
-               </div>
-							  <div class="w_50 card_right">
-            <div class="card_review">
-              <div class="star_review">
-                <span>清潔さ</span>
-                 <div class="star-rating">
-                 <div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
-                 <div class="star-rating-back">★★★★★</div>
-              </div>
-              <div class="average-score-display">
-                  <%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
-              </div>
-            </div>
-             <div class="star_review">
-                            <span>静かさ</span>
-                            <div class="star-rating">
-                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
-                                  <div class="star-rating-back">★★★★★</div>
-                            </div>
-                            <div class="average-score-display">
-                                  <%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
-                            </div>
-                         </div>
-                         <div class="star_review">
-                            <span>設備充実度</span>
-                            <div class="star-rating">
-                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
-                                  <div class="star-rating-back">★★★★★</div>
-                            </div>
-                            <div class="average-score-display">
-                                  <%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
-                            </div>
-                         </div>
+  <div class="border">
+    <h2 class="card_title"><%= room.name %></h2>
+    <p class="bookmark"><i class="far fa-bookmark"></i>&nbsp;ブックマークに追加</p>
 
-                         <div class="star_review">
-                            <span>人間関係</span>
-                            <div class="star-rating">
-                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
-                                  <div class="star-rating-back">★★★★★</div>
-                            </div>
-                            <div class="average-score-display">
-                                  <%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
-                            </div>
-                         </div>
+    <div class="card_inner">
+      <div class="w_50">
+				<%= link_to admin_room_photos_path(room_id: room.id) do %>
+					<img src="<%= room_image_url(room) %>" alt="" />
+					<div class="more_photo"><i class="fas fa-angle-double-right"></i>写真をもっと掲載する</div>
+				<% end %>
+      </div>
+      <div class="w_50 card_right">
+				<div class="card_review">
+					<div class="star_review">
+						<span>清潔さ</span>
+						<div class="star-rating">
+							<div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
+							<div class="star-rating-back">★★★★★</div>
+						</div>
+						<div class="average-score-display">
+							<%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
+						</div>
+					</div>
+					<div class="star_review">
+						<span>静かさ</span>
+						<div class="star-rating">
+							<div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
+							<div class="star-rating-back">★★★★★</div>
+						</div>
+						<div class="average-score-display">
+							<%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
+						</div>
+					</div>
+					<div class="star_review">
+						<span>設備充実度</span>
+						<div class="star-rating">
+							<div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
+							<div class="star-rating-back">★★★★★</div>
+						</div>
+						<div class="average-score-display">
+							<%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
+						</div>
+					</div>
+					<div class="star_review">
+						<span>人間関係</span>
+						<div class="star-rating">
+							<div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
+							<div class="star-rating-back">★★★★★</div>
+						</div>
+						<div class="average-score-display">
+							<%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
+						</div>
+					</div>
+					<div class="star_review">
+						<span>管理会社対応</span>
+							<div class="star-rating">
+								<div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
+								<div class="star-rating-back">★★★★★</div>
+							</div>
+							<div class="average-score-display">
+								<%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
+							</div>
+					</div>
+				</div>
 
-                         <div class="star_review">
-                            <span>管理会社対応</span>
-                            <div class="star-rating">
-                                  <div class="star-rating-front" style="width: <%= room.review_score_percentage_clean %>%">★★★★★</div>
-                                  <div class="star-rating-back">★★★★★</div>
-                            </div>
-                            <div class="average-score-display">
-                                  <%= room.avg_score_clean %>点（<%= room.reviews.count %>件）
-                            </div>
-                         </div>
-                </div>
+        <div class="star_text_gr">
+					<p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">&nbsp;(光熱費込)</span></p>
+					<%=simple_format(room.description, class: 'desc') %>
 
-                <div class="star_text_gr">
-                         <p class="roomfee">&yen;<%= room.price.try(:to_s, :delimited) %>&nbsp;-&nbsp;&yen;<%= room.maxprice.try(:to_s, :delimited) %><span class="utilities">&nbsp;(光熱費込)</span></p>
-                         <%=simple_format(room.description, class: 'desc') %>
+					<%= render 'tag_list', tag_list: room.tag_list %>
+			 	</div>
+				<div class="link_buttons">
+					<% unless room.management_company.present? %>
+						<%= link_to "管理会社登録", new_admin_room_management_companies_path(room_id: room.id), class: "management_new" %>
+					<% else %>
+						<%= link_to "管理会社詳細",  admin_room_management_companies_path(room_id: room.id), class: "management_show" %>
+					<% end %>
+						<%= link_to "編集する", edit_admin_room_path(room), class: "card_button1 font100" %>
+						<%= link_to "削除する", [:admin, room], method: :delete,data:{confirm: "#{room.name}を削除します。よろしいですか？"}, class: "card_button2 font100" %>
+				</div>
 
-                         <%= render 'tag_list', tag_list: room.tag_list %>
-                      </div>
-                </div>
-
-            </div>
-
- <div class="link_buttons">
- <% unless room.management_company.present? %>
-                     <%= link_to "管理会社登録", new_admin_room_management_companies_path(room_id: room.id), class: "management_new" %>
-<% else %>
-                     <%= link_to "管理会社詳細",  admin_room_management_companies_path(room_id: room.id), class: "management_show" %>
-
+			</div>
+		</div>
+  </div> 
 <% end %>
 
-                    <%= link_to "編集する", edit_admin_room_path(room), class: "card_button1 font100" %>
-                    <%= link_to "削除する", [:admin, room], method: :delete,data:{confirm: "#{room.name}を削除します。よろしいですか？"}, class: "card_button2 font100" %>
-                    </div>
-
-
-          </div>
-     </div>
-<% end %>
-</div>
 
 <div class="pagination">
      <%= paginate @rooms %>
