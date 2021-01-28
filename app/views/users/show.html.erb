@@ -65,8 +65,8 @@
 							<%#= f.radio_button :score, 1 %>
 								<%# <label><span class="text"></span><i class="fas fa-star"></i></label> %>
              <%# </div> %>
-      		<% end %>
-        </div>
+      		<%# end %>
+        <%# </div> %>
             <%= simple_format(review.comment, class: 'border_layout') %>
 
  <div class="border_layout review_list"><%= link_to 'レビュー一覧', room_reviews_path(room_id: review.room.id) %></div>
