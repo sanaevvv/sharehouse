@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_14_054233) do
+ActiveRecord::Schema.define(version: 2021_01_26_030326) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -96,6 +96,10 @@ ActiveRecord::Schema.define(version: 2021_01_14_054233) do
     t.bigint "user_id"
     t.bigint "room_id"
     t.integer "score"
+    t.integer "Quiet_score"
+    t.integer "Facility_score"
+    t.integer "Relationships_score"
+    t.integer "Management_score"
     t.index ["room_id"], name: "index_reviews_on_room_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -106,6 +110,8 @@ ActiveRecord::Schema.define(version: 2021_01_14_054233) do
     t.bigint "room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "email"
     t.index ["room_id"], name: "index_room_contacts_on_room_id"
   end
 
@@ -117,8 +123,6 @@ ActiveRecord::Schema.define(version: 2021_01_14_054233) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "picture"
     t.integer "maxprice"
-    t.bigint "management_company_id", null: false
-    t.index ["management_company_id"], name: "index_rooms_on_management_company_id"
   end
 
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -144,7 +148,6 @@ ActiveRecord::Schema.define(version: 2021_01_14_054233) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "taggings_count", default: 0
-    t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -156,7 +159,7 @@ ActiveRecord::Schema.define(version: 2021_01_14_054233) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false, null: false
+    t.boolean "admin", default: false, null: false, comment: "true: 管理者, false: 一般ユーザー"
     t.text "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
