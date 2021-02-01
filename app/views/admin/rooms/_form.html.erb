@@ -3,7 +3,7 @@
     <%= link_to '一覧に戻る', admin_rooms_path, class:"back_to_index" %>
 </div>
 
-<%= form_with model: [:admin, room], local: true do |f| %>
+<%= form_with url: url, model: room, local: true do |f| %>
      <div class="grid_new">
           <div><%= f.label :name, "シェアハウス名" %></div>
           <div><%= f.text_field :name %></div>
@@ -21,7 +21,7 @@
           <div><%= f.label :image, "イメージ画像" %></div>
           <div><%= f.file_field :image %></div>
 
-          <%= f.hidden_field :management_company_id, value: room.management_company %>
+          <%= f.hidden_field :management_company_id, value: room.management_company.presence || 0 %>
 
           <div><%= f.submit '登録する', class:"button" %></div>
      </div>

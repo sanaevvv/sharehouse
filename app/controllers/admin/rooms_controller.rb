@@ -29,16 +29,16 @@ module Admin
           def create
                @room = Room.new(room_params)
                if @room.save
-               redirect_to admin_room_url(@room), notice:"#{@room.name}を登録しました。"
+                    redirect_to room_path(@room), notice:"#{@room.name}を登録しました。"
                else
-               render :new
+                    render :new
                end
           end
 
           def update
                room = Room.find_by(id: params[:id])
-               if room.save
-               redirect_to admin_rooms_path, notice: "#{room.name}を更新しました。"
+               if room.update(room_params)
+                redirect_to admin_rooms_path, notice: "#{room.name}を更新しました。"
                else
                   render :edit
                end

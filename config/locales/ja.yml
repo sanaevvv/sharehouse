@@ -1,4 +1,7 @@
 ja:
-     activerecord:
-          models: 
-               reviews: レビュー
+  activerecord:
+    models:
+      reviews: レビュー
+    errors:
+      messages:
+        record_invalid: レコードが不適切です
