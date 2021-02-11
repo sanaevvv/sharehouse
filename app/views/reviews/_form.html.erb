@@ -30,57 +30,57 @@
 		</div>
 
 		<div class="evaluation">
-			<%= f.radio_button :score, 5, id:"star5" %>
+			<%= f.radio_button :Quiet_score, 5, id:"star5" %>
 				<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 4, id:"star4" %>
+			<%= f.radio_button :Quiet_score, 4, id:"star4" %>
 				<label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 3, id:"star3" %>
+			<%= f.radio_button :Quiet_score, 3, id:"star3" %>
 				<label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 2, id:"star2" %>
+			<%= f.radio_button :Quiet_score, 2, id:"star2" %>
 				<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 1, id:"star1" %>
+			<%= f.radio_button :Quiet_score, 1, id:"star1" %>
 				<label for="star1"><span class="text">最悪</span><i class="fas fa-star"></i></label>
 			<div class="star_text">静かさ</div>
 		</div>
 
 		<div class="evaluation">
-			<%= f.radio_button :score, 5, id:"star5" %>
+			<%= f.radio_button :Facility_score, 5, id:"star5" %>
 				<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 4, id:"star4" %>
+			<%= f.radio_button :Facility_score, 4, id:"star4" %>
 				<label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 3, id:"star3" %>
+			<%= f.radio_button :Facility_score, 3, id:"star3" %>
 				<label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 2, id:"star2" %>
+			<%= f.radio_button :Facility_score, 2, id:"star2" %>
 				<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 1, id:"star1" %>
+			<%= f.radio_button :Facility_score, 1, id:"star1" %>
 				<label for="star1"><span class="text">最悪</span><i class="fas fa-star star_text_relative"></i></label>
 			<div class="star_text">設備充実度</div>
 		</div>
 
 		<div class="evaluation">
-			<%= f.radio_button :score, 5, id:"star5" %>
+			<%= f.radio_button :Relationships_score, 5, id:"star5" %>
 				<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 4, id:"star4" %>
+			<%= f.radio_button :Relationships_score, 4, id:"star4" %>
 				<label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 3, id:"star3" %>
+			<%= f.radio_button :Relationships_score, 3, id:"star3" %>
 				<label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 2, id:"star2" %>
+			<%= f.radio_button :Relationships_score, 2, id:"star2" %>
 				<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 1, id:"star1" %>
+			<%= f.radio_button :Relationships_score, 1, id:"star1" %>
 				<label for="star1"><span class="text">最悪</span><i class="fas fa-star star_text_relative"></i></label>
 			<div class="star_text">人間関係</div>
 		</div>
 
 		<div class="evaluation">
-			<%= f.radio_button :score, 5, id:"star5" %>
+			<%= f.radio_button :Management_score, 5, id:"star5" %>
 				<label for="star5"><span class="text">最高</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 4, id:"star4" %>
+			<%= f.radio_button :Management_score, 4, id:"star4" %>
 				<label for="star4"><span class="text">良い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 3, id:"star3" %>
+			<%= f.radio_button :Management_score, 3, id:"star3" %>
 				<label for="star3"><span class="text">普通</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 2, id:"star2" %>
+			<%= f.radio_button :Management_score, 2, id:"star2" %>
 				<label for="star2"><span class="text">悪い</span><i class="fas fa-star"></i></label>
-			<%= f.radio_button :score, 1, id:"star1" %>
+			<%= f.radio_button :Management_score, 1, id:"star1" %>
 				<label for="star1"><span class="text">最悪</span><i class="fas fa-star star_text_relative"></i></label>
 			<div class="star_text">管理会社対応</div>
 		 </div>
@@ -88,7 +88,6 @@
 
 	<div class="evaluate_layout">
 		<%= f.hidden_field :room_id, value: room.id %>
-		<%= f.hidden_field :score %>
 		<%= f.text_area :comment, row: 5, placeholder: "コメントをご記入ください", class: "textarea" %>
 		<div class="evaluate_buttons">
 			<%= f.submit "保存", class: "button" %>
