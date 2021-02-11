@@ -88,6 +88,7 @@
 
 	<div class="evaluate_layout">
 		<%= f.hidden_field :room_id, value: room.id %>
+		<%= f.hidden_field :score %>
 		<%= f.text_area :comment, row: 5, placeholder: "コメントをご記入ください", class: "textarea" %>
 		<div class="evaluate_buttons">
 			<%= f.submit "保存", class: "button" %>
