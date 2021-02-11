@@ -86,7 +86,7 @@
 					<%= render 'tag_list', tag_list: room.tag_list %>
 			 	</div>
 				<div class="link_buttons">
-					<% unless room.management_company.present || 0 %>
+					<% unless room.management_company.present? %>
 						<%= link_to "管理会社登録", new_admin_room_management_companies_path(room_id: room.id), class: "management_new" %>
 					<% else %>
 						<%= link_to "管理会社詳細",  admin_room_management_companies_path(room_id: room.id), class: "management_show" %>
