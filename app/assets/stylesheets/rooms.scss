@@ -41,7 +41,6 @@
                }
 
                .star-rating {
-                    flex: 1;
                     font-size: 1.7rem;
                     position: relative;
                     .star-rating-front {
@@ -58,7 +57,7 @@
 
                .average-score-display {
                     font-size: 1.5rem;
-                    flex: 1;
+                    margin-left: 2vw;
                     white-space: nowrap;
                }
           }
