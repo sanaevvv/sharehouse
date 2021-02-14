@@ -9,7 +9,7 @@ layout 'admin'
 
     def edit
       @room = Room.find_by(id: params[:room_id])
-      @management_company = ManagementCompany.find_by(room_id: @room.id)
+      @management_company = @room.management_company
 
     end
 
@@ -45,7 +45,7 @@ layout 'admin'
 
     def show
       @room = Room.find_by(id: params[:room_id])
-      @management_company = ManagementCompany.find_by(room_id: @room.id)
+      @management_company = @room.management_company
     end
 
     private

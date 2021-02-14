@@ -4,7 +4,7 @@ class Room < ApplicationRecord
        has_many :bookmarks, dependent: :destroy
        has_many :users, through: :bookmarks
        has_many :photos, dependent: :destroy
-       belongs_to :management_company
+       belongs_to :management_company, optional: true
 
        has_one_attached :image
 

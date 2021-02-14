@@ -24,9 +24,8 @@
                   <%= link_to "編集する", edit_admin_room_management_companies_path(@room), class: "edit_button" %>
                   <%= link_to "削除する", admin_room_management_companies_path(@room), method: :delete, data:{confirm: "#{@room.name}を削除します。よろしいですか？"}, class: "delete_button" %>
                   </p>
-
     <% else %>
-      <p class="color_grey">まだ登録がありません。</p>
+       <p class="color_grey">まだ登録がありません。</p>
     <% end %>
   </div>
 </div>

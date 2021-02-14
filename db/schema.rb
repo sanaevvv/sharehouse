@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_030326) do
+ActiveRecord::Schema.define(version: 2021_02_13_133642) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -66,8 +66,6 @@ ActiveRecord::Schema.define(version: 2021_01_26_030326) do
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "room_id"
-    t.index ["room_id"], name: "index_management_companies_on_room_id"
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -172,7 +170,6 @@ ActiveRecord::Schema.define(version: 2021_01_26_030326) do
   add_foreign_key "bookmarks", "rooms"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "reviews"
-  add_foreign_key "management_companies", "rooms"
   add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "relationships", "users", column: "followerd_id"
   add_foreign_key "reviews", "rooms"
